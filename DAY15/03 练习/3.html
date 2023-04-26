@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	<style>
+	    .box {
+	      position: relative;
+	      width: 70px;
+	      height: 90px;
+	      margin: 100px auto;
+	      padding-top: 4px;
+	      border: 1px solid #ccc;
+	      font-size: 12px;
+	      text-align: center;
+	      color: #ff5000;
+	    }
+	
+	    .box img {
+	      width: 62px;
+	      margin-top: 4px;
+	    }
+	
+	    .box .close_btn {
+	      position: absolute;
+	      top: -1px;
+	      left: -23px;
+	      width: 20px;
+	      height: 20px;
+	      border: 1px solid #ccc;
+	      font-style: normal;
+	      color: #ccc;
+	    }
+	  </style>
+	</head>
+	<body>
+	  <div class="box" id="box" >
+	    去领红包
+	    <img src="img/tao.png" alt="" />
+	    <i class="close_btn" id='close_btn'>x</i>
+	  </div>
+	  <script>
+	    // 需求. 仿淘宝的效果. 点击x号, 关闭广告
+		  // 提示:让元素隐藏 修改display属性即可
+		  
+		  var btn = document.getElementById('close_btn');
+		  var box = document.getElementById('box');
+		  var showclose = true;
+		  btn.addEventListener('click',function(){
+			  
+			  if(close){
+				  box.style.display = 'none';
+				  
+			  }else {
+				 box.style.display = 'block';
+			  }
+			  showclose = !showclose
+		  })
+		  
+		  
+	  </script>
+	</body>
+</html>

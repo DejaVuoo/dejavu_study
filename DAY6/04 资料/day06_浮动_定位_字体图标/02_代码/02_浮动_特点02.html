@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            特点02
+                浮动元素会受上面元素边界的影响
+
+            设置c1不浮动 c2浮动
+
+            情况
+                c2并没有漂浮起来覆盖c1
+            原因
+                c1是一个块级元素,在标准流中独占一行,它没有浮动,浮动元素会受上面元素边界的影响,c2不会飘到c1的上面
+
+            解决
+                可以设置c1为行内块元素(行内块元素不会独占一行),最好的方式就是让c1也浮动起来
+        */
+        .c1{
+            width: 200px;
+            height: 200px;
+            background: lightblue;
+            display: inline-block;
+        }
+        .c2{
+            width: 220px;
+            height: 220px;
+            background: green;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="c1"></div>
+    <div class="c2"></div>
+</body>
+</html>

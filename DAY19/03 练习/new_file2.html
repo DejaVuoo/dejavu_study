@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Random Image Selector</title>
+    <meta charset="UTF-8">
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+      button {
+        margin: 0 10px;
+        font-size: 20px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background: #4CAF50;
+        color: white;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #3E8E41;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="" alt="Random Image">
+    <div>
+      <button id="startButton">Start</button>
+      <button id="pauseButton" disabled>Pause</button>
+    </div>
+    <script>
+      // 获取元素
+      const img = document.querySelector('img');
+      const startButton = document.querySelector('#startButton');
+      const pauseButton = document.querySelector('#pauseButton');
+
+      // 定义图片数组
+      const images = [
+        'https://picsum.photos/id/237/400/300',
+        'https://picsum.photos/id/238/400/300',
+        'https://picsum.photos/id/239/400/300',
+        'https://picsum.photos/id/240/400/300',
+        'https://picsum.photos/id/241/400/300',
+        'https://picsum.photos/id/242/400/300'
+      ];
+
+      // 定义定时器变量
+      let timer;
+
+      // 随机选择一张图片并显示
+      function selectImage() {
+        const index = Math.floor(Math.random() * images.length);
+        img.src = images[index];
+      }
+
+      // 开始定时器
+      function startTimer() {
+        // 禁用开始按钮，启用暂停按钮
+        startButton.disabled = true;
+        pauseButton.disabled = false;
+
+        // 每秒切换一次图片
+        timer = setInterval(selectImage, 1000);
+      }
+
+      // 暂停定时器
+      function pauseTimer() {
+        // 启用开始按钮，禁用暂停按钮
+        startButton.disabled = false;
+        pauseButton.disabled = true;
+
+        // 停止定时器
+        clearInterval(timer);
+      }
+
+      // 绑定事件
+      startButton.addEventListener('click', startTimer);
+      pauseButton.addEventListener('click', pauseTimer);
+    </script>
+  </body>
+</html>

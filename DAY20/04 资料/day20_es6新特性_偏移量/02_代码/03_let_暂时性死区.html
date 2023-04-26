@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            ES6 明确规定，代码块内如果存在 let 或者 const，
+            代码块会对这些命令声明的变量从块的开始就形成一个封闭作用域。
+            代码块内，在声明变量 PI 之前使用它会报错。
+        */
+        var PI = "a";
+        console.log(window);
+        if(true){
+            console.log(PI);  // Cannot access 'PI' before initialization
+            let PI = "3.1415926";// 声明变量PI之前的{}区域,都属于PI变量的死区
+        }
+    </script>
+</body>
+</html>

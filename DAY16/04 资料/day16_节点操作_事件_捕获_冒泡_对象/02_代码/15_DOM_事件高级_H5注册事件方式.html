@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="c1">传统注册事件方式</button>
+    <button class="c2">H5注册事件方式</button>
+
+    <script>
+        //使用传统方式给c1的点击事件添加两个处理函数:本质是设置属性,后面赋值的属性会覆盖前面的
+        var btn1 = document.querySelector('.c1')
+        btn1.onclick = function(){
+            console.log('我被点了');
+        }
+        btn1.onclick = function(){
+            console.log('我又被点了');
+        }
+
+        //使用H5方式给c2的点击事件添加两个处理函数:本质是调用方法,方法是可以多次调用
+        var btn2 = document.querySelector('.c2')
+        btn2.addEventListener('click',function(){
+            console.log('我被点了');
+        })
+        btn2.addEventListener('click',function(){
+            console.log('我又被点了');
+        })
+    </script>
+</body>
+</html>

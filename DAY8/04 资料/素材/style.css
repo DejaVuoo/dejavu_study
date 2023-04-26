@@ -1,0 +1,38 @@
+/* 声明全局属性 */
+:root {
+  --blue: #2980b9;
+  --black: #333;
+  --white: #fff;
+  --light-color: #777;
+  --light-bg: #eee;
+  --box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 设置页面元素的默认样式 */
+* {
+  font-family: "Microsoft YaHei", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all 0.2s linear;
+}
+
+/* 设置滚动条整体部分样式 */
+html::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* 设置滚动条的轨道样式 */
+html::-webkit-scrollbar-track {
+  background: var(--blue);
+}
+
+/* 设置滚动条里面的上下移动小方块的样式 */
+html::-webkit-scrollbar-thumb {
+  background: var(--white);
+  border-radius: 50px;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+                需求:学生类不仅有姓名和年龄还有学号 number
+        */
+       //定义Person类
+       class Person{
+            constructor(name,age){
+                this.name = name
+                this.age = age
+            }
+
+            eat(){
+                console.log('吃饭');
+            }
+        }
+
+        //定义Student类
+        class Student extends Person{
+            //自己构造函数
+            constructor(name,age,number){
+                super(name,age)  //其实是在调用父类的构造方法
+                this.number = number
+            }
+            
+            //特有方法
+            study(){
+                console.log('学习');
+            }
+        }
+
+        //创建对象
+        const stu1 = new Student('张三',23,100)
+        console.log(stu1);
+        stu1.eat()
+        console.log(stu1.name);
+        stu1.study()
+
+    </script>
+</body>
+
+</html>

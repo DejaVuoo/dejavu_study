@@ -1,0 +1,28 @@
+<!--
+ Copyright (c) 2023 smable<316245279@qq.com>
+ 
+ This software is released under the MIT License.
+ https://opensource.org/licenses/MIT
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1></h1>
+    <script>
+      //fetch返回的是一个promise对象
+      fetch("https://api.vvhan.com/api/en").then(res => 
+      //第一次调用.then 将结果通过.json()保留
+         res.json()
+      ).then(res=>{
+        document.querySelector('h1').innerHTML = res.data.zh
+      })
+    </script>
+  </body>
+</html>

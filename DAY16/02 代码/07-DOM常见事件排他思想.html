@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button>按钮1</button>
+		<button>按钮2</button>
+		<button>按钮3</button>
+		<button>按钮4</button>
+		<button>按钮5</button>
+		<button>按钮6</button>
+		
+		
+		<script>
+			
+			var btns = document.querySelectorAll('button')
+			
+			btns.forEach(function(btn){
+				btn.addEventListener('click',function(){
+					btns.forEach(function(item){
+						item.style.background = ''
+					})
+					this.style.background = 'pink'
+				})
+			})
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

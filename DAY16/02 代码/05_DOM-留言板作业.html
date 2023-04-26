@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        padding: 100px;
+      }
+      textarea {
+        width: 200px;
+        height: 100px;
+        border: 1px solid skyblue;
+        outline: none;
+        resize: none;
+      }
+      ul {
+        margin-top: 40px;
+      }
+
+      li {
+        width: 300px;
+        margin: 10px 0;
+        padding: 5px;
+        background-color: blueviolet;
+        color: #fff;
+      }
+	  li a{
+		  float:right;
+		  text-decoration: none;
+	  }
+    </style>
+  </head>
+  <body>
+    <textarea></textarea>
+    <button>发布</button>
+    <ul></ul>
+    <script>
+	   //提示会用到createElement方法 和 insertBefore方法
+	var btn = document.querySelector('button');
+	var text =document.querySelector('textarea');
+	var ul = document.querySelector('ul');
+	
+     btn.onclick= function() {
+		 if(text.value ==''){
+			 alert('您还没有输入内容');
+			 return false
+		 }else{
+			 var li = document.createElement('li');
+			 li.innerHTML = text.value+"<a href='javascript:;'>删除</a>";
+			 //创建1i元素
+			 ul.insertBefore(li,ul.children[0]);
+			 //添加完成之后，清除文本框内容
+			 text.value = ''
+			 //删除元素删除的是当前链接的li 它的父亲
+
+			 var remove = document.querySelectorAll('a')
+			 for (var i = 0; i<remove.length;i++){
+				 remove[i].onclick=function(){
+					 ul.removeChild(this.parentNode);
+				 }
+			 }
+		 }
+	 }
+    </script>
+  </body>
+</html>

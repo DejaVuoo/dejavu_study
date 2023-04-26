@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 设置底图 */
+        .box{
+            width: 1366px;
+            height: 600px;
+            background: url(./img/bg.jpg);
+            margin: 0 auto;
+            /* 超出部分隐藏 */
+            overflow: hidden;
+        }
+        /* 设置左边div */
+        .box .left{
+            float: left;
+            width: 50%;
+            height: 600px;
+            background: url(./img/fm.jpg);
+            transition: all 0.5s;
+        }
+        /* 设置右边的div */
+        .box .right{
+            float: left;
+            width: 50%;
+            height: 600px;
+            background: url(./img/fm.jpg);
+            background-position: -683px 0;/* 类似之前精灵图的做法 */
+            transition: all 0.5s;
+        }
+        /* 实现鼠标移入效果 */
+        .box:hover .left{
+            transform: translateX(-100%);
+        }
+        .box:hover .right{
+            transform: translateX(100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(b)//undefined
+
+        console.log(a)//function
+
+        var a = 123
+
+        console.log(a)//123
+
+        function a() {
+            console.log(a)
+        }
+
+        var b
+
+        /* 
+            大致流程
+                	1,先查找变量的声明,作为GO对象的属性名,值是undefined
+                    2,在查找函数的声明,作为GO对象的属性名,值是function
+                    3,从上到下依次执行代码(声明的语句会被略过)
+            具体流程
+                一,先生成GO对象(window对象)
+                二,全局预编译
+                    1,先查找变量的声明,作为GO对象的属性名,值是undefined
+                        GO : {a:undefined,b:undefined}
+                    2,在查找函数的声明,作为GO对象的属性名,值是function
+                        GO : {a:function,b:undefined}
+                    3,从上到下依次执行代码(声明的语句会被略过)
+                        执行第11行,打印b,打印的就是undefined
+                        执行第13行,打印a,  function
+                        执行第15行, 给a赋值 GO : {a:123,b:undefined}
+                        执行第17行, 打印a  打印123
+        */  
+    </script>
+</body>
+</html>

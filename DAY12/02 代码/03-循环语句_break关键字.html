@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/*  
+			 模拟一个人，20岁开始上班，寿命80岁，从60岁退休，打印xx岁在上班
+			 */
+			for (var i = 20; i <= 80; i++) {
+				if (i == 60) {
+					break /* 终止当前循环 */
+				}
+				console.log(i + '岁在上班');
+			}
+			
+			//1,在控制台上输出2次'xzd
+			//break
+			//2,在控制台上输出7次'xzd
+			//continue
+			//3,在控制台上输出13次'xzd
+			//console.log('xzd');
+			for (var i = 1; i <= 10; i++) {
+				if (i%3 == 0) {
+					break /* 终止当前循环 */
+				}
+				console.log('xzd');
+			}
+			var admin = 0
+			var password = 0
+			//while (!(admin=='123'&& password =="888"))
+			//while (admin != 123 || password != 888) {
+			while(ture){	
+				if(!(admin=='123'&& password =="888")){
+				admin = prompt('请用户输入登录账号')
+				password = prompt('请用户输入账号密码')
+				if(password !=888){
+					alert('账号或密码错误')
+				}else{
+					break
+				}
+			}
+			alert("登录成功")
+		</script>
+	</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //map()	通过指定函数处理数组的每个元素，并返回处理后的数组。
+
+        /* 需求1:把数组var arr = [1,3,5,8,10,11] 里面每一个元素都*2 */
+
+        var arr = [1,3,5,8,10,11]
+
+         //定义一个函数:将来数组中的每一个元素都会执行这个函数
+         function operationArr(value){
+             return value * 2
+         }
+
+         var newArr = arr.map(operationArr)
+         console.log(newArr);
+
+
+         /* 需求1:把数组var arr = [1,3,5,8,10,11] 里面每一个元素 都 * 它的索引值  */
+
+         //定义一个函数
+         function operationValue(value,index){ //第一个参数代表数组中的元素,第二个参数代表索引
+             return value * index
+         }
+
+         var resArr = arr.map(operationValue)
+         console.log(resArr);
+
+
+         //every()	检测数值元素的每个元素是否都符合条件。每一个元素都是偶数,控制台输出ok,否则就是no
+         //some()  	检测数组元素中是否有元素符合指定条件。只要有一个元素,控制台输出ok,否则就是no
+    </script>
+</body>
+</html>

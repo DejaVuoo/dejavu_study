@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //定义数组
+        var arr = ['迪丽热巴','古力娜扎','马尔扎哈']
+
+        //查询(获取数组中的某个元素:通过索引)
+        console.log(arr[2]);
+
+        //新增 蒙娜丽莎
+        arr[3] = '蒙娜丽莎'
+        console.log(arr);
+
+        arr[5] = '摩托罗拉'
+        console.log(arr);
+        console.log(arr[4]);//undefined
+
+        //修改
+        arr[0] = '阿拉斯加'
+        console.log(arr);
+
+        //删除
+        delete arr[1]
+        console.log(arr);/* 数组的长度不会发生改变,就相当于索引为1的元素走了 */
+
+        //获取数组的长度
+        console.log(arr.length);//6
+
+        /* 
+            对数组的操作(增删改查),都跟它的索引有关
+        */
+    </script>
+</body>
+</html>

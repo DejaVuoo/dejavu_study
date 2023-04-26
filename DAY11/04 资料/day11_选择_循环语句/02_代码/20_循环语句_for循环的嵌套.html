@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 打印一个三行四列的星星
+            ☆☆☆☆
+            ☆☆☆☆
+            ☆☆☆☆
+        */
+       //方式一
+       console.log('☆☆☆☆\n☆☆☆☆\n☆☆☆☆\n');
+
+       //方式二
+       console.log('☆☆☆☆\n');
+       console.log('☆☆☆☆\n');
+       console.log('☆☆☆☆\n');
+
+       //方式三:对方式二的改进,使用循环来打印次数(出现问题,浏览器会将相同代码进行折叠)
+       for(var i=1;i<=3;i++){
+            console.log('☆☆☆☆\n');
+       }
+
+       //方式四:将方式三种的星星使用字符串拼接好之后再去打印(类似于求1-10的和)
+       var str = ''
+       for(var i=1;i<=3;i++){
+            str += '☆☆☆☆\n'
+       }
+       console.log(str);
+
+       //方式五:将方式四种( str += '☆☆☆☆\n')使用循环实现
+       var newStr = ''
+       for(var i=1;i<=2;i++){  //外层循环控制行数
+            for(var j=1;j<=8;j++){//内层循环控制列数
+                newStr += '☆'
+            }
+            newStr += '\n'
+       }
+       console.log(newStr);
+
+       /* 
+       ☆
+       ☆☆
+       ☆☆☆
+       ☆☆☆☆ 
+
+        1x1=1	
+        1x2=2	2x2=4	
+        1x3=3	2x3=6	3x3=9	
+        1x4=4	2x4=8	3x4=12	4x4=16	
+        1x5=5	2x5=10	3x5=15	4x5=20	5x5=25	
+        1x6=6	2x6=12	3x6=18	4x6=24	5x6=30	6x6=36	
+        1x7=7	2x7=14	3x7=21	4x7=28	5x7=35	6x7=42	7x7=49	
+        1x8=8	2x8=16	3x8=24	4x8=32	5x8=40	6x8=48	7x8=56	8x8=64	
+        1x9=9	2x9=18	3x9=27	4x9=36	5x9=45	6x9=54	7x9=63	8x9=72	9x9=81	
+       */
+       
+    </script>
+</body>
+</html>

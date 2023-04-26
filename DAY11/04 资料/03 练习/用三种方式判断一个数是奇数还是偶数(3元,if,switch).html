@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//判断一个数是奇数还是偶数
+			//三元
+			var num = Number(prompt('请输入一个数字'))
+			//判断
+			var result = (num % 2 == 0) ? '偶数' : '奇数'
+			alert(result)
+			//if
+			if(num%2==0){
+				alert('偶数')
+			}else if(num%2==1){
+				alert('奇数')
+			}else{
+				alert('你输入的不是一个整数')
+			}
+
+			//swicth
+			//获取输入的数
+			/* var num = prompt('请输入一个数') */
+			//判断
+			switch (num % 2) {
+				case 1:
+					alert('奇数')
+					break
+				case 0:
+					alert('偶数')
+					break
+				default:
+					alert('你输入的不是一个整数')
+					break
+			}
+		</script>
+	</body>
+</html>

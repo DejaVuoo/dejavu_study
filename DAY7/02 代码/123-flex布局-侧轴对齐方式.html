@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			/* 主轴默认是水平方向：元素就会沿着水平方向排布 */
+			.father{
+			background: cornflowerblue;
+			display: flex;
+			height: 300px;
+			
+			/* 
+			 align-items定义f1ex子项在f1ex容器的当前行的侧轴（纵轴）方向上的对齐方式。
+				 
+				 flex-start	 元素位于容器的开头（上面）默认值。
+			
+				 flex-end	 元素位于容器的结尾（底部）。
+			
+				 center		 元素位于容器的中心。
+			
+				 stretch	 默认值。元素被拉伸以适应容器
+			
+				 注意
+					侧轴align-items属性有两个默认值
+						 1,元素默认在容器的上面排布
+						 2,元素默认是拉伸效果（前提是子元素没有设置高度）
+				
+			 
+			 
+			 
+			 
+			 
+			 */
+			
+			align-items:flex-start;	/*默认在父容器的上面排布*/
+			align-items:flex-end;	/*在父容器的底部排布*/
+			align-items:center;		/*在容器的中间排布*/
+			align-items:stretch;	/*默认拉伸效果，前提是子元素没有设置高度*/
+			}
+			.son{
+				
+				width: 100px;
+				/* height: 100px; */
+				background: greenyellow;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div class="father">
+			<div class="son">1</div>
+			<div class="son">2</div>
+			<div class="son">3</div>
+	</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var str=`有钱人终成眷属,没钱人亲眼目睹`
+			
+			//查找索引为3处的字符
+			
+			console.log(str[7]);
+			
+			console.log(str.charAt(7));
+			
+			//查找第一个'钱'所在的索引
+			
+			console.log(str.indexOf("钱"));
+			//查找最后一个'钱'所在的索引
+			
+			console.log(str.lastIndexOf("钱"));
+			
+			//将'眷属'截取出来打印
+			
+			console.log(str.slice(str.indexOf("眷属"),str.indexOf(",")));
+			console.log(str.substr(5,2));
+			console.log(str.substring(5,7));
+			
+			//将第一个·钱替换成'情
+			//replace()在字符串中查找匹配的子串，并替换与正则表达式匹配的子串。
+			
+			console.log(str.replace('钱','情'));
+			
+			//将里面的'人替换成的
+			//replaceA1l()在字符串中查找匹配的子串，并替换与正则表达式匹配的所有子串。
+			
+			console.log(str.replaceAll('人','的'));
+			
+			
+		</script>
+	</body>
+</html>

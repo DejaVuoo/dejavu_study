@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+    <button>按钮4</button>
+    <button>按钮5</button>
+    <button>按钮6</button>
+
+    <script>
+        //获取按钮对象
+        var btns = document.querySelectorAll('button')
+
+        //添加事件
+        btns.forEach(function(btn){
+            //拿到每一个按钮添加事件
+            btn.onclick = function(){
+
+                //在设置当前按钮的背景颜色之前,先把所有按钮的背景颜色清除掉(先干掉所有)
+                btns.forEach(function(item){
+                    item.style.background = ''
+                })
+
+                //再设置自己的
+                this.style.background = 'pink'
+            }
+        })
+
+        /* 
+            排他思想:先排除其他人,然后再设置自己的样式
+        */
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/* 
+			 作业3: 将 '小红=99 小白=100 小黄=70 小黑=66 小绿=88' 进行操作,在控制台输出 
+			 					  小红:99
+			 					  小白:100
+			 					  小黄:70
+			 					  小黑:66
+			 					  小绿:88
+			 
+			 */
+			
+			var str = '小红=99 小白=100 小黄=70 小黑=66 小绿=88';
+			function getstr(str){
+				var reg = str.replace(/=/g,':').replace(/\s/g,'\n')
+				return reg
+			}
+			console.log(getstr(str));
+		</script>
+	</body>
+</html>

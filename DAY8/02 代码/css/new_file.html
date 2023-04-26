@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			
+		.g-progress {
+		    margin: auto;
+		    width: 240px;
+		    height: 25px;
+		    border-radius: 25px;
+		    background: linear-gradient(90deg, #0f0, #0ff var(--progress), transparent 0);
+		    border: 1px solid #eee;
+		    transition: .3s --progress;
+		}
+		@property --progress {
+		  syntax: '<percentage>';
+		  inherits: false;
+		  initial-value: 0%;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="g-progress" style="--progress: 70%"></div>
+	</body>
+</html>

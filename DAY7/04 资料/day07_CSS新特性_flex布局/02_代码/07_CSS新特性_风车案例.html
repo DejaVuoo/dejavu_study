@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 定义动画 */
+        @keyframes rotate {
+            0%{transform: rotate(0);}
+            100%{transform: rotate(360deg);}
+        }
+
+        /* 使用动画 */
+        img{
+            animation: rotate 1s infinite;
+
+            /* 
+                animation-timing-function
+                    linear	动画从头到尾的速度是相同的。
+                    ease	默认。动画以低速开始，然后加快，在结束前变慢。
+            
+            */
+            animation-timing-function: linear;
+        }
+    </style>
+</head>
+<body>
+    <img src="./img/rotate.png" alt="">
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+        }
+
+        .c{
+            background: lightblue;
+        }
+
+        .c1{
+            border: 5px solid green;
+            border-radius: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="c"></div>
+
+    <script>
+        //获取元素
+        var div =  document.querySelector('div')
+     
+        
+        //添加样式
+        div.classList.add('c1')
+
+		//移出样式
+		/*div.onclick =function(){
+		this.classList.remove('c1')
+		}*/
+		//切换样式
+		div.onclick =function(){
+		this.classList.toggle('c1)/*如果没有c1属性，添加上去，如果有的话，就移出样式*/
+		}
+    </script>
+</body>
+</html>

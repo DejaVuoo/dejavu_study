@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/*
+			出现的场景
+			操作数据的时候，得到的数据类型不是我们想要的，怎么办？
+			
+			
+			
+			
+			*/
+			var age = prompt('请输入你的年龄')
+			console.log(typeof age); //string 因为string和数值运算的时候，会出问题（其实执行的是拼接)
+			console.log(age 10);
+			
+			/*
+			强制转换（显示转换，其实是调用一些方法来实现的）
+					String():将数据转成字符串
+					Number():将数据转成数字
+					Boolean():将数据转成true和false
+					
+					null和undefined的区别
+						null可以转成数值的g,但是undefined转换不了的
+					
+					弹框录入两个整数，求两个数的和
+					
+					
+					
+			*/
+			
+			//String():将数据转成字符串
+			/*var a String(10)
+			console.log(a);
+			console.log(typeof a);//string */
+			
+			//Number():将数据转成数字
+			//var b = Number('100') //number
+			//var b = Number('abc') //NaN: not a number
+			//var b = Number(true)//1
+			//var b = Number(null)//0
+			//var b = Number(undefined)//NaN not a number
+			
+			//console.log(b);
+			//console.log(typeof b);//number
+			
+			
+			//Boolean():将数据转成true和false
+			//var c = Boolean('xzd')//true
+			//var c = Boolean('false') //true  注意：参数是一个字符串
+			//var c = Boolean(false)//false
+			//var c = Boolean(10)//true
+			//var c = Boolean(0)//false
+			//var c = Boolean(null)//false
+			//var c = Boolean(undefined)//false
+			//var c =Boolean('')//false 空字符串会被转成false
+			
+			
+			console.log(c);
+			console.log(typeof c);
+			
+			
+			
+			if('abc'){
+				console.log('ccc');
+			
+			}
+			
+		</script>
+	</body>
+</html>

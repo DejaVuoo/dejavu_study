@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //使用普通的函数书写字面量对象
+        var stu1 = {
+            name:'张三',
+            study:function(){
+                console.log(this);  //this指向stu1对象
+                console.log(this.name + '学习');
+            }
+        }
+
+        stu1.study()
+
+        //使用箭头函数书写字面量对象
+        var stu2 = {
+            name:'张三',
+            study:()=>{
+                console.log(this);  //this指向window对象
+                console.log(this.name + '学习');//获取不到name的值
+            }
+        }
+        stu2.study()
+
+
+    </script>
+</body>
+</html>

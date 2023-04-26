@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="c1">打开窗口</button>
+    <button class="c2">关闭窗口</button>
+
+    <script>
+        var newWindow = null
+
+        //打开窗口
+        document.querySelector('.c1').addEventListener('click',function(){
+            newWindow = open('http://www.baidu.com')
+        })
+
+        //关闭窗口
+        document.querySelector('.c2').addEventListener('click',function(){
+            newWindow.close() //默认是关闭当前窗口
+        })
+
+    </script>
+</body>
+</html>

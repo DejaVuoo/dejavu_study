@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hello</h1>
+    <button>按钮</button>
+
+    <script>
+        //获取dom
+        var h1 =  document.querySelector('h1')
+        var btn =  document.querySelector('button')
+
+        //死循环指定等待时间
+        function delay(duration){
+            var start = Date.now() //调用的那一刻的时间
+            while(Date.now() - start < duration){ }  //如果事件差小于指定时间,就等待
+        }
+
+        //添加事件
+        btn.addEventListener('click',function(){
+            h1.innerHTML = 'welcom to xzd'
+            delay(3000)  //延时器就相当于阻塞 主渲染程序 
+        })
+
+        /* 
+            分析 渲染主程序执行流程(主要分析主程序执行全局js这一块的流程)
+                1,主程序执行script标签下的全局代码
+                2,执行到底25行的时候,通知交互线程,将处理函数fn定义好,监听按钮的点击
+                3,当用户点击了按钮,交互线程就会将fn放到消息队列里面
+                4,主线程,执行完同步任务之后,就会从消息队列里面拿到fn进行执行
+                    首先执行第26行代码,将h1标签里面的文本改掉,然后重新渲染绘制页面
+                    这里就会产生一个新的任务,绘制任务,将这绘制任务加到消息队列里面
+                5,修改完文本之后,主线程继续执行后面的代码delay(3000),死循环3秒钟,3秒钟过后,fn才执行完
+                6,然后主程序才继续从消息队列中拿出绘制任务,执行完之后,用户才能看到内容发生改变
+
+                如果你在等待的这3秒钟,又做了其他操作,点了别的按钮等,都需要排队
+        */
+
+    </script>
+</body>
+</html>

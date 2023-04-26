@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father{
+            background: lightblue;
+        }
+
+        .son{
+            width: 200px;
+            height: 200px;
+            background: green;
+
+            /* 设置子元素浮动 */
+            float: left;
+        }
+        /*   
+            //在father的前面添加一个伪元素,用于分隔父子元素的margin-top,解决外边距塌陷问题 
+            .clearfix::before{
+                content: '';
+                display: table; // 类似于block,建议使用这个 
+            }
+
+            //在father的后面添加一个伪元素,用于清除浮动 
+            .clearfix::after{
+                content: '';
+                display: block;
+                clear: both;
+            }
+         */
+
+         /* 对上面前后伪元素的设置做一个简化写法 */
+         .clearfix::before,.clearfix::after{
+            content: '';
+            display: table;
+         }
+         .clearfix::after{
+            clear: both;
+         }
+    </style>
+</head>
+<body>
+    <div class="father clearfix"> <!-- 将来需要清除的时候,直接加上clearfix类名即可 -->
+        <div class="son"></div>
+    </div>
+</body>
+</html>

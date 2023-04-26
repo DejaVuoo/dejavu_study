@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Document</title>
+		<style>
+			.slider-bar {
+				position: absolute;
+				left: 50%;
+				top: 300px;
+				margin-left: 600px;
+				width: 45px;
+				height: 130px;
+				background-color: pink;
+			}
+
+			.w {
+				width: 1200px;
+				margin: 10px auto;
+			}
+
+			.header {
+				height: 150px;
+				background-color: purple;
+			}
+
+			.banner {
+				height: 250px;
+				background-color: skyblue;
+			}
+
+			.main {
+				height: 1000px;
+				background-color: yellowgreen;
+			}
+
+			span {
+				display: none;
+				position: absolute;
+				bottom: 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="slider-bar">
+			<span class="goBack">返回顶部</span>
+		</div>
+		<div class="header w">头部区域</div>
+		<div class="banner w">banner区域</div>
+		<div class="main w">主体部分</div>
+
+		<script>
+			//获取侧边栏和banner区域的对象
+			const slider = document.querySelector('.slider-bar')
+			const banner = document.querySelector('.banner')
+
+			//获取侧边栏距离顶部的尺寸
+			const sliderTop = slider.offsetTop
+
+			//获取panner距离顶部的尺寸
+			const bannerTop = banner.offsetTop
+
+			//计算slider固定定位需要设置的top的值(sliderTop-bannerTop)
+			const fixedTop = sliderTop - bannerTop
+			console.log(fixedTop); //130
+
+			//获取主体区域距离顶部的尺寸尺寸
+			const mainTop = document.querySelector('.main').offsetTop
+
+			//获取goBack元素
+			const goBack = document.querySelector('.goBack')
+
+
+
+			//监听页面的滚动事件
+			document.addEventListener('scroll', function() {
+				if (pageYOffset > bannerTop) { //当滚动距离超过panner.距离顶部的初始尺寸的时候
+					slider.style.position = 'fixed'
+					slider.style.top = fixedTop + 'px'
+				} else {
+					slider.style.position = 'absolute'
+					slider.style.top = '300px'
+				}
+
+				//当滚动距离超过main距离顶部的初始尺寸的时候，设置goBack
+				if (pageYOffset >= mainTop) {
+					goBack.style.display = 'block'
+				} else {
+					goBack.style.display = 'none'
+				}
+
+			})
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            try {
+                ...    //一般会把可能会出现问题的代码放在这里,这里也可以做异常的抛出
+            } catch(e) {
+                ...    //一般书写异常的捕获与处理的代码
+            } finally {
+                ...    //不管有没有异常,都必须要执行的代码,放在这里(日志的记录等)
+            }
+
+            好处
+                程序再出了异常,后面还可以继续执行
+        
+        */
+        try {
+            console.log(a);
+        } catch (error) {
+            console.log(error); //处理方式就打印异常信息
+        } finally{
+            console.log('记录日志');
+        }
+        
+
+        console.log(123);//后面的代码还可以正常打印
+    </script>
+</body>
+</html>

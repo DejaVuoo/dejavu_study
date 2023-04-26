@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        注意点
+            如果一个script标签中,既有内嵌式,又有外联式,只会执行外链式
+     -->
+    <script src="./money.js">
+       /*  alert('没钱人亲眼目睹') */  /* 不要在引入标签中写代码 */
+    </script>
+
+    <!-- 如果还需要编写js代码,重新开一个标签 -->
+    <script>
+        alert('没钱人终生痛苦')
+    </script>
+</body>
+</html>

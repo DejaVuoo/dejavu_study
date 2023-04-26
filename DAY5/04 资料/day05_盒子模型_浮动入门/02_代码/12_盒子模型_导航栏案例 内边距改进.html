@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            问题
+                a标签的宽度是写死的,如果内容发生改变,可能会影响布局
+            做法
+                1,将宽度去掉
+                2,使用内边距,让文字之间有间隙
+        */
+        nav a{
+            /* 1,布局属性  display */
+            display: inline-block;
+            /* 2,宽高属性 */
+            /* width: 80px; */
+            height: 50px;
+            /* 3,辅助背景颜色 */
+            background: pink;
+            /* 4,盒子模型相关属性 */
+            padding: 0 20px;
+            /* 5,其他样式(字体,文本,行高) */
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            line-height: 50px;
+            /* 6,点缀样式(圆角,阴影) */
+        }
+        nav a:hover{
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="">新闻新闻1新闻1新闻1新闻11</a><a href="">新闻2</a><a href="">新闻3</a><a href="">新闻4</a><a href="">新闻5</a>
+    </nav>
+</body>
+</html>

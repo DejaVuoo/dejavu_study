@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.father{
+			background: lightblue;
+			/* /*由于父元素在标准流中高度是由子元素撑开的，子元素浮动之后，就撑不开了*/
+			
+			}
+			.son{
+			width:200px;
+			height:200px;
+			background:green;
+			
+			/* /*设置子元素浮动 */
+			float:left;
+			}
+			/* 解决方式3:使用伪元素改进 */
+			.father::after{
+				content:"";
+				
+				
+				display: block;
+				clear:both; /* 清除左右两边浮动的影响 */
+			} 
+		</style>
+	</head>
+	<body>
+		<div class="father">
+			<div class="son"></div>
+			
+		</div>
+
+		
+	
+	
+	</body>
+</html>

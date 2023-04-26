@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/*打印一个三行四列的星星
+		☆☆☆☆
+		☆☆☆☆
+		☆☆☆☆
+		*/
+			//方式一
+			console.log('☆☆☆☆\n☆☆☆☆\n☆☆☆☆\n');
+			//方式二
+			console.log('☆☆☆☆\n');
+			console.log('☆☆☆☆\n');
+			console.log('☆☆☆☆\n');
+			//方式三：对方式二的改进，使用循环来打印次数(出现问题，浏览器会将相同代码进行折叠)
+			for (var i = 1; i <= 3; i++) {
+				console.log('☆☆☆☆\n');
+			}
+			//方式四：将方式三种的星星使用字符串拼接好之后再去打印（类似于求1-10的和）
+			var str = ''
+			for (var i = 1; i <= 3; i++) {
+				str += '☆☆☆☆\n'
+			}
+			console.log(str);
+			//方式五：将方式四种(str+=·☆☆☆☆\n')使用循环实现
+			var newStr = ''
+			for (var i = 1; i <= 3; i++) { //外层循环控制行数
+				for (var j = 1; j <= 4; j++) { //内层循环控制列数
+					newStr += '☆'
+				}
+				newStr += '\n'
+			}
+			console.log(newStr);
+			/* 
+			 ♥
+			 ♥♥
+			 ♥♥♥
+			 ♥♥♥♥
+			 ♥♥♥♥♥
+			 */
+			var heart = ''
+			for (var i = 1; i <= 5; i++) {
+				for (var j = 1; j <= i; j++) {
+					heart += '♥'
+				}
+				heart += '\n'
+			}
+			console.log(heart);
+			/* 九九乘法表 */
+			var heart = ''
+			for (var i = 1; i <= 9; i++) {
+				for (var j = 1; j <= i; j++) {
+					
+					heart += j + '×' + i + '=' + i * j + '\t'
+				}
+				heart += '\n'
+			}
+			console.log(heart);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.main{
+				
+				
+				display:flex;
+				margin:0 auto;
+				gap: 14px;
+				width: 1226px;
+				height: 614px;
+				
+				background: lavenderblush;
+			}
+			.left{
+				width: 234px;
+				height: 614px;
+				flex: none;
+				background: #800080;
+			}
+			.right{
+			gap: 14px;
+			flex:1;		/* 将剩余的尺寸分配给右边 */
+			height: 614px;
+			background: violet;
+			align-content:space-between;
+			display:flex;
+			flex-wrap: wrap;
+			}
+			.b2{
+				width: 234px;
+				height: 300px;
+				background: #87ceeb;
+			
+			}
+		</style>
+	</head>
+	<body>
+		<div class="main">
+			
+			<div class="left">0</div>
+			<div class="right">
+				<div class="b2">1</div>
+				<div class="b2">1</div>
+				<div class="b2">1</div>
+				<div class="b2">1</div>
+				<div class="b2">1</div>
+				<div class="b2">1</div>
+				<div class="b2">1</div>
+				<div class="b2">1</div>
+			
+			</div>
+				
+			
+			
+			
+		</div>
+	</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+            分三次输出字符串,第一次间隔1秒后输出first,第二次间隔2秒后输出second,第三次间隔3秒后输出third,
+
+
+            就相当于把
+                new Promise((resolve, reject) => {
+                    setTimeout(function () {
+                        console.log('first');
+                        resolve()
+                    }, 1000)
+                })
+
+                重复了3次
+        */
+
+        new Promise((resolve, reject) => {
+            setTimeout(function () {
+                console.log('first');
+                resolve()
+            }, 1000)
+        }).then(function () {
+            return new Promise((resolve, reject) => {
+                setTimeout(function () {
+                    console.log('second');
+                    resolve()
+                }, 2000)
+            })
+        }).then(function () {
+            return new Promise((resolve, reject) => {
+                setTimeout(function () {
+                    console.log('third');
+                    resolve()
+                }, 3000)
+            })
+        })
+    </script>
+</body>
+
+</html>

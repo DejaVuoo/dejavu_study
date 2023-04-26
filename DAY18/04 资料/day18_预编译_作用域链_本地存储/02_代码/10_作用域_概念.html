@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         var num =  100 //全局变量,定义全局作用域下
+
+         function f(){
+            var num = 200  //局部变量,定义在局部作用域下
+            console.log(num);
+         }
+
+         f()//打印的是20 因为就近原则
+
+         console.log(window);
+    </script>
+
+    <script>
+        console.log(num);  //打印的是全局作用域下的变量
+    </script>
+</body>
+</html>

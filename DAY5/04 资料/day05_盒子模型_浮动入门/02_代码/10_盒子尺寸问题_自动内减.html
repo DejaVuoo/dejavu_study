@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            /* 这里一开始设置的并不是盒子最终的尺寸,而是盒子内容区域的宽高 */
+            width: 200px;
+            height: 200px;
+
+            /* 设置边框 */
+            border: 10px solid green;
+
+            /* 设置内边距 */
+            padding: 10px;
+
+            background: lightblue;
+
+            /* 
+                终极解决:使用box-sizing属性实现自动内减
+            */
+            box-sizing: border-box;
+
+        }
+    </style>
+</head>
+<body>
+    <!-- 需求:创建一个最终宽度是200px,高度是200px,边框是10px,内边距为10px 的盒子 -->
+
+    <div></div>
+</body>
+</html>

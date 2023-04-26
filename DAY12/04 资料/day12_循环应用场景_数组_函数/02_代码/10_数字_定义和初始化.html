@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 创建方式一:常规方式:  类似于变量的先定义后赋值 */
+        var arr1 = new Array()
+        console.log(arr1);
+
+        arr1[0] = '迪丽热巴'
+        arr1[1] = '古力娜扎'
+        arr1[2] = '马尔扎哈'
+
+        console.log(arr1);
+        
+        /* 创建方式二:简洁方式: 类似于变量定义的同时并赋值 */
+        var arr2 = new Array('阿拉斯加','摩托罗拉','蒙娜丽莎')
+        console.log(arr2);
+
+
+        /* 创建方式三:字面量方式 字面上的含义([]代表数组) */
+        var arr3 = []  //空的数组
+        console.log(arr3);
+
+        var arr4 = ['萨瓦迪卡','噼里啪啦']
+        console.log(arr4);
+
+        /* 通过指定数组名以及索引号码，你可以访问某个特定的元素。 */
+        console.log(arr1[2]);
+    </script>
+</body>
+</html>

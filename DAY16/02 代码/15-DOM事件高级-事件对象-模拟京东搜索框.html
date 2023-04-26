@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text">
+		<script>
+		/*监听键盘操作*/
+		document.addEventListener('keyup',function(e){
+			console.log(e.keyCode);
+			
+			//判断
+			if(e.keyCode ==83){
+				//让文本框聚焦
+				document.querySelector('input').focus()//onfocus是属性，focus()是聚焦方法
+			}
+		})
+		
+		</script>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/* 
+				
+			 */
+			async function f() {
+				async function f2() {
+				return 222
+			}
+			const p = await f2() //只需要在异步函数的前面加一个await关键字，就可以拿到异步函数结果属性中的值
+
+			console.log(p);
+			}
+			f()
+		</script>
+	</body>
+</html>

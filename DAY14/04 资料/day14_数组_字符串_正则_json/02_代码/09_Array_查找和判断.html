@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //indexOf()	搜索数组中的元素，并返回它所在的位置。
+        //lastIndexOf()	搜索数组中的元素，并返回它最后出现的位置。
+        //includes()	判断一个数组是否包含一个指定的值。
+
+        var arr = [1,2,3,6,8,9,2]
+
+        //查找2首次出现的位置
+        var res1 = arr.indexOf(2)
+        console.log(res1);//1
+
+        //查找2最后出现的位置
+         var res2 = arr.lastIndexOf(2)
+         console.log(res2);//6
+
+         //查找10所在的位置
+         var res3 = arr.indexOf(10)
+         console.log(res3);//-1 说明数组中不存在这个元素
+
+         //判断数组中是否包含某个元素
+         var res4 = arr.includes(10)
+         console.log(res4);//false
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input {
+            color: #999;
+        }
+    </style>
+</head>
+
+<body>
+	<div class="wrap">
+		
+		 <input type="text" value="婴幼儿奶粉" class="ipt">
+	</div>
+   
+    <script>
+
+        // 需求:
+        // 文本框获得焦点时, 文字颜色变浅, 文本框的内容清空
+        // 文本框失去焦点时, 颜色恢复, 文本框为空时, 提示内容
+		var div = document.querySelector('.wrap');
+		var input = document.querySelector('.ipt')
+        
+		input.addEventListener('focus',function(){
+			input.style.color = 'rgb(200,200,200)'
+		})
+		
+		input.addEventListener('blur',function(){
+			input.style.color = '#989898'
+			if(this.value == ''){
+				input.value = '婴幼儿奶粉'
+				
+			}
+		})
+		
+		input.addEventListener('keydown',function(){
+			input.value = ''
+			input.style.color = '#424242'
+		})
+		
+		
+		
+    </script>
+
+</body>
+
+</html>

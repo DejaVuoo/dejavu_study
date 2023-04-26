@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father{
+            display: flex;
+            height:300px;
+            background: lightblue;
+
+            flex-wrap:wrap;
+
+            /* 设置换行之后行的显示效果: 使用align-content属性
+                    flex-start	元素位于容器的开头。
+                    flex-end	元素位于容器的结尾。
+                    center	    元素位于容器的中心。
+                    space-between	元素位于各行之间留有空白的容器内。
+                    space-around	元素位于各行之前、之间、之后都留有空白的容器内。    
+            */
+            align-content: flex-start;
+            align-content: flex-end;
+            align-content: center;
+            align-content: space-between;
+            align-content: space-around;
+            align-content: space-evenly;/* 间距等分 */
+        }
+
+        .son{
+            width: 100px;
+            height: 100px;
+            background: gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son">1</div>
+        <div class="son">2</div>
+        <div class="son">3</div>
+        <div class="son">4</div>
+        <div class="son">5</div>
+        <div class="son">6</div>
+        <div class="son">7</div>
+        <div class="son">8</div>
+    </div>
+</body>
+</html>

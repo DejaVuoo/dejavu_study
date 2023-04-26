@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>今天的励志话语是:</h1>
+    <ul>
+
+    </ul>
+    <button onclick="init()">点我励志</button>
+    <script>
+      function init() {
+        //利用ajax向接口发送请求 将返回那句中文渲染到页面
+        //1.生成一个XMLHttpRequest对象
+        let xhr = new XMLHttpRequest()
+        //2.准备发送请求 调用open方法来发送请求 第一个参数是请求方式 第二个参数是请求地址 请求是异步的
+        xhr.open("GET", "http://localhost:3000/word")
+        //3.发送请求
+        xhr.send()
+        //4.监听请求的状态
+        const ul = document.querySelector('ul')
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4) {
+            //拿到请求的数据 存放在xhr的responseText中
+            const res = JSON.parse(xhr.responseText)//[{}，{}，{}]
+            res.forEach(item=>{
+              const li = document.createElement('li')
+              li.innerHTML = item.content
+              ul.appendChild(li)
+            })
+            console.log('很好')
+          }
+        }
+
+      }
+    </script>
+  </body>
+</html>

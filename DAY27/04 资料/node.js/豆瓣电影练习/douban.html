@@ -1,0 +1,136 @@
+<!--
+ Copyright (c) 2023 smable<316245279@qq.com>
+ 
+ This software is released under the MIT License.
+ https://opensource.org/licenses/MIT
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="never" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .box {
+        position: relative;
+        width: 60%;
+        margin: 200px auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-gap: 20px;
+      }
+
+      .item img {
+        width: 100%;
+        height: 200px;
+      }
+
+      p {
+        text-align: center;
+        color: #37a;
+        font-size: 16px;
+      }
+      p strong {
+        color: #e09015;
+      }
+      .detail {
+        position: absolute;
+        width: 400px;
+        background-color: #fff;
+        padding: 20px;
+        text-align: center;
+        border: 1px solid #ddd;
+        z-index: 100;
+        display: none;
+      }
+      .hide {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <!-- <div class="item">
+        <a href="">
+            <img
+          src="https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2888918765.jpg"
+          alt=""
+        />
+        </a>
+        <p>
+            流浪地球
+            <strong>8.1</strong>
+        </p>
+ 
+      </div> -->
+      <div class="detail">
+        <h2>流浪地球</h2>
+        <p>6.6</p>
+        <div class="actor">
+          2023-03-15(西南偏南电影节) / 2023-03-31(美国网络) / 塔伦·埃哲顿 /
+          迈尔斯·巴罗 / 尹成植 / 尼基塔·叶甫列莫夫 / 托比·琼斯 / 奥列格·斯特凡 /
+          罗杰·阿拉姆 / 安东尼·鲍伊 / 古畑新之 / 伊川东吾 / 長渕文音 /
+          伊戈尔·格拉布佐夫 / 山村宪之介
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      const box = document.querySelector(".box")
+      let items
+      axios.get("http://localhost:3000/movies").then((res) => {
+        const data = res.data
+        data.forEach((item) => {
+          const _item = `
+                <div class="item">
+         <a href=${item.info.url}>          
+        <img src=${item.info.imgurl} alt="">
+        </a>
+        <p>
+            ${item.title}
+            <strong>${item.info.pingfen}</strong>
+        </p>
+      </div>`
+          box.innerHTML += _item
+        })
+        items = document.querySelectorAll(".item")
+        let itemWidth = items[0].clientWidth
+        let itemHeight = items[0].clientHeight
+        items.forEach((item, index) => {
+          const content = data[index]
+          item.onmouseover = function () {
+            let detail = document.querySelector(".detail")
+            detail.style.display = "block"
+            detail.innerHTML = `
+            <h2>${content.title}</h2>
+             <p>${content.info.pingfen}</p>
+             <div class="actor">
+                  ${content.info.yanyuan}
+              </div>
+            `
+            if(index<5){
+              detail.style.left = itemWidth* (index+1) + 19*(index+1) +'px'
+              detail.style.top = 0
+            }
+            if(index>=5){
+              detail.style.left = itemWidth* (index-4) + 19*(index-4) +'px'
+              detail.style.top = itemHeight + 20 +'px'
+            }
+          }
+          item.onmouseout = function () {
+            document.querySelector(".detail").style.display = "none"
+          }
+        })
+      })
+    </script>
+  </body>
+</html>

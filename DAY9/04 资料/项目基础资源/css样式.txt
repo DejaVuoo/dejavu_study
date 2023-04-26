@@ -1,0 +1,86 @@
+/* 样式表中通过:root伪类抽取了常用的公共样式 通过var()使用 
+:root 选择器是一个伪类，表示文档根元素，所有主流浏览器均支持 ，除了 IE8 及更早的版本。
+在:root中声明相当于全局属性，只要当前页面引用了:root所在文件，都可以使用var()来引用。
+*/
+/* 公共样式 */
+
+:root {
+  /* 颜色相关样式 */
+  /* 本项目中的颜色模式采用hsl 可以理解为和RGB类似 3个参数分别表示色相 饱和度 和明度 一般由设计师决定 */
+  --sonic-silver: hsl(0, 0%, 47%);
+  --marigold: hsl(39, 96%, 48%);
+  --white: hsl(0, 0%, 100%);
+  --jet: hsl(0, 0%, 21%);
+  --light-gray: hsl(0, 0%, 83%);
+  --davys-gray: hsl(0, 0%, 30%);
+  /* 字体相关样式 */
+  --ff-wryh: "微软雅黑", sans-serif;
+  --fs-1: 7rem;
+  --fs-2: 4.2rem;
+  --fs-3: 3.8rem;
+  --fs-4: 3.6rem;
+  --fs-5: 3.4rem;
+  --fs-6: 3.2rem;
+  --fs-7: 3rem;
+  --fs-8: 2.4rem;
+  --fs-9: 2rem;
+  --fs-10: 1.8rem;
+  --fs-11: 1.4rem;
+  --fs-12: 1.2rem;
+  /* 间距 */
+  --section-padding: 100px;
+  /* 圆角 */
+  --radius-circle: 50%;
+  --radius-20: 20px;
+  --radius-15: 15px;
+  --radius-10: 10px;
+  /* 阴影 */
+  --shadow-1: 0 0 30px 4px hsla(0, 0%, 0%, 0.05);
+  --shadow-2: -1px 15px 26px -4px hsla(0, 5%, 61%, 0.15);
+  /* 过渡动画 */
+  --transition-1: 0.25s ease;
+  --transition-2: 0.5s ease;
+}
+/* 默认样式修改 */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+/* 常见行内元素改为块级元素 */
+a,
+img,
+span,
+input,
+button {
+  display: block;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  height: auto;
+}
+button{
+  background: none;
+  border: none;
+}
+.w{
+  width: 90%;
+  margin: 0 auto;
+}
+.w-100{
+  width: 100%;
+}
+.relative{
+  position: relative;
+}
+.absolute{
+  position: absolute;
+}

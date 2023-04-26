@@ -1,0 +1,252 @@
+<head>
+    <meta charset="UTF-8">
+    <title>TodoList</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .myhead {
+            background-color: #0b87ff;
+            text-align: center;
+            padding: 5px 0px 10px 0px;
+            color: aliceblue;
+        }
+
+        .myhead .box {
+            margin-top: 10px;
+            display: flex;
+            gap: 5px;
+            justify-content: center;
+        }
+
+        .thing {
+            width: 300px;
+            height: 30px;
+            padding: 0 10px;
+            border-radius: 3px;
+            outline: none;
+            border: solid 1px white;
+        }
+
+        .add {
+            display: inline-block;
+            width: 80px;
+            height: 30px;
+            background-color: #eee;
+            color: #0b87ff;
+            line-height: 30px;
+            border: none;
+            border-radius: 3px;
+        }
+
+        .add:hover {
+            cursor: pointer;
+            background-color: #fff;
+            color: #ff6700;
+        }
+
+        ul li {
+            list-style: none;
+            position: relative;
+            padding-left: 40px;
+            height: 40px;
+            line-height: 40px;
+        }
+
+        /* 将所有奇数列表项设置为不同的颜色（斑马线）*/
+        ul li:nth-child(odd) {
+            background-color: #f9f9f9;
+        }
+
+        /* 光标移入的时候背景变暗 */
+        ul li:hover {
+            cursor: pointer;
+            background-color: #dddddd;
+        }
+
+        /* 单击时，添加背景色并删除文本 */
+        ul li.check {
+            background-color: #888888;
+            text-decoration: line-through;
+            color: #f9f9f9;
+        }
+
+        /* 单击时添加“已选中”标记 */
+        ul li.check::before {
+            content: '';
+            position: absolute;
+            border-color: #fff;
+            border-style: solid;
+            border-width: 0 2px 2px 0;
+            top: 10px;
+            left: 16px;
+
+            transform: rotate(45deg);
+            height: 15px;
+            width: 7px;
+        }
+
+        /* 设置关闭按钮的样式 */
+        .close {
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            padding: 0px 20px;
+            font-size: 16px;
+        }
+
+        .close:hover {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- 头部 -->
+    <div class="myhead">
+        <h2>My ToDo List</h2>
+        <div class="box">
+            <input type="text" placeholder="请输入待办事项..." class="thing">
+            <button class="add">添加</button>
+        </div>
+    </div>
+
+    <!-- 待办事项部分，内容动态生成 -->
+    <ul></ul>
+
+</body>
+
+<script>
+    /* 
+        给添加按钮添加点击事件
+        在点击事件中获取文本框的内容,创建li元素,添加事件,最后添加到ul下面
+    */
+   //定义一个初始化的序号
+    var count = 0
+
+    //获取添加按钮
+    var btn = document.querySelector('.add')
+
+    //获取ul元素
+    var ul = document.querySelector('ul')
+
+    //页面加载完成之后展示localStorage中的数据
+    window.addEventListener('load',function(){
+         count = Object.keys(localStorage).length
+         console.log(count);
+
+         //调用展示localStorage中的数据的方法
+         displayTasks()
+    })
+
+    //展示localStorage中的数据的方法
+    function displayTasks(){
+        //先清除ul下所有的li
+        ul.innerHTML = ''
+
+        //获取页面中所有的键值
+        var arr = Object.keys(localStorage)
+        arr.sort()
+
+        //遍历,拿到每一个键值
+        arr.forEach(function(item){
+
+            //将item填充到li中添加到ul下
+            var li = document.createElement('li')
+            li.innerHTML = item.split('_')[1]
+
+            //创建删除按钮添加到li里面
+            var span = document.createElement('span')
+            span.innerHTML = 'x'
+            span.classList.add('close')
+            span.addEventListener('click',function(e){ //绑定删除事件
+
+                e.stopPropagation()  //防止事件冒泡
+
+                var el = this.parentNode
+                el.style.display = 'none'
+
+                //删除localStorage中对应的key
+                localStorage.removeItem(item)
+            })
+            li.appendChild(span)
+
+            //给li元素添加点击事件(切换选中后的样式)
+            li.addEventListener('click',function(){
+                this.classList.toggle('check')
+
+                //修改localStorage中key对应的value的值
+                if(this.classList.contains('check')){
+                    localStorage.setItem(item,true)
+                }else{
+                    localStorage.setItem(item,false)
+                }
+            })
+
+            //获取item的值,添加状态
+            var value = localStorage.getItem(item)
+            console.log(typeof value);//获取出来的值是string类型,判断的时候需要注意
+
+            if(value == 'true'){
+                li.classList.add('check')
+            }
+           
+            //将创建好的li元素添加到ul下面
+            ul.appendChild(li)
+
+        })
+
+    }
+
+    //添加事件
+    btn.addEventListener('click',function(){
+        //获取文本框输入的内容
+        var thing =  document.querySelector('.thing').value
+
+        //判断
+        if(thing == ''){
+            alert('请输入代办事项')
+            return
+        }
+
+        /* //创建li元素,设置内容
+        var li = document.createElement('li')
+        li.innerHTML = thing
+
+        //创建删除按钮添加到li里面
+        var span = document.createElement('span')
+        span.innerHTML = 'x'
+        span.classList.add('close')
+        span.addEventListener('click',function(){ //绑定删除事件
+            var el = this.parentNode
+            el.style.display = 'none'
+        })
+        li.appendChild(span)
+
+        //给li元素添加点击事件(切换选中后的样式)
+        li.addEventListener('click',function(){
+            this.classList.toggle('check')
+        })
+
+        //将创建好的li元素添加到ul下面
+        ul.appendChild(li) */
+
+        //更新一下本地存储的数据就行
+        count += 1
+        localStorage.setItem(count +'_'+ thing,false)
+        displayTasks()//展示数据
+
+
+        //将文本框中的内容清空
+        document.querySelector('.thing').value = ''
+
+    })
+  
+</script>
+
+</html>

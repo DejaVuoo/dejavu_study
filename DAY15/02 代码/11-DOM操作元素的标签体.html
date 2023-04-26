@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="c1">👂听君一席话，胜听一席话🤔</div>
+		<div class="c2"><h1>我三句话就让男人，听我说了三句话💅</h1></div>
+		<script>
+			//分别使用innerHTML和innerText.进行设置
+			document.querySelector('.c1').innerHTML='<h1>👂听君一席话，胜听一席话🤔/h1>'
+			document.querySelector('.c1').innerText='<h1>👂听君一席话，胜听一席话🤔<h1>'//使用innerText设置不了样式
+			
+			//分别使用innerHTML和innerText进行获取
+			console.log(document.querySelector('.c2').innerHTML);//<h1>我三句话就让男人，听我说了三句话💅</h1>
+			console.log(document.querySelector('.c2').innerText);//我三句话就让男人，听我说了三句话💅  获取不了样式
+			
+			//结论
+			//innerText只要用于操作纯文本
+		</script>
+	</body>
+</html>

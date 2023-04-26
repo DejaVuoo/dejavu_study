@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			/*  */
+			/* .information .proficiency .box1 {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 20px;
+				justify-content: space-between;
+
+			} */
+
+			/* .information .proficiency .box-skills {
+				flex: 300px;
+				line-height: 2;
+
+			} */
+
+			/* .information .proficiency .progress-bar-container {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 50px;
+				flex: 250px;
+			} */
+
+			/* .information .proficiency .progress-bar-container h3 {
+				display: flex;
+				justify-content: space-between;
+				padding: 10px 0;
+				color: var(--black);
+				font-size: 15px;
+
+
+			}
+ */
+			/* 进度条样式 */
+
+			.progress-bar1,
+			.progress-bar2,
+			.progress-bar3,
+			.progress-bar4,
+			.progress-bar5,
+			.progress-bar6,
+			.progress-bar7,
+			.progress-bar8 {
+
+				position: relative;
+				display: block;
+				flex: 250px;
+				height: 15px;
+				border-radius: 10px;
+				overflow: hidden;
+				background: #eee;
+				border: 1px solid lawngreen;
+			}
+
+			.progress-bar1::before,
+			.progress-bar2::before,
+			.progress-bar3::before,
+			.progress-bar4::before,
+			.progress-bar5::before,
+			.progress-bar6::before,
+			.progress-bar7::before,
+			.progress-bar8::before {
+				content: "";
+				position: absolute;
+
+				height: 100%;
+				transform: scaleX(0);
+				transform-origin: left center;
+				background-image: linear-gradient(45deg, #0f0, #0ff);
+				animation: 3s progress ease-out forwards;
+			}
+
+			.progress-bar1::before {
+				width: 95%;
+			}
+
+			.progress-bar2::before {
+				width: 80%;
+			}
+
+			.progress-bar3::before {
+				width: 65%;
+			}
+
+			.progress-bar4::before {
+				width: 70%;
+			}
+
+			.progress-bar5::before {
+				width: 90%;
+			}
+
+			.progress-bar6::before {
+				width: 75%;
+			}
+
+			.progress-bar7::before {
+				width: 65%;
+			}
+
+			.progress-bar8::before {
+				width: 70%;
+			}
+
+			@keyframes progress {
+
+				to {
+					transform: scaleX(1);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1"></div>
+		<div class="box-skills">
+			<div class="progress-bar-container">
+				<h3>html<span>95%</span></h3>
+				<div class="progress-bar1"></div>
+			</div>
+			<div class="progress-bar-container">
+				<h3>css<span>80%</span></h3>
+				<div class="progress-bar2"></div>
+			</div>
+			<div class="progress-bar-container">
+				<h3>javaScript<span>65%</span></h3>
+				<div class="progress-bar3"></div>
+			</div>
+			<div class="progress-bar-container">
+				<h3>photoshop<span>70%</span></h3>
+				<div class="progress-bar4"></div>
+			</div>
+			<button>roll</button>
+
+
+
+			<script>
+				// 获取按钮
+				const btn = document.querySelector('span')
+			</script>
+	</body>
+</html>

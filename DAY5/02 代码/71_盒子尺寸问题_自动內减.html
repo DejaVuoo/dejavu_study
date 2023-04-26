@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			/* <!-<!--需求：创建一个最终宽度是200px,高度是200px,边框是10px,内边距为10px的盒子-->-> */
+			
+		div{
+			width: 200px;/*这里一开始设置的并不是盒子最终的尺寸，而是盒子内容区域的宽高 */
+			height: 200px;
+			padding: 10px;
+			background: pink;
+			text-align: center;
+			line-height: 200px;
+			border: 10px  dashed palegreen; /*边框*/
+			color: #ffffff;
+			/* 
+			 问题
+			 添加内边距之后，盒子的最终尺寸变成240
+			 原因
+			 盒子宽度=左边框宽度+左内边距+内容宽度+右内边距+右边框宽度=10+10+200+
+			 解决
+			 手动内减（根据计算的结果在内容区域手动的将内容区域的宽高减去40px)
+			 */
+			
+			/* 终极解决：使用box-sizing属性实现自动内减 */
+			box-sizing:border-box;
+		}
+		</style>
+	</head>
+	<body>
+		<div>
+			DejavuDejavuDejavuDejavuDejavuDejavuDejavuDejavuDejavu
+		</div>
+	</body>
+</html>

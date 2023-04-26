@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //请求url https://api.vvhan.com/api/horoscope?type=scorpio&time=today
+
+        //获取的数据
+        /* 
+        {"success":true,"data":{"title":"天蝎座","type":"今日运势","time":"4月7日","todo":{"yi":"快刀斩乱麻","ji":"作息不规律"},"fortune":{"all":2,"love":2,"work":3,"money":3,"health":3},"index":{"all":"56%","love":"52%","work":"69%","money":"68%","health":"65%"},"shortcomment":"关键时候掉链子","fortunetext":{"all":"受霉运的影响，需要面临腹背受敌的严峻格局。精神欠佳，会容易出现不在状态的情况，导致总是在关键时候掉链子。生活方面过于讲究人情，会影响你的判断，总是凭着主观想法做决定。","love":"单身的带有偏见，会以貌取人。恋爱中的会因为比较而带来感情方面的不满。","work":"会出现精神内耗的情况，行动总是显得很吃力，需要花费比别人更多的时间完成任务。","money":"经济略显拮据，会以省吃俭用的方式过日子，只是也没多少进账，稍微花钱就有压力。","health":"容易因为作息不规律，而导致睡眠不足影响精神状态，需要找时间补补眠休息片刻。"},"luckynumber":"3","luckycolor":"粉","luckyconstellation":"双鱼座"}}
+        */
+
+        //需求:获取其中的love中的内容
+
+        var str = '{"success":true,"data":{"title":"天蝎座","type":"今日运势","time":"4月7日","todo":{"yi":"快刀斩乱麻","ji":"作息不规律"},"fortune":{"all":2,"love":2,"work":3,"money":3,"health":3},"index":{"all":"56%","love":"52%","work":"69%","money":"68%","health":"65%"},"shortcomment":"关键时候掉链子","fortunetext":{"all":"受霉运的影响，需要面临腹背受敌的严峻格局。精神欠佳，会容易出现不在状态的情况，导致总是在关键时候掉链子。生活方面过于讲究人情，会影响你的判断，总是凭着主观想法做决定。","love":"单身的带有偏见，会以貌取人。恋爱中的会因为比较而带来感情方面的不满。","work":"会出现精神内耗的情况，行动总是显得很吃力，需要花费比别人更多的时间完成任务。","money":"经济略显拮据，会以省吃俭用的方式过日子，只是也没多少进账，稍微花钱就有压力。","health":"容易因为作息不规律，而导致睡眠不足影响精神状态，需要找时间补补眠休息片刻。"},"luckynumber":"3","luckycolor":"粉","luckyconstellation":"双鱼座"}}'
+
+         var obj = JSON.parse(str)
+
+         console.log(obj);
+
+         console.log(obj.data.fortunetext.love);
+    </script>
+</body>
+</html>

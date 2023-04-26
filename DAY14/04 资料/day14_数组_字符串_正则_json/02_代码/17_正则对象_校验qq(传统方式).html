@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+           写一个方法校验qq号
+            1,必须是5-15位
+            2,第一位不能是0
+            3,全部都是数字
+        */
+       function checkQQ(qq){
+
+            //1,必须是5-15位
+           var len = qq.length
+           if(len < 5 || len > 15){
+                return false
+           }
+
+            //2,第一位不能是0
+           if(qq.charAt(0) === '0'){
+                return false
+           }
+
+            //3,全部都是数字
+            for(var i=0;i<len;i++){
+                if( isNaN( qq[i]) == true){
+                    return false
+                }
+            }
+
+            //以上条件都不满足,才能走到这里,说明符合条件
+            return true
+       }
+
+       //使用函数
+       var flag = checkQQ('a12345')
+       console.log(flag);
+    </script>
+</body>
+</html>

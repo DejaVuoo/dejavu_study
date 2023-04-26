@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button>按钮</button>
+		<script>
+			const btn  = document.querySelector('button')
+			//使用匿名函数实现事件
+			btn.addEventListener('click',function(){
+			console.log(this);
+			console.log(this.innerHTML);
+			})
+			
+			//使用箭头函数实现事件
+			btn.addEventListener('click',() => {
+			console.log(this); //代表window
+			console.log(this.innerHTML);  //不能获取到按钮的内容
+			})
+		</script>
+	</body>
+</html>

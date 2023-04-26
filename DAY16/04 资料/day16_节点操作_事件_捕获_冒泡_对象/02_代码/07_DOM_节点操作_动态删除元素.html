@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <img src="./img/ldh.jpg" alt="">
+
+     <button>点击删除图片</button>
+
+     <script>
+        /* 
+            element.removeChild()	删除一个子元素
+                只能通过父元素来删除子元素
+        */
+        document.querySelector('button').onclick = function(){
+            
+            //获取子元素
+            var son = document.querySelector('img')
+
+            //第一种方法获取父元素
+            //var father = document.querySelector('body')
+
+            //第二种获取父元素方式
+            var father = son.parentNode //推荐使用第二种方式
+
+            //移除
+            father.removeChild(son)
+        }
+     </script>
+</body>
+</html>

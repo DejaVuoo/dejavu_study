@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body.nav-active {
+            overflow: hidden;
+        }
+
+        .header .btn {
+            display: none;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            display: block;
+            color: white;
+            text-decoration: none;
+        }
+
+        .header {
+            background-color: black;
+            padding-block: 20px; /* 相当于设置padding-top和padding-buttom都为20px*/
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-open-btn {
+            width: 50px;
+            height: 50px;
+            display: grid;
+            place-content: center; /* 指定网格元素水平、垂直方向元素分布方式 */
+            gap: 6px;
+        }
+
+        .nav-open-btn .line {
+            width: 24px;
+            height: 2px;
+            background-color: black;
+        }
+
+        .nav-open-btn:is(:hover, :focus-visible) .line {
+            background-color: white;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 100%;
+            max-width: 300px;
+            height: 100vh;
+            background-color: black;
+            padding: 25px 20px;
+            visibility: hidden;
+            z-index: 3;
+        }
+
+        /* 点击展开按钮的时候,改变位移即可!!! */
+        .navbar.active {
+            transform: translateX(300px);
+            visibility: visible;
+        }
+
+        .navbar-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-block-end: 20px;
+            border-block-end: 1px solid gray; /* 下边框 */
+            margin-block-end: 10px; /* 下外边距 */
+        }
+
+        .nav-close-btn {
+            width: 30px;
+            height: 30px;
+            background-color: black;
+            color: white;
+            font-size: 20px;
+        }
+
+        .navbar-link {
+            padding: 8px;
+            margin-block-start: 4px;/* 左外边距 */
+        }
+
+        .navbar-link:is(:hover, :focus-visible) {
+            color: white;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: black;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .overlay.active {
+            opacity: 0.5;
+            pointer-events: all;/* 设置元素是否对鼠标事件做出反应 */
+        }
+
+        /* 思路:当屏幕放大的时候,将 nav-open-btn 和 navbar-top隐藏,.navbar-list设置为flex布局 */
+        @media (min-width: 992px) {
+            .header .container {
+                margin-inline: 0;
+                min-width: 100%;
+            }
+
+            
+            .nav-open-btn,
+            .navbar-top {
+                display: none;
+            }
+
+            .navbar {
+                all: unset;/* CSS设置重置为其初始值 */
+                display: block;
+            }
+
+            .navbar-list {
+                display: flex;
+                gap: 16px;
+            }
+
+            .header .btn { display: flex; }
+
+        }
+
+        @media (min-width: 1200px) {
+
+            .header {
+                padding-block: 40px;
+            }
+
+            .header .container {
+                padding-inline: 60px;
+            }
+
+            .navbar-list {
+                gap: 50px;
+            }
+
+        }
+
+        @media (min-width: 1400px) {
+            .header {
+                padding-inline: 90px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header" data-header>
+        <div class="container">
+            <!-- 头部LOGO -->
+            <a href="#" class="logo">
+                <img src="./img/logo.svg" width="84" height="26" alt="logo" />
+            </a>
+            <!-- navbar -->
+            <nav class="navbar" data-navbar>
+                <div class="navbar-top">
+                    <a href="#" class="logo">
+                        <img src="./img/logo.svg" width="84" height="26" alt="logo" />
+                    </a>
+
+                    <button class="nav-close-btn" data-nav-toggler>
+                        x
+                    </button>
+                </div>
+
+                <ul class="navbar-list">
+                    <li>
+                        <a href="#home" class="navbar-link" data-nav-link>主页</a>
+                    </li>
+
+                    <li>
+                        <a href="#service" class="navbar-link" data-nav-link>技能</a>
+                    </li>
+
+                    <li>
+                        <a href="#about" class="navbar-link" data-nav-link>关于</a>
+                    </li>
+
+                    <li>
+                        <a href="#project" class="navbar-link" data-nav-link>项目</a>
+                    </li>
+
+                    <li>
+                        <a href="#review" class="navbar-link" data-nav-link>评价</a>
+                    </li>
+
+                    <li>
+                        <a href="#contact" class="navbar-link" data-nav-link>联系</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <a href="#" class="btn btn:hover">
+                <span class="span">获取报价</span>
+            </a>
+
+            <button class="nav-open-btn btn:hover" aria-label="open menu" data-nav-toggler>
+                <span class="line line-1"></span>
+                <span class="line line-2"></span>
+            </button>
+            <!-- 小屏幕下的弹窗浮层 弹出navbar时透明度调整为0.5 -->
+            <div class="overlay" data-overlay data-nav-toggler></div>
+        </div>
+    </header>
+
+    <script>
+
+        // 封装一个给多个元素批量绑定事件的方法
+        const addEventOnElements = function (elements, eventType, callback) {
+            for (let i = 0, len = elements.length; i < len; i++) {
+                elements[i].addEventListener(eventType, callback);
+            }
+        }
+
+
+        //获取元素
+        const navbar = document.querySelector("[data-navbar]");/* 整个导航栏 包含侧边和水平的导航条 */
+        const navTogglers = document.querySelectorAll("[data-nav-toggler]");/* 隐藏在最右边的用于展开侧边nav的按钮 */
+        const navLinks = document.querySelectorAll("[data-nav-link]");/* 导航条li中的a标签 */
+        const overlay = document.querySelector("[data-overlay]");/* 点击展开侧边nav时候的一个半透明遮罩 */
+
+        addEventOnElements(navTogglers, "click", function () {
+            navbar.classList.toggle("active");
+            overlay.classList.toggle("active");
+            document.body.classList.toggle("nav-active");
+        });
+
+        addEventOnElements(navLinks, "click", function () {
+            navbar.classList.remove("active");
+            overlay.classList.remove("active");
+            document.body.classList.remove("nav-active");
+        });
+    </script>
+</body>
+
+</html>

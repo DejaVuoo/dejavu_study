@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 1,生成普通标签:直接写标签名,本质使用的是元素选择器
+        例如 div p h1
+    -->
+    <div></div>
+    <p></p>
+
+    <!-- 2,生成div+类名,本质使用的是类选择器
+        例如 .d1 .c1
+    -->
+    <div class="di"></div>
+    <div class="c1"></div>
+
+    <!-- 3,生成div+id属性,本质使用的id选择器
+        例如 #d1 #aaa
+    -->
+    <div id="d1"></div>
+    <div id="aaa"></div>
+
+    <!-- 4,生成指定标签+类名+属性名,本质使用的是交集选择器
+        例如: p.c1 p.c1#d1
+    -->
+    <p class="c1"></p>
+    <p class="c1" id="d1"></p>
+
+    <!-- 5,生成带有子元素的标签,本质使用的是子选择器
+        例如  ul>li .father>.son
+    -->
+    <ul>
+        <li></li>
+    </ul>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+
+    <!-- 6,生成内部文本{}
+        例如: div{中国} ul>li{美国}
+    -->
+    <div>中国</div>
+    <ul>
+        <li>美国</li>
+    </ul>
+
+    <!-- 7,一次生成多个标签
+        例如 div*3 ul>li*3 ul>li{aaa}*3 ul>li{aaa$}*3 
+    -->
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <ul>
+        <li>aaa</li>
+        <li>aaa</li>
+        <li>aaa</li>
+    </ul>
+
+    <ul>
+        <li>aaa1</li>
+        <li>aaa2</li>
+        <li>aaa3</li>
+    </ul>
+
+    <!-- 8,生成带有指定属性的元素,本质上使用的是属性选择器
+        例如 input[type=radio]
+    -->
+    <input type="radio">
+
+    <!-- 9,生成相邻的兄弟元素,本质使用的就是相邻兄弟选择器
+        例如 div+p
+    -->
+    <div></div>
+    <p></p>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="./img/hero-banner.jpg" width="250" height="340">
+
+    <script>
+        //图片的动画效果 通过perspective 和rotate实现
+
+        //获取要添加抖动动画的图片
+        const img = document.querySelector('img');
+
+        //鼠标移入时抖动
+        img.addEventListener("mousemove", function (event) {
+
+            /** 获取倾斜元素的中心位置 */
+            const centerX = this.offsetWidth / 2;
+            const centerY = this.offsetHeight / 2;
+
+            const tiltPosY = ((event.offsetX - centerX) / centerX) * 10;
+            const tiltPosX = ((event.offsetY - centerY) / centerY) * 10;
+
+            this.style.transform = ` rotateX(${tiltPosX}deg) rotateY(${tiltPosY - (tiltPosY * 2)}deg)`;
+
+        })
+
+        //鼠标移出的时候复原
+        img.addEventListener("mouseout", function () {
+            this.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg)`;
+        });
+    </script>
+</body>
+
+</html>

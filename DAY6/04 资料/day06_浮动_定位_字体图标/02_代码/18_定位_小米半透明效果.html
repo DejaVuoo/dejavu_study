@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            position: relative;
+            width: 1226px;
+            height: 600px;
+            background: url(./img/bg1.jpg);
+            margin: 0 auto;
+        }
+
+        .box .overlay{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;/* 设置绝对定位之后,元素会脱标,必须要设置宽度 */
+            height: 150px;
+            background: rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="overlay"></div> <!-- 半透明的遮罩 -->
+    </div>
+</body>
+</html>

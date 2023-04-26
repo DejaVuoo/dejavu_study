@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function Car(name,model,weight,color){
+				this.name = name
+				this.model = model
+				this.weigh = weight
+				this.color = color
+				this.start = function(){
+					console.log('car.start');
+				}
+				this.drive = function(){
+					console.log('car.drive');
+				}
+				this.brake = function(){
+					console.log('car.brake');
+				}
+				this.stop = function(){
+					console.log('car.stop');
+				}
+			}
+			
+			var WLmini = new Car('五菱迷你EV','500','850kg','pink')
+			console.log(WLmini);
+			WLmini.start()
+			WLmini.drive()
+			WLmini.brake()
+			WLmini.stop()
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

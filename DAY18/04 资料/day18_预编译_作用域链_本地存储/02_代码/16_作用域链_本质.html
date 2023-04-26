@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function a(){
+            console.dir(a);
+
+            function b(){
+                console.dir(b);
+
+                function c(){
+                    console.dir(c);
+                }
+
+                c()
+            }
+
+            b()
+        }
+        a()
+
+        /* 分析 作用域链产生的过程
+
+            1,js引擎加载html页面,产生GO对象,在全局作用域中
+                GO {a:function}
+
+            2,执行a函数,在执行的这一刻,会为a函数产生一个a函数的AO对象,在局部作用域中
+                在a函数内部,有两个作用域,一个是GO所在的全局作用域,一个是a函数所在的局部作用域
+
+                [scopes]  --- aAO{b:function}
+                               GO{a:function}
+
+             3,执行b函数,在执行的这一刻,会为b函数产生一个b函数的AO对象,在局部作用域中
+                在b函数内部,有三个作用域,一个是GO所在的全局作用域,一个是a函数所在的局部作用域,一个是b函数的所在的局部作用域
+
+                [scopes]  ---  bAO{c:function}
+                               aAO{b:function}
+                               GO{a:function}
+
+            4,执行c函数,在执行的这一刻,会为b函数产生一个c函数的AO对象,在局部作用域中
+                在c函数内部,有四个作用域,一个是GO所在的全局作用域,一个是a函数所在的局部作用域,一个是b函数的所在的局部作用域,一个是c函数的所在的局部作用域
+
+                [scopes]  ---  cAO{}
+                               bAO{c:function}
+                               aAO{b:function}
+                               GO{a:function}
+
+        
+        */
+    </script>
+</body>
+</html>

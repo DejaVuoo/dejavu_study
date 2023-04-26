@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.father{
+				/* 使用flex布局，就不会有子元素脱标的影响，父元素仍然有高度 */
+				background: cornflowerblue;
+				display: flex;/* 使用flex布局，只需要添加一个属性，就可以实现子元素间距等分 */
+				
+				justify-content: space-between;
+			}
+			.son{
+				/* 浮动的弊端：子元素浮动之后会脱标，导致父元素没有高度，会对后面元素的布局产生影响  */
+				/* float: left; */
+				width: 100px;
+				height: 100px;
+				background: greenyellow;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div class="father">
+			<div class="son">1</div>
+			<div class="son">2</div>
+			<div class="son">3</div>
+		</div>
+	</body>
+</html>

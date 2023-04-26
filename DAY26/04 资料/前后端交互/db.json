@@ -1,0 +1,34 @@
+{
+  "word": [
+    {
+      "id": 1,
+      "content": "读万卷书不如行万里路"
+    },
+    {
+      "content": "活到老学到老0.7955860585747083",
+      "id": 2
+    },
+    {
+      "content": "活到老学到老0.4266950679394632",
+      "id": 4
+    },
+    {
+      "content": "hello",
+      "id": 5
+    },
+    {
+      "content": "haha",
+      "id": 6
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

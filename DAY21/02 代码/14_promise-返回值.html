@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/* 
+				1,调用then方法后，有没有返回值，返回值是什么
+			 */
+			const p1 = new Promise((resovle,reject)=>{})
+			const t1 = p1.then(()=>{})
+			console.log(t1);//返回值是一个promise对象，并且默认是准备状态
+			
+			
+			/* 
+				2,既然then方法返回的是一个promise对象，promise对象可以继续调用then方法，从而实现链式编程
+				
+				注意：
+					链式编程能够执示下去的前提条件，第一个promise对象的状态必须发生改变，不能是pending状态
+			 */
+			const p2 = new Promise((resovle,reject)=>{resovle()})//加上resovle()之后，状态才会发生改变，then方法才能执行
+			const t2 = p2.then(()=>{})
+			t2.then(()=>{console.log('成功');})
+			
+			/* 
+				3,第三行代码的执行情况，只跟第二行代码代码有关，只有第二行代码出现了异常，第三行代码才会调用第二个回调函数
+			 */
+			const p3 = new Promise((resovle,reject)=>{resovle()})//加上reject()之后，状态才会发生改变，then方法才能执行
+			const t3 = p3.then(()=>{},()=>{console.log(a);}) //第一行调用的reject(),执行第二个回调函数，第二个回调函数出现了异常，才会调用第三行代码，
+			t3.then(()=>console.log('成功'),()=>console.log('失败'))
+			
+		</script>
+	</body>
+</html>

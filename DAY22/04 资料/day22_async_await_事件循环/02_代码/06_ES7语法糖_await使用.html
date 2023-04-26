@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /*     
+            async function f2(){
+                return 222
+            }
+
+            const p = f2()  
+
+            p.then(data=>{
+                console.log(data);
+            }) 
+        
+        */
+
+        //await is only valid in async functions  await只能存在于异步函数中
+
+        //解决方法,在外面套一个异步的壳子
+
+        async  function f(){
+            async function f2(){
+                return 222
+            }
+
+            const p = await f2() //只需要在异步函数的前面加一个await关键字,就可以拿到异步函数结果属性中的值
+
+            console.log(p);
+        }
+        
+        f()
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.father{
+				width: 200px;
+				height: 200px;
+				background: royalblue;
+			}
+			.son{
+				width: 100px;
+				height: 100px;
+				background: greenyellow;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="father">
+			<div class="son"></div>
+		</div>
+		<script>
+			/* 
+				addEventListener:第三个参数是true,执行的就是事件捕获阶段的处理函数
+				顺序：document > father > son
+			 */
+			//给document添加点击事件
+			document.addEventListener('click',function(){
+				alert('document')
+			},true)
+			
+			//给父亲添加点击事件
+			document.querySelector('.father').addEventListener('click',function(){
+				alert('father')
+			},true)
+			//给儿子添加点击事件
+			document.querySelector('.son').addEventListener('click',function(){
+				alert('son')
+			},true)
+			
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 1226px;
+            height: 614px;
+            background: pink;
+            margin: 0 auto;
+        }
+        .box .left{
+            float: left;
+            width: 234px;
+            height: 614px;
+            background: #800080;
+        }
+        .box .right{
+            float: right;
+            width: 978px;
+            height: 614px;
+           /*  background: blue; */
+        }
+        .box .item{
+            float: left;
+            width:234px;
+            height: 300px;
+            background: #87ceeb;
+            margin-right: 14px;
+            margin-bottom: 14px;
+        }
+
+        /* 将第4个和第8个子元素的右外边距设置成0 */
+        .box .item:nth-child(4n){
+            margin-right: 0;
+        }
+
+        /* 将第5个后面的子元素下外边距设置成0 */
+        .box .item:nth-child(n + 5){
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <!-- 左边 -->
+        <div class="left"></div>
+        <!-- 右边 -->
+        <div class="right">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+    </div>
+</body>
+</html>

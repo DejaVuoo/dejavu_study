@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         function Student(name,age){
+            this.name = name
+            this.age = age
+        }
+
+        //做法
+        Student.prototype.study = function(){
+            console.log('学习');
+        }
+
+        //创建两个实例对象
+        var stu1 = new Student('张三',23)
+        stu1.study()
+
+        var stu2 = new Student('李四',23)
+        stu2.study()
+
+        //原型对象里面有一个构造函数(constructor属性)
+        console.dir(Student.prototype);
+
+        //对象的原型里面有一个构造函数(constructor属性)
+        console.log(stu1.__proto__);
+
+        //打印这两个构造函数
+        console.log(Student.prototype.constructor);
+        console.log(stu1.__proto__.constructor);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+
+            /* 
+                修改轴向之后,布局技巧
+                    首先要明确,水平和垂直方向上到底是哪个轴
+                        如果是主轴,对齐用justify-content属性
+                        如果是侧轴,对齐用 align-items属性
+            */
+
+            display: flex;
+
+            width: 80px;
+            height: 80px;
+            border: 1px solid #000;
+
+            flex-direction: column; /* 主轴已经被修改为垂直方向上,元素就会沿着垂直方向排布 */
+
+            /* 想实现元素水平居中,现在水平方向上市侧轴,侧轴元素居中,用align-item */
+            align-items: center;
+
+            /* 想实现元素垂直居中,现在垂直方向上市主轴,主轴元素居中,用justify-content */
+            justify-content: center;
+        }
+
+        img{
+            width: 32px;
+            height: 32px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="./img/media.png" alt="">
+        <span>媒体</span>
+    </div>
+</body>
+</html>

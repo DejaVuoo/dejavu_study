@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 将之前求1-10的和 封装成一个函数 */
+
+        //定义函数
+        function getSum() {
+
+            var sum = 0
+            for (var i = 1; i <= 10; i++) {
+                sum += i
+            }
+            console.log(sum);
+        }
+
+        //调用函数
+        getSum()
+
+        /* 
+            弊端
+                现在这个getSum函数已经写死了,只能求1-10的和,如果想求1-100的和
+                这里需要借助 函数的参数 才能实现
+        */
+
+    </script>
+</body>
+
+</html>

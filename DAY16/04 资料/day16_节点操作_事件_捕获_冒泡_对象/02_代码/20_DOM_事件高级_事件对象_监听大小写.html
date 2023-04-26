@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            要判断是否按下大小写,使用keypress事件(使用keydown事件,获取的永远都是大写的值)
+        */
+        document.addEventListener('keypress',function(e){
+            console.log(e.keyCode);
+
+            //判断是否按下了大小写
+            if(e.keyCode == 65){
+                console.log('按下了大写的A');
+            }else if(e.keyCode == 97){
+                console.log('按下了小写的a');
+            }else{
+                console.log('按下了其他键');
+            }
+        })
+    </script>
+</body>
+</html>

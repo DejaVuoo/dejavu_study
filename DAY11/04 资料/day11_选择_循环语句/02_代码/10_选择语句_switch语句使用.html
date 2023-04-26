@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            	语法
+                    switch(表达式或者变量)
+                    {
+                        case 值1:
+                            执行代码块1
+                            break;
+                        case 值2:
+                            执行代码块2
+                            break;
+                        ...
+                        default:
+                            前面都不满足的时候执行
+                            break
+                    }
+                作用
+                    主要用于判断多个条件(基于不同的条件来执行不同的动作)
+        
+        */
+
+        //判断一个数是奇数还是偶数
+        
+        //获取输入的数
+        var num = prompt('请输入一个数')
+
+        //判断
+        switch(num%2){
+            case 1:
+                alert('奇数')
+                break
+            case 0:
+                alert('偶数')
+                break
+            default:
+                alert('你输入的不是一个整数')
+                break
+        }
+
+        /* 
+            判断月份属于哪个季节: 12,1,2冬季  3,4,5春季 6,7,8夏季 9,10,11秋季 
+        */
+    </script>
+</body>
+</html>

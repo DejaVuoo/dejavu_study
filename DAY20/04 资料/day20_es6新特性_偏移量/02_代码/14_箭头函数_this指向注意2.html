@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>按钮</button>
+
+    <script>
+        const btn = document.querySelector('button')
+
+        //使用匿名函数实现事件
+        btn.addEventListener('click',function(){
+            console.log(this);//代表按钮对象
+            console.log(this.innerHTML);//可以获取按钮中的内容
+        })
+
+        //使用箭头函数实现事件
+        btn.addEventListener('click',()=>{
+            console.log(this);//代表window
+            console.log(this.innerHTML);//不能获取到按钮的内容
+        })
+
+    </script>
+</body>
+</html>

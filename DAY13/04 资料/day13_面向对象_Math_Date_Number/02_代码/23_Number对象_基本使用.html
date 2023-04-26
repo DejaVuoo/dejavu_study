@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            Number.NaN	非数字
+            Number.MAX_VALUE	最大值
+            Number.MIN_VALUE	最小值
+        */
+       console.log(Number.MAX_VALUE);//1.7976931348623157e+308
+       console.log(Number.MIN_VALUE);//5e-324
+
+       /* 
+            Number.parseFloat()	将字符串转换成浮点数，和全局方法 parseFloat() 作用一致。Number可以省略
+            Number.parseInt()	将字符串转换成整型数字，和全局方法 parseInt() 作用一致。 Number可以省略
+            Number.isInteger()	判断传递的参数是否为整数。
+            isNaN()	判断传递的参数是否为 isNaN()。
+            toFixed()	返回指定小数位数的表示形式。
+       */
+      console.log(parseInt('100'));//100
+      console.log(parseFloat('100.88'));//100.88
+      console.log(Number.isInteger(100.88));//false
+      console.log(isNaN('abc')); //true
+      console.log(10.918.toFixed(2));//10.92 四舍五入
+
+    </script>
+</body>
+</html>

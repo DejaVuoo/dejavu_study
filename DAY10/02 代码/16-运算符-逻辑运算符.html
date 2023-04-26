@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/* 
+			 作用
+				用来连接多个条件
+			 
+			 生活中的应用
+				女孩子找男朋友  高 并且 富 并且 帅   高&&富&&帅
+				男孩子找女朋友  白 或者 富 或者 美	   白||富||美
+				屌丝找女朋友    非硅胶              !硅胶
+				程序员找女朋友  new GirlFriend()
+				
+			特点
+				运算的结果都是boolea类型
+			
+			 
+			 
+			 */
+			//&&:同真为真，一假则假
+			console.log(true && true); //true
+			console.log(true && false); //false
+			console.log(false && false); //false
+
+			//||：一真为真，同假则假
+			console.log(true || true); //true
+			console.log(true || false); //true
+			console.log(false || false); //false
+			
+			//!真变假，假变真
+			console.log(!true);
+			console.log(!false);
+			/* 题目
+				弹框录入一个年份，判断这个年份是否是闰年（打印true或者falsel即可）
+				1,能被4整除，不能被100整除
+				2,能被400整除 
+				*/
+			   
+			  var year = 0;
+			         year = parseInt(window.prompt('请输入一个年份：'));
+			         if((year%4 ==0) && (year%100 !=0) || year % 400 == 0){
+			             document.write(year+'年是闰年');
+			         }else{
+			             document.write(year+'年是平年');
+			         }
+		</script>
+	</body>
+</html>

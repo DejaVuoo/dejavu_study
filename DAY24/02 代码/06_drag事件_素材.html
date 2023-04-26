@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    body {
+      user-select: none;
+    }
+
+    #draggable {
+      text-align: center;
+      background: white;
+    }
+
+    .dropzone {
+      width: 200px;
+      height: 20px;
+      background: blueviolet;
+      margin: 10px;
+      padding: 10px;
+    }
+
+    .dropzone.dragover {
+      background-color: purple;
+    }
+
+    .dragging {
+      opacity: 0.5;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="dropzone">
+    <div id="draggable" >这个div可以拖动</div>
+  </div>
+  <div class="dropzone" id="droptarget"></div>
+
+  <script>
+   
+
+  </script>
+</body>
+
+</html>

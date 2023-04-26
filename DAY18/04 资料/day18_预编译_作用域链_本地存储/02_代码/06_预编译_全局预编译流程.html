@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(a);
+
+        var a = 10
+
+        console.log(a);
+
+        function a(){
+            console.log(a);
+        }
+
+        a()
+
+        /* 
+            大致流程
+                	1,先查找变量的声明,作为GO对象的属性名,值是undefined
+                    2,在查找函数的声明,作为GO对象的属性名,值是function
+                    3,从上到下依次执行代码(声明的语句会被略过)
+            具体流程
+                一,先生成GO对象(window对象)
+                二,全局预编译
+                    1,先查找变量的声明,作为GO对象的属性名,值是undefined
+                        GO : {a:undefined}
+                    2,在查找函数的声明,作为GO对象的属性名,值是function
+                        GO : {a:function}
+                    3,从上到下依次执行代码(声明的语句会被略过)
+                        执行第11行,打印a,打印的就是function函数
+                        执行第13行,给a赋值,  GO : {a:10}
+                        执行第15行,打印da,  打印的结果就是10
+                        执行第21行,a现在是一个变量.变量是不能调用方法,就会报错(a不是一个函数)
+        */  
+
+        /* 
+            console.log(b)
+
+            console.log(a)
+
+            var a = 123
+
+            console.log(a)
+
+            function a() {
+                console.log(a)
+            }
+
+            var b
+        */
+    </script>
+</body>
+</html>

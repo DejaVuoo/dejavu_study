@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="./img/off.gif" alt="">
+
+    <!-- 
+        使用String对象的match方法来匹配 src属性值 来切换
+
+        string.match(regexp)
+            
+            参数
+                regexp	必需。规定要匹配的模式的 RegExp 对象。如果该参数不是 RegExp 对象，
+                    则需要首先把它传递给 RegExp 构造函数，将其转换为 RegExp 对象。
+            返回值
+                Array	存放匹配结果的数组。该数组的内容依赖于 regexp 是否具有全局标志 g。
+                    如果没找到匹配结果返回 null 
+     -->
+
+    <script>
+        //获取图片对象
+        var img =  document.querySelector('img')
+        console.dir(img)
+
+        //添加事件
+        img.onclick = function(){
+            //获取图片的src属性
+            var imgSrc = img.src
+
+            //console.log(imgSrc.match(/off/));/* 如果有匹配的,返回的是匹配后的数组,如果没有匹配,返回是null */
+
+            //判断
+            if(imgSrc.match(/off.gif/)){ 
+                img.src = './img/on.gif'
+            }else{
+                img.src = './img/off.gif'
+            }
+        }
+
+    </script>
+</body>
+</html>

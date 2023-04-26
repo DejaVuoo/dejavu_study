@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //定义类
+        class Student{
+            //静态属性
+            static contry = '中国'
+
+            constructor(name,age){
+                this.name = name
+                this.age = age
+            }
+
+            study(){
+                console.log('学习');
+            }
+
+            //静态方法
+            static exam(){
+                console.log('考试');
+            }
+        }
+
+        //创建对象
+        const stu1 = new Student('张三',23)
+        console.log(stu1);
+        console.log(stu1.name);
+        stu1.study()
+
+        //访问静态属性
+        console.log(stu1.contry);//undefined
+        console.log(Student.contry);//只能通过类名访问
+
+        //访问静态方法
+        Student.exam() //只能通过类名访问静态方法
+        stu1.exam()
+        
+    </script>
+</body>
+</html>

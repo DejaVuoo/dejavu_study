@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            字符串（String）、
+            数字(Number)、
+            布尔(Boolean)、
+            空（Null）、
+            未定义（Undefined）
+        */
+        // 字符串（String）、
+        var str = '你好'
+        console.log(str);
+        console.log(typeof str);
+
+        // 数字(Number)、
+        var num = 10.9
+        console.log(num);
+        console.log(typeof num);
+
+        // 布尔(Boolean)、
+        var b = true //取值只有true和false
+        console.log(b);
+        console.log(typeof b);
+
+        // 未定义（Undefined）
+        var c 
+        console.log(c); //undefined  声明之后没有赋值,就是未定义类型
+        console.log(typeof c);
+
+        // 空（Null）、
+        var arr = [1,2,3] //定义一个数组,对象类型
+        console.log(arr);
+        arr = null  //给数组赋值,让数组为空
+        console.log(arr);//null
+
+        /* 
+            弱类型语言
+                没有强制规定变量的类型,变量的类型根据后面的值来确定
+                例如 js php
+                var a = 10  a是数值类型
+                var a = '10' a就变成了字符串类型
+
+            强类型语言
+                定义完变量的类型之后,这个变量只能存固定的类型,其他类型是不可以的
+                例如 java c语言  int  a = 10  将来这个a只能存整数类型
+        */
+
+    </script>
+</body>
+</html>

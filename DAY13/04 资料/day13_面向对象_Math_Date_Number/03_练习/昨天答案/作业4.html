@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            不死神兔
+               其实就是求出  斐波那契数列 1、1、2、3、5、8、13、21、34 ... 的第20位数 
+        */
+
+        //1,定义一个数组,里面的每一个元素都表示每个月兔子的对数
+        var arr = new Array(20);
+
+        //给数组中的元素赋值
+        arr[0] = 1;
+        arr[1] = 1;
+
+        /*arr[2] = arr[0]+arr[1];
+                arr[3] = arr[1]+arr[2];
+                arr[4] = arr[2]+arr[3];*/
+
+        //使用循环来计算每个月兔子的对数(其实就是依次给数组中的元素赋值)
+        for (var i = 2;i < arr.length;i++){
+            arr[i] = arr[i-2] + arr[i-1];
+        }
+
+        //最后打印第20个月的兔子的对数
+        console.log(arr[19]);
+    </script>
+</body>
+</html>

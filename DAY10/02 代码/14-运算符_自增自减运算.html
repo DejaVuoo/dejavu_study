@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/* 
+		 概念
+			在自身的基础上加1或者减1
+		 语法
+			变量++或者变量--只能写在变量上
+		 规则
+			++在前，先变量的值+1，然后在返回计算后的结果
+			++在后，先把变量的值返回作为表达式的值，然后变量再加1
+		 */
+			//++在前，先变量的值+1，然后在返回计算后的结果
+			var num1 = 1
+			console.log(++num1); //整个表达式的值是2
+			console.log(num1); //运算完字后num1的值是2
+
+			var num2 = 1
+			console.log(num2++); //整个表达式的值是1
+			console.log(num2); //运算完后num2的值是2
+			//练习
+			var n1 = 100
+			console.log(200 + ++n1); //301
+			console.log(n1); //101
+
+			var n2 = 100
+			console.log(200 + n2++); //300
+			console.log(n2); //101
+		</script>
+	</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       // reduce() 方法接收一个函数作为累加器，数组中的每个值（从左到右）开始缩减，最终计算为一个值。
+
+       /* 
+        function(total,currentValue, index,arr)	必需。用于执行每个数组元素的函数。
+            函数参数:
+            参数	        描述
+            total	        必需。初始值, 或者计算结束后的返回值。
+            currentValue	必需。当前元素
+            currentIndex	可选。当前元素的索引
+            arr	            可选。当前元素所属的数组对象。
+
+      initialValue	可选。传递给函数的初始值
+
+
+      initialValue是传递给函数的初始值,如果没有传的话,默认初始值为数组索引为0的元素,从数组的索引为1的元素遍历,进行操作
+       */
+
+
+       const arr = [1,2,3,4]
+
+       const sum =  arr.reduce(function(total,currentValue,currentIndex){
+            console.log(total,currentValue,currentIndex);
+            return total + currentValue
+       },0)
+
+       console.log(sum);
+    </script>
+</body>
+</html>

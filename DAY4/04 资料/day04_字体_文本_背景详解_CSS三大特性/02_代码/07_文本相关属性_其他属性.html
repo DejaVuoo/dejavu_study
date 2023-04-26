@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            line-height	设置行高
+                normal	默认。设置合理的行间距。
+                设置数字  此数字会与当前的字体尺寸相乘来设置行间距。 假如设置1,行间距就是1*font-size大小
+                单位还可以是em 假如设置2em,行间距就是2*font-size大小
+                单位还可以是像素,就是固定的行间距
+                如果写0的话,没有行高,内容就会重叠到一块
+
+            text-indent	规定文本块首行的缩进
+                取值可以是em或者是具体的像素值
+        */
+        div{
+            font-size: 30px;
+
+            /* line-height: 50px; */  /* 固定取值 */
+
+            /*  line-height: 1; */ /* 行高就是1倍的字体大小,行与行之间没有间隙,可以方便我们自己精准布局 */
+
+            line-height: 2em;/* 行高就是2倍的字体大小 */
+
+
+            text-indent: 2em; /* 首行缩进2个字体的大小 */
+        }
+    </style>
+</head>
+<body>
+    <div>忙或不忙 不足以成为 断了我想你的理由</div>
+    <div>忙或不忙 不足以成为 断了我想你的理由</div>
+    <div>忙或不忙 不足以成为 断了我想你的理由</div>
+    忙或不忙 不足以成为 断了我想你的理由
+</body>
+</html>

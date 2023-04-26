@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+        }
+        .c1{
+            background: lightblue;
+            margin-bottom: 100px;/* 下外边距 */
+        }
+        .c2{
+            background: lightgreen;
+            margin-top: 100px;/* 上外边距 */
+        }
+
+        /* 
+            正常情况
+                两者间距是100px,就产生了外边距合并情况
+        */
+    </style>
+</head>
+<body>
+    <div class="c1"></div>
+    <div class="c2"></div>
+</body>
+</html>

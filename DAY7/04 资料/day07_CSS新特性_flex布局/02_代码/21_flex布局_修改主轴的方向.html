@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            display: flex;
+
+            width: 80px;
+            height: 80px;
+            border: 1px solid #000;
+
+            /* 可以通过flex-direction来修改主轴的方向,让元素沿着垂直方向排布
+                    row	默认值。灵活的项目将水平显示，正如一个行一样。
+                    column	灵活的项目将垂直显示，正如一个列一样。
+            */
+            flex-direction: column; /* 主轴已经被修改为垂直方向上,元素就会沿着垂直方向排布 */
+        }
+
+        img{
+            width: 32px;
+            height: 32px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="./img/media.png" alt="">
+        <span>媒体</span>
+    </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+/* 
+ *****
+  ****
+   ***
+    **
+     *
+*/
+
+/* 
+        5行,外层循环i<=5
+
+        内层 找规律得到
+
+        行数和*的规律
+
+        第i行               空格的数量          *的数量
+          1                     0                 5
+          2                     1                 4
+          3                     2                 3 
+          4                     3                 2
+          i                     i-1              6-i
+
+*/
+
+        for(var i=1;i<=5;i++){
+            //先打印空格
+            for(var j=1;j<=i-1;j++){
+                document.write('&nbsp;')
+            }
+            //再打印星星
+            for(var k=1;k<=6-i;k++){
+                document.write('*')
+            }
+            //打印完一行之后再换行
+            document.write('<br>')
+        }
+
+    </script>
+
+</body>
+</html>

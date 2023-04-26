@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .father {
+            /* position: relative; */
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 150px;
+        }
+        
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+            margin-left: 45px;
+        }
+        
+        .w {
+            height: 200px;
+            background-color: skyblue;
+            margin: 0 auto 200px;
+            padding: 10px;
+            border: 15px solid red;
+        }  
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <div class="w"></div>
+    <script>
+      //获取father和son
+      var father = document.querySelector('.father')
+      var son = document.querySelector('.son')
+      
+	  //获取father偏移值
+	  console.log(father.offsetTop);
+	  console.log(father.offsetLeft);
+	  
+	  //获取son偏移值(有带定位的父级元素，相对于父级元素，没有话的话相对于body)
+	  console.log(son.offsetTop);
+	  console.log(son.offsetLeft);
+	  
+	  //获取father的宽高
+	  console.log(father.offsetWidth);
+	  console.log(father.offsetHeight);
+	  
+	  //获取最下面w的宽高，获取出来的就是最终尺寸(包含内容区域+内边距+边框)
+	  console.log(document.querySelector('.w').offsetWidth);
+	  console.log(document.querySelector('.w').offsetHeight);
+	  
+	  //获取带定位父元素
+	  console.log(son.offsetParent); //返回带定位的父级元素，如果没有返回body
+	  console.log(son.parentNode);	//返回最近一级的父元素，不管它有没有定位
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="module">  //记得这里加type的类型为module
+			
+			
+			import{a,c} from './2-1.a.js'
+			import fn from './2-1.a.js'	//在默认导入的情况下可以任意指定导入的名称（这里不一定是f)这里导入的可以用函数名代表这个函数
+
+			import{b,c as _c} from './2-2.b.js'
+			console.log(a,b,c,_c)
+			console.log(fn(),b,c) //这里输出的函数记得不是用函数名，函数名不代表调用这个函数，后面记得加括号
+		</script>
+	</body>
+</html>

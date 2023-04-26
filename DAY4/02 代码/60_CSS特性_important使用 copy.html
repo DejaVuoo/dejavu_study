@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* li元素虽然优先级最高,但是它并不是直接作用在a元素上,a继承li的样式,继承优先级是最低的 */
+        li{
+            color: red  !important;  /* 加上important,优先级是最大的 */
+        }
+
+        li a{
+            color: yellow;/* 0,0,0,1  +  0,0,0,1 = 0,0,0,2*/
+        }
+
+        .myLink{
+            color: lightblue; /* 0,0,1,0   */
+        }
+
+        #myLi a{
+            color: purple; /* 0,1,0,0 + 0,0,0,1 = 0,1,0,1  */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li id="myLi">
+                <a href="" class="myLink">新中地</a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

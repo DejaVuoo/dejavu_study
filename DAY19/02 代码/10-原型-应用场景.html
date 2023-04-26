@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+
+	</head>
+
+	<body>
+		<script src="js/mui.js">
+			/*给js的Array类，扩展一个求数字类型数组内部元素和的方法(sum方法)*/
+
+			console.dir(Array); //可以看到它里面是有prototype.属性，并且很多方法也是定义在里面的
+
+			//可以把sum方法定义到原型对象中，将来arrayl的实例对象都可以共享这个方法
+			Array.prototype.sum = function() {
+				//定义求和变量
+				var sum = 0
+
+				//遍历数组累加
+				this.forEach(function(item) { //this代表当前这个对象
+					sum += item
+				})
+				return sum
+			}
+		</script>
+
+	</body>
+
+</html>

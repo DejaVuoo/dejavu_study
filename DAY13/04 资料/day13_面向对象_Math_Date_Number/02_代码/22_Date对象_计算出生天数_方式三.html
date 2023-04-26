@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //计算 你来到这个世界多少天,不足一天也按一天计算
+
+        /* 
+            分析
+                1,定义两个时间
+                    你的生日 --- 转成毫秒值
+                    今天的时间 --- 转成毫秒值
+                2,求两个时间的差值,再转换成天
+        */
+       //定义两个时间
+       var now = +new Date()
+       var birth = +new Date('2008-5-12')
+
+       //相减
+       var time = now - birth
+       console.log(time);
+
+       //换算成天
+       console.log(Math.ceil(time/1000/60/60/24));//5443
+    </script>
+</body>
+</html>

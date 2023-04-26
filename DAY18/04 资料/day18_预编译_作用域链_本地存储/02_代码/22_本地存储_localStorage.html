@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <button class="c1">存储数据</button>
+    <button class="c2">获取数据</button>
+    <button class="c3">删除数据</button>
+    <button class="c4">清空数据</button>
+
+    <button class="c5">新建一个窗口</button>
+
+    <script>
+        //获取浏览器中本地存储中所有的键值对
+        var res = Object.keys(localStorage)
+        console.log(res); //获取的是一个数组,存的是键的名称
+        
+
+        //获取文本框对象
+        var input =  document.querySelector('input')
+
+        //添加
+        document.querySelector('.c1').addEventListener('click',function(){
+            localStorage.setItem('username',input.value)
+            localStorage.setItem('password',input.value)
+        })
+
+        //获取
+        document.querySelector('.c2').addEventListener('click',function(){
+            console.log(localStorage.getItem('username'));  
+            console.log(localStorage.getItem('password'));
+        })
+
+        //删除
+        document.querySelector('.c3').addEventListener('click',function(){
+            localStorage.removeItem('username')
+        })
+
+        //清空
+        document.querySelector('.c4').addEventListener('click',function(){
+            localStorage.clear()
+        })
+
+        //新建窗口
+        document.querySelector('.c5').addEventListener('click',function(){
+            window.open('http://127.0.0.1:5501/aaa.html') /* 要确保ip和端口保持一致,才能共享 */
+        })
+
+    </script>
+</body>
+</html>

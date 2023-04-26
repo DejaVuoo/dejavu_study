@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			
+			fetch("https://api.vvhan.com/api/en").then(res =>
+				res.json()
+			).then(res =>{
+				document.querySelector('h1').innerHTML = res.data.zh
+				
+			})
+		</script>
+	</body>
+</html>

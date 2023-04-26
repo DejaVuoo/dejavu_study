@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function Student(name, age) {
+				this.name = name
+				this.age = age
+		
+				/* this.study = function() {
+					console.log('学习');
+				} */
+			}
+			
+			console.dir(Student); //可以看出类中有一个prototype属性，可以看做是类的静态成员，可以把公共的东西放在上面
+			
+			//做法
+			Student.prototype.study = function(){
+				console.log('学习');
+			}
+			
+			//创建两个实例对象
+			var stu1 = new Student('张三', 23)
+			stu1.study()
+			var stu2 = new Student('李四', 23)
+			stu2.study()
+			
+			
+			//验证一下两个对象中方法是不是同一个地址
+			console.log(stu1.study === stu2.study); //true说明同一个地址，只创建了一份，役有浪费内存
+		</script>
+	</body>
+</html>

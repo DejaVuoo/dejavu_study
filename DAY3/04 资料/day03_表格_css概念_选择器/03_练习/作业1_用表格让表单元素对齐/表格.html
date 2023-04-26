@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>表格</title>
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<form id="formData" name="formData" action="success.html" method="get">
+			<table border="1" >
+				<tr>
+					<td><label for="username">用户名：</label></td>
+					<td><input type="text" id="username" value="ikun" placeholder="请输入用户名"></td>
+				</tr>
+				<tr>
+					<td><label for="password">密码：</label></td>
+					<td><input type="password" id="password" value="jinitaimei" placeholder="请输入密码"></td>
+				</tr>
+				<tr>
+					<td><span>性别：</span></td>
+					<td>
+						<input type="radio" name="sex" id="male" value="male" checked><label for="male">男</label>
+						<input type="radio" name="sex" id="female" value="female"><label for="female">女</label>
+					</td>
+				</tr>
+				<tr>
+					<td><span>爱好：</span></td>
+					<td><input type="checkbox" name="favour" id="c" value="chang" checked><label for="c">唱</label>
+						<input type="checkbox" class="aihao" name="favour" id="t" value="jump" checked><label for="t">跳</label>
+						<input type="checkbox" class="aihao" name="favour" id="r" value="rap"><label for="r">rap</label>
+						<input type="checkbox" class="aihao" name="favour" id="l" value="basketBall"><label for="l">篮球</label>
+					</td>
+				</tr>
+				<tr>
+					<td><span>照片：</span></td>
+					<td><input type="file" value="选择文件" id="file" accept=".jpg, .jpeg, .png" multiple></td>
+				</tr>
+				<tr>
+					<td><span>学科：</span></td>
+					<td>
+						<select name="happy">
+						<option value="d2">命运2</option> 
+						<option value="2042" selected>2042</option>
+						<option value="8">老八蜜汁小憨包</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="pj" style="float:left">评价：</label></td>
+					<td><textarea name="textarea" cols="30" rows="10" placeholder="请输入" id="pj"></textarea></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<div>
+							<button type="submit">提交</button>
+							<button type="reset">重置</button>
+							<button type="button">按钮</button>
+						</div>
+					</td>
+					
+				</tr>
+			
+			</table>
+		</form>	
+	</body>
+</html>

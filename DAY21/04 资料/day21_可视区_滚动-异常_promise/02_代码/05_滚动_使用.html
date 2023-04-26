@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: lightblue;
+            border: 10px solid green;
+            padding: 10px;
+
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <div>我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本</div>
+
+
+    <script>
+        //获取内容区域的宽度和高度
+        var div = document.querySelector('div')
+        console.log(div.scrollHeight);//425
+        console.log(div.scrollWidth);//201
+        console.log(div.scrollTop);//0
+        console.log(div.clientHeight);//220
+        console.log(div.clientWidth);//201
+        console.log(div.offsetHeight);//240
+        console.log(div.offsetWidth);//240
+
+
+        //打印滚动的距离
+        div.addEventListener('scroll',function(){
+            console.log(div.scrollTop);
+            console.log(div.scrollLeft);
+        })
+        
+    </script>
+</body>
+</html>

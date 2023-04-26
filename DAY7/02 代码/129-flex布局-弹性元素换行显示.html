@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.b0{
+				height: 300px;
+				background: royalblue;
+				display: flex;
+				/* 
+				 flex-wrap 	该属性控制f1ex容器是单行或者多行，同时横轴的方向决定了新行堆叠的方向。
+				
+				 nowrap: ; 默认值。规定灵活的项目不拆行或不拆列。
+				
+				 wrap	
+				
+				 现象
+					随着父级元素宽度的缩小，子级元素会被挤压，宽度也会变小，不会自动换行
+				 原因
+					f1ex-wrap属性规定了f1ex子项不拆行或不拆列（默认的）
+				 解决
+					flex-wrap:wrap
+				 
+				 */
+				flex-wrap:wrap;
+			}
+			.b2{
+				height: 100px;
+				width: 100px;
+				background: greenyellow;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="b0 ">
+			
+			
+			<div class="b2 clearfix">1</div>
+			<div class="b2 clearfix">2</div>
+			<div class="b2 clearfix">3</div>
+			<div class="b2 clearfix">3</div>
+			<div class="b2 clearfix">5</div>
+			<div class="b2 clearfix">6</div>
+			<div class="b2 clearfix">7</div>
+			<div class="b2 clearfix">8</div>
+			
+	</body>
+</html>

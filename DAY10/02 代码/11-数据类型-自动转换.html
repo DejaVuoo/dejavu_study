@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+
+		<script>
+			/* 
+				自动转换（隐式转换）
+					任意类型的数据+字符串，执行的都是字符串的拼接
+					true,false,nu11在跟数字进行运算的时候，会被转成数字
+				
+				对于+运算的规律
+					如果+两端有一端是字符串，就会执行字符串的拼接
+					如果+两端都不是字符串，就会默认使用Number()进行强转，然后再执行加法运算 
+					
+					
+					*/
+
+
+			var a = ture + '100' //隐含将true转成字符串类型的true的操作
+			console.log(a); //true100
+
+			var a = ture + 100 //隐含将true转成数值类型的操作
+			console.log(b); //101
+
+			var c //c的值是undefined,这里隐含将undefined转成数值的过程，结果NaN
+			var d = c + 100 //NaN
+		</script>
+	</body>
+</html>

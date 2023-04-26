@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            getFullYear()	从 Date 对象以四位数字返回年份。
+            getMonth()	从 Date 对象返回月份 (0 ~ 11)。
+            getDate()	从 Date 对象返回一个月中的某一天 (1 ~ 31)。
+            getDay()	从 Date 对象返回一周中的某一天 (0 ~ 6)。
+        */
+       var date = new Date()
+
+       console.log(date.getFullYear());//2023
+       console.log(date.getMonth());//3  返回值是 0（一月） 到 11（十二月） 之间的一个整数
+       console.log(date.getDate());//6  
+       console.log(date.getDay());//4  返回值是 0（周日） 到 6（周六） 之间的一个整数。
+
+
+       //封装一个方法,调用这个方法,就可以打印当前时间(在控制台上打印: 今天是2023年4月6号,星期四)
+
+    </script>
+</body>
+</html>

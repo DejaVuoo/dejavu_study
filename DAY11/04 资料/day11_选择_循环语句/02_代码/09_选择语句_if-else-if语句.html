@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            语法
+                if(条件表达式1){
+                    语句体1
+                }else if(条件表达式2){
+                    语句体2
+                }else if(条件表达式3){
+                    语句体3
+                }else if(条件表达式4){
+                    语句体4
+                }
+                ...
+                else{
+                    语句体n
+                }
+            作用
+                主要用于判断多个条件
+            执行流程
+                从上往下,依次判断每一个条件,如果满足就会执行对应的语句体,剩下的条件,即使满足
+                也不会执行,如果前面所有的条件都不成立,就会执行else中语句
+        */
+
+        /* 假设李凯今天带了1000元,那么完整的敲诈流程
+                先问他有没有500块,有的话,请吃大餐
+                           400             中餐
+                           300             快餐
+                           200             小餐
+                           100             泡面
+                           <100            放学别走
+        */
+
+        //获取李凯钱包里的钱
+        var money = prompt('请输入李凯钱包里的钱')
+
+        //判断
+        if(money >= 500){
+            alert('请吃大餐')
+        }else if(money >= 400){
+            alert('请吃中餐')
+        }else if(money >= 300){
+            alert('请吃快餐')
+        }else if(money >= 200){
+            alert('请吃小餐')
+        }else if(money >= 100){
+            alert('请吃泡面')
+        }else{
+            alert('放学别走')
+        }
+    </script>
+</body>
+
+</html>

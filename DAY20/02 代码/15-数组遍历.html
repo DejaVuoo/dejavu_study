@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var arr = [1,2,3]
+			//forEach格式：数组对象.forEach(匿名函数)
+			arr.forEach((item,index) => {
+				console.log(item + ':' + index);
+			})
+			
+			//for...of格式(获取不了索引)
+			//完整格式:for(const 元素名称 0f 容器对象)
+			for(const item of arr){
+			console.log(item);
+			}
+			//for..in格式（获取的是索引）
+			for(const index in arr){
+			console.log(index);
+			}
+			
+			//for in一般用于遍历对象
+			const stu={name:'张三',age:23}
+			for(const key in stu){
+			console.log(key);//获取的是字面量对象的属性名
+			console.log(stu.key);//使用.key的方式是获取不到的
+			console.log(stu[key]);
+			}
+			
+			//for of可以使用解构的方式来来遍历对象
+			var array = [
+			                {name:"河南省",cities:["郑州","洛阳","开封"]},
+			                {name:"辽宁省",cities:["沈阳","大连","鞍山"]},
+			                {name:"山东省",cities:["青岛","济南","烟台"]},
+			            ];
+			for(const{name,cities}of array){
+			console.log(name,cities);
+			}			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function delay(duration) {
+            var start = Date.now();
+            while (Date.now() - start < duration) { }
+        }
+
+
+        setTimeout(function () {
+            console.log(1);
+        }, 0);
+
+        delay(1000)
+
+        console.log(2);
+
+        /* 
+            1,渲染主程序 执行全局js代码
+            2,执行19行的时候,计时器线程启动,因为定时为0秒,所以计时器线程会立即将回调函数fn,放到延时队列中等待执行
+            3,主线程接着往下执行,执行第23行的时候,执行死循环,阻塞1秒钟,
+            4,执行第25行,打印2,然后执行全局js任务完成
+            5,然后再从消息队列中取出fn执行,打印1
+
+        */
+    </script>
+</body>
+
+</html>

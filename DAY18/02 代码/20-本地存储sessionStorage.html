@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text">
+		<button class="c1">存储数据</button>
+		<button class="c2">获取数据</button>
+		<button class="c3">删除数据</button>
+		<button class="c4">清空数据</button>
+		<button class="c5">新建一个窗口</button>
+		<script>
+			//获取文本框中的数据
+			var input = document.querySelector('input')
+			//添加
+			document.querySelector('.c1').addEventListener('click',function(){
+				sessionStorage.setItem('username',input.value)
+				sessionStorage.setItem('password',input.value)
+			})
+			//获取
+			document.querySelector('.c2').addEventListener('click',function(){
+				console.log(sessionStorage.getItem('username'));
+				console.log(sessionStorage.getItem('password'));
+			})
+			//删除
+			document.querySelector('.c3').addEventListener('click',function(){
+				sessionStorage.removeItem('username')
+			})
+			//清空
+			document.querySelector('.c4').addEventListener('click',function(){
+				sessionStorage.clear()
+			})
+			//新建窗口
+			document.querySelector('.c5').addEventListener('click',function(){
+				window.open('http://127.0.0.1:8848/%E6%96%B0%E4%B8%AD%E5%9C%B0/DAY18/02%20%E4%BB%A3%E7%A0%81/20-%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8sessionStorage.html')/*要确保ip和端口保持一致，才能共享*/
+			})
+		</script>
+	</body>
+</html>

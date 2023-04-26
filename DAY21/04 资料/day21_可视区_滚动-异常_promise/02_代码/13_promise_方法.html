@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            then方法
+                then方法,接收两个函数作为参数,第一个参数是在promise执行成功的时候调用(成功的时候调用的回调函数)
+                第二个参数是在promise执行失败的时候调用(失败的时候调用的回调函数),两个函数只能有一个被调用
+
+            注意点
+                then方法只有在promise状态发生改变的时候才调用
+        */
+       const p1 =  new Promise((resovle,reject) => {resovle()})//p1是成功状态
+       p1.then( ()=>console.log('成功') ,()=>console.log('失败') )//调用成功时候的回调函数(第一个函数)
+
+       const p2 =  new Promise((resovle,reject) => {reject()})//p2是失败状态
+       p2.then( ()=>console.log('成功') ,()=>console.log('失败') )//调用失败时候的回调函数(第二个函数)
+
+       //一般情况下,then方法里面只写一个函数,这个函数只有成功状态下才调用
+       const p3 =  new Promise((resovle,reject) => {resovle()})
+       p3.then( ()=>console.log('成功') )
+
+       //如何拿到结果属性中的数据?给then方法中的函数添加一个参数,就可以拿到
+       const p4 =  new Promise((resovle,reject) => {resovle('successDate')}) //成功的状态
+       p4.then( date => console.log(date) )  //在回调函数中拿到成功之后的数据
+
+       const p5 =  new Promise((resovle,reject) => {reject('faildReason')}) //失败的状态
+       p5.then( date => console.log(date), value => console.log(value) )  //在回调函数中拿到失败之后的原因
+
+
+    </script>
+</body>
+</html>

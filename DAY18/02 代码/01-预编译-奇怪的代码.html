@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			console.log(a);
+			var a = 10
+			console.log(a);
+				
+			function a(){
+				console.log(a);
+				
+			}
+			
+			a()
+			
+			
+			/* 
+				原因
+					代码产性了歧义，定义的变量名和函数名冲突，导致程序报错
+					
+					想要报错的本质，需要了解5s预编译的过程
+					
+					js预编译目的：
+						就是为了消除歧义，让代码能够从上往下执行（也称为预处理）
+			 
+			 
+			 */
+		</script>
+	</body>
+</html>

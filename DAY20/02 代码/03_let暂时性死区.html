@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+
+	</head>
+
+	<body>
+		<script>
+			/* 
+				 ES6明确规定，代码块内如果存在let或者const,
+				 代码块会对这些命令声明的变量从块的开始就形成个封闭作用域。
+				 代码块内，在声明变量PI之前使用它会报错。
+			 */
+			var PI = "a";
+			console.log(window);
+			if(true){
+			 
+			 console.log(PI);  // Cannot access 'PI' before initialization
+			 let PI = "3.1415926"; //变量PI之前的{}区域，都属于PI变量的死区
+			 
+			}
+		</script>
+
+
+	</body>
+
+</html>

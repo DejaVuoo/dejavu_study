@@ -1,0 +1,29 @@
+浏览器环境下最新的模块化标准 (es module =>esm)
+导出/暴露
+
+1.分别导出
+  1.1 export let a = 1
+  2.2 export {a,b,...}
+2.默认导出
+  export default a
+  一个模块中只能有一个默认导出的变量
+  分别导出可以和默认导出共存
+导入
+
+1.分别导入
+  import {a,b as c} from './..' 通过as关键字将分别导出的变量换一个名字
+2.默认导入
+  import x from './.. 默认导出的变量名可以任意指定 
+
+node环境下的模块化标准(commom.js标准 )
+导出
+module.exports = {
+    a,
+    b,
+    ...
+}
+exports.a =...
+exports.b =...
+
+导入
+const res = require('../')  通过解构的形式将res对象内的属性提取出来

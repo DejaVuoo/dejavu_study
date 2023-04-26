@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 设置行级和块级元素的背景,了解这两个元素所占的默认宽度 */
+        a,div{
+            background-color: lightblue;
+        }
+
+        /* 设置a标签自身相对于父控件的居中,还是需要借助它的父控件body来实现 */
+        body{
+            text-align: center;
+        }
+
+        /* 设置div宽度 */
+        div{
+            width: 200px;
+        }
+
+        /* 想设置div相对于父控件居中 */
+        div{
+            margin: 0 auto;/* 如果是块元素相对于父控件居中,需要用到margin外边距来设置 */
+        }
+
+        /* 总结
+            对于行级元素,设置它自身相对于父控件的居中,需要通过父控件的text-align来设置
+            对于块级元素,设置它自身相对于父控件的居中,需要在自身使用margin外边距来设置
+        */
+
+    </style>
+</head>
+<body>
+    <a href="">百度</a>
+
+    <div>中地</div>
+</body>
+</html>

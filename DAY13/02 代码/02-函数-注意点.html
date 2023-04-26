@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/* 1,如果函数没有显示的调用return,函数就没有返回值，强行接收，接收的值就是undefined*/
+			function f1() {
+				console.log("aaa");
+				/* return 111 */ //只有显示的调用了return,才能接收到函数返回的数据，否则就undefined
+			}
+			var res = f1() //undefined
+			console.log(res);
+
+			/* 2,函数名其实代表整个函数(类似数组名代表整个数组，因为他们都是对象类型) */
+			function f2() {
+				console.log('bbb');
+			}
+			console.log(f2);
+
+			/*3,实参的个数小于形参，没有被赋值的形参的值就是undefined*/
+			function f3(num1, num2, num3) {
+				return numl + num2 + num3
+			}
+			var sum = f3(1, 2)
+			console.log(sum); //NaN num3没有被赋值，是undefined,被转成NaN
+		</script>
+	</body>
+</html>

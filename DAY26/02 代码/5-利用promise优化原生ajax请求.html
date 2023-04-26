@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>今天的励志话语是:</h1>
+		<ul></ul>
+		<button>点我励志</button>
+	     <script>
+				console.log(111)
+			 	function init(url) {
+			 		const p = new Promise(function(resolve, reject) {
+			 			let xhr = new XMLHttpRequest()
+			 			xhr.open('GET', url)
+			 			xhr.send()
+			 			xhr.onreadystatechange = function() {
+			 				if (this.readyState === 4) {
+			 					//进入到这里 说明请求完成 让promise变成成功状态
+			 					resolve(this.responseText)
+			 				}
+			 			}
+			 		})
+			 		return p
+			 	}
+			 	const btn = document.querySelector('button')
+			 	btn.onclick = function() {
+					console.log(btn)
+			 		init("http://localhost:3000/word").then(res => {
+			 			console.log(res)
+			 			document.querySelector('h1').innerHTML = JSON.parse(res)[0].content
+			 		})
+			 	}
+		 </script>
+	</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         /* 类似: 请用户输入登录账号和密码.(账户123 密码888) 只要1个不正确,就全部重新输入.直到正确为止. */
+
+         /* 
+            循环条件: !(账户123 密码888)
+            循环体:获取账户和密码过程
+         */
+        var username = 0
+        var password = 0
+
+         //while(!(username == '123' && password == '888')){
+        while(username != '123' || password != '888'){
+            username = prompt('请输入用户名:')
+            password = prompt('请输入密码:')
+         }
+
+         alert('恭喜你,登录成功');
+
+         /*
+           对&&表达式取反,里面运算符都要取反
+           !(username == '123' && password == '888')   ====   (username != '123' || password != '888')
+         */
+    </script>
+</body>
+</html>

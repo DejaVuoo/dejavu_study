@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>1111</li>
+        <li>2222</li>
+        <li>3333</li>
+    </ul>
+    <script>
+        /* 使用定时器,遍历里面的元素 */
+        //获取li元素
+        var lis = document.querySelectorAll('li')
+
+        //遍历数组
+        for (var i = 0; i < lis.length; i++) {
+
+            //使用定时器
+            /*  setTimeout(function(){
+                 console.log(lis[i].innerHTML);
+             },1000) */
+
+            //使用立即执行函数改正
+            (function (index) {
+                setTimeout(function () {
+                    console.log(lis[index].innerHTML);
+                },1000)
+            })(i)
+
+        }
+
+        /*
+            出错的原因
+                因为定时器里面的代码需要1秒钟之后才执行,而for循环一开始就执行完了,执行的时候,不断的给i赋值
+                i就从0变成了3,定时器里面的函数,一秒钟之后执行,此时lis[i]已经变成3了,没有这个元素,就会报错
+
+            解决思路
+                可以使用立即执行函数,每遍历一次,拿到i的值,立即执行定时器
+
+            这里面就形成了一个小闭包
+                立即执行函数里面的匿名函数是外部函数,定时器是内层函数,内层函数访问外层函数中的变量index
+        
+        */
+    </script>
+</body>
+
+</html>

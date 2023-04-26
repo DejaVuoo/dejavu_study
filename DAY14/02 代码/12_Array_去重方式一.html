@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//数组去重[10,9,8,8,9][10,9,8]
+			/* 
+			 思路
+			 定义一个新的数组，用于存储最终的数据
+			 先遍历原数组，拿到每一个元素，在放入新数组之前做一个判断（如果新数组中没有这个元素才放进去）
+			 
+			 */
+			var arr = [10, 9, 8, 8, 9]
+
+			//定义新数组
+			var narr = []
+
+			//遍历原数组
+
+			arr.forEach(function(item) {
+				if (narr.indexOf(item) == -1 /* narr.includes(item)==false */ ) {
+					narr.push(item)
+				}
+			})
+
+			console.log(narr);
+		</script>
+	</body>
+</html>

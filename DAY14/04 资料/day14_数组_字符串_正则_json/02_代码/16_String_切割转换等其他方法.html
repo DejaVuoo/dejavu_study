@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         //'1,2,3,4,5' ---> 数组
+         var str = '1,2,3,4,5'
+
+         //split()	把字符串分割为字符串数组。
+         var arr = str.split(',')
+         console.log(arr);
+
+         //toLowerCase()	把字符串转换为小写。
+         //toUpperCase()	把字符串转换为大写
+         console.log('abc'.toUpperCase());
+
+         //startsWith()	查看字符串是否以指定的子字符串开头。
+         //endsWith()	判断当前字符串是否是以指定的子字符串结尾的（区分大小写）。
+         var res = 'abc'.startsWith('a')
+         console.log(res);//true
+
+         //trim()	去除字符串两边的空白
+         console.log('  fd  '.trim());
+
+          /*
+           写一个方法校验qq号
+            1,必须是5-15位
+            2,第一位不能是0
+            3,全部都是数字
+        */
+
+    </script>
+</body>
+</html>

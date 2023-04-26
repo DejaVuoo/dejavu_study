@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			
+			div{
+				width: 200px;
+				height: 200px;
+				background: lawngreen;
+			}
+			
+		</style>
+		
+	</head>
+	<body>
+		<div ></div>
+		<script>
+			var div = document.querySelector('div');
+			
+			
+			div.addEventListener('mouseover',function(){
+				this.style.background ='blue'
+			})
+			div.addEventListener('mouseout',function(){
+				this.style.background ='lawngreen'
+			})
+			
+		</script>
+	</body>
+</html>

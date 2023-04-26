@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 清除默认内外边距 */
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .topBar{  /* 通栏的效果.可以不设置宽度,默认跟父元素保持一致*/
+            height: 40px;
+            background: #333;
+        }
+        .main{
+            width: 1226px;
+            height: 560px;
+            margin: 0 auto;
+            /* background-color: lightblue; */
+        }   
+        .main .nav{
+            width: 1226px;
+            height: 100px;
+            background: #ffc0cb;
+        }
+        .main .left{
+            width: 234px;
+            height: 460px;
+            background: #ffa500;
+            float: left;
+        }
+        .main .right{
+            width:992px;
+            height:460px;
+            background: #87ceeb;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        布局顺序
+            从上往下,从左往右,从外向里
+     -->
+     <!-- 上层的topBar -->
+     <div class="topBar"></div>
+     <!-- 下层元素在一个div中 -->
+     <div class="main">
+        <!-- 上面的导航条 -->
+        <div class="nav"></div>
+        <!-- 左边的导航条 -->
+        <div class="left"></div>
+        <!-- 右边的轮播图 -->
+        <div class="right"></div>
+     </div>
+
+</body>
+</html>

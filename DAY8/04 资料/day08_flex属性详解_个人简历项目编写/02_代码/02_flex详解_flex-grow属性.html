@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            flex-grow
+	            定义项目的放大比例,默认为0,即 如果父元素存在剩余空间,也不放大
+
+            操作
+                1,动态设置父元素宽度为浏览器50%,拖动浏览器,发现子元素并没有放大,因为flex-grow默认是0,不放大
+
+                2,将子元素宽度注释掉,设置flex-grow为1,就会发现子元素能够随着父元素的变大而变大
+        */
+        .box{
+            display: flex;
+            /* width: 300px; */
+            width: 50%;
+            height: 100px;
+            background: lightblue;
+            margin: 0 auto;
+        }
+        .c1{
+            /* width: 100px; */
+            flex-grow: 1;
+            height: 100px;
+            background: green;
+        }
+        .c2{
+            /* width: 100px; */
+            flex-grow: 1;
+            height: 100px;
+            background: purple;
+        }
+        .c3{
+            /* width: 100px; */
+            flex-grow: 1;
+            height: 100px;
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+    </div>
+</body>
+</html>

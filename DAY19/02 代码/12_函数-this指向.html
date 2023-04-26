@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button>press</button>
+		<script>
+			//命名函数
+			function f1() {
+				console.log('命名函数中的this:');
+				console.log(this);
+			}
+			
+			f1()
+			
+			//匿名函数
+			var f2 = function() {
+				console.log('命名函数中的this:');
+				console.log(this);
+			}
+			
+			f2()
+			
+			//构造函数
+			function Student(){
+				console.log('构造函数中的this:');
+				console.log(this);
+			}
+			
+			var s = new Student()
+			
+			//字面对象中定义的方法（函数）
+			var t = {
+				name:'张三',
+				age:23,
+			}
+		
+			eat:function(){
+				console.log('字面量对象中的this:');
+				console.log(this);
+			}
+			
+			t.eat()
+			
+			//事件处理函数
+			document.querySelector('button').addEventListener('click',function(){
+				console.log('事件函数中的this:');
+				console.log(this);
+			})
+			//定时器里面的函数
+			function run(){
+			console.log('定时器函数中的this:');
+			console.log(this);
+			}
+			setTimeout(run,2000);//需要加上分号，否则会影响下面的立即执行函数
+			//立即执行函数
+			(function(){
+				console.log('立即执行函数中的this:');
+				console.log(this);
+			})()
+		</script>
+	</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//有一个包含工资的数组[1500,1200,2000,2100,2200,1800]把超过2000的删除，剩余的放到一个新的数组打印新的数组
+
+			//定义一个新的数组，用于存放不超过2000的元素
+			var arr = [1500, 1200, 2000, 2100, 2200, 1800]
+			var newArr =[]
+			for (var i = 0; i < arr.length; i++) {
+				if (arr[i] <= 2000) {
+					newArr.push(arr[i])
+				}
+			}
+			console.log(newArr);
+			
+			
+		</script>
+	</body>
+</html>

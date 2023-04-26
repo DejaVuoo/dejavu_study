@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="./img/off.gif" alt="">
+    <script>
+        /* 
+            原始方法
+                element.setAttribute()	设置或者改变指定属性并指定值。
+                element.getAttribute()	返回指定元素的属性值
+                element.getAttribute()	返回指定元素的属性值
+
+            简化方式
+                元素对象.属性名 = 属性值  设置或改变元素的属性
+                元素对象.属性名           获取元素的属性
+
+        */
+
+        //1,获取img元素对象
+        var img =  document.querySelector('img')
+        console.dir(img);
+
+        //2.设置图片的src属性(使用原始方法)
+        //img.setAttribute('src','./img/on.gif')
+
+        //2,设置图片的src属性(使用简化方法)
+        img.src = './img/on.gif'
+
+        //获取元素的src属性
+        console.log(img.src);//http://127.0.0.1:5500/img/on.gif 完整的url地址
+    </script>
+</body>
+</html>

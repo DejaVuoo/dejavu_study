@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>个人技能介绍</title>
+		<!-- 偏爱图标 -->
+		<link rel="shorcut icon" href="favicon.svg" type="image/svg+xml" />
+		<!-- 引入font-aesonme -->
+		<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.2.1/css/all.css" rel="stylesheet">
+		<!-- 引入CSS -->
+		<link rel="stylesheet" href="assets/css/style.css" />
+		<link rel="stylesheet" href="../个人技能介绍_files/bmap.css" />
+		<!--
+		  - preload images 预先加载指定图片资源
+		-->
+		<link rel="preload" as="image" href="./个人技能介绍_files/hero-banner.jpg">
+		<link rel="preload" as="image" href="./个人技能介绍_files/hero-shape-1.png">
+		<link rel="preload" as="image" href="./个人技能介绍_files/hero-shape-2.png">
+	</head>
+	<!-- 网页内容 -->
+	<body id="top" class="loaded">
+
+
+		<div class="preloader " data-preloader>
+			<span class="line"></span>
+		</div>
+
+
+
+		<!--
+		顶部导航
+	-->
+		<header class="header">
+			<div class="container">
+				<!-- 头部LOGO -->
+
+				<a href="#" class="logo">
+					<img src="assets/images/logo.svg" / width="84" height="26" alt="logo">
+				</a>
+				<!-- navbar -->
+				<div class="navbar">
+					<ul class="navbar-list">
+						<li><a href="http://project.x-zd.net/product/#home" class="navbar-link">主页</a></li>
+						<li><a href="http://project.x-zd.net/product/#service" class="navbar-link">技能</a></li>
+						<li><a href="http://project.x-zd.net/product/#about" class="navbar-link">关于</a></li>
+						<li><a href="http://project.x-zd.net/product/#project" class="navbar-link">项目</a></li>
+						<li><a href="http://project.x-zd.net/product/#review" class="navbar-link">评价</a></li>
+						<li><a href="http://project.x-zd.net/product/#contact" class="navbar-link">联系</a></li>
+					</ul>
+				</div>
+
+				<div class="header-btn">
+					<a href="#">
+						<span class="span">获取报价</span>
+						<div class="steam"><i class="fa-brands fa-steam fa-fade"></i></div>
+					</a>
+				</div>
+			</div>
+		</header>
+		<!-- 主体 -->
+		<main>
+		<!-- 第一部分 -->
+		<section class="section1">
+			<div class="hero">
+				<!-- 左边文字 -->
+				<div class="container ">
+					<h1 class="title">我将为你<br>提供完整的<br>产品服务</h1>
+					<div class="wrapper">
+						<a href="http://project.x-zd.net/product/#" class="btn ">
+							<span class="span">下载示例</span>
+							<div class="steam"><i class="fa-brands fa-laravel fa-spin fa-spin-reverse"></i></div>
+						</a>
+						<p class="hero-text">
+							无论是本地还是云端<br>所有的服务都是安全的
+						</p>
+					</div>
+				</div>
+				<!-- --------------------------------------------------------- -->
+				<!-- 右边图片 -->
+				<div class="banner-outline ">
+					<div class="hero-banner " data-tilt="">
+						<img src="assets/images/hero-banner.jpg" class="img-cover">
+
+					</div>
+					<span class="span title">Deja Vu</span>
+				</div>
+			</div>
+		</section>
+
+
+		<!-- --------------------------------------------------------- -->
+		<!-- 第二部分 -->
+		<!-- --------------------------------------------------------- -->
+		<section class="section2">
+			<div class="service">
+				<ul class="servicebar-list">
+					<li class="service-item">
+						<div class="service-card">
+							<div class="card-icon">
+								<img src="assets/images/service-icon-1.svg" />
+							</div>
+							<h3 class="card-title">
+								<a href="http://project.x-zd.net/product/#">
+									网页 <br>
+									开发
+								</a>
+							</h3>
+						</div>
+					</li>
+					<li class="service-item">
+						<div class="service-card">
+							<div class="card-icon">
+								<img src="assets/images/service-icon-2.svg" />
+							</div>
+							<h3 class="card-title">
+								<a href="http://project.x-zd.net/product/#">
+									数字 <br>
+									营销
+								</a>
+							</h3>
+						</div>
+					</li>
+					<li class="service-item">
+						<div class="service-card">
+							<div class="card-icon">
+								<img src="assets/images/service-icon-3.svg" />
+							</div>
+							<h3 class="card-title">
+								<a href="http://project.x-zd.net/product/#">
+									图表 <br>
+									设计
+								</a>
+							</h3>
+						</div>
+					</li>
+					<li class="service-item">
+						<div class="service-card">
+							<div class="card-icon">
+								<img src="assets/images/service-icon-4.svg" />
+							</div>
+							<h3 class="card-title">
+								<a href="http://project.x-zd.net/product/#">
+									移动 <br>
+									App
+								</a>
+							</h3>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</section>
+
+		<!-- --------------------------------------------------------- -->
+		<!-- 第三部分 -->
+		<!-- --------------------------------------------------------- -->
+
+		<section class="section3">
+			<div class="container">
+
+				<!-- --------------------------------------------------------- -->
+
+				<!-- 展示栏 -->
+				<div class="tab-box">
+					<ul class="tab-btn-list">
+						<li class="tab-btn-item " id="current">
+							<button class="tab-btn">
+								关于我
+							</button>
+						</li>
+						<li class="tab-btn-item">
+							<button class="tab-btn">
+								技术栈
+							</button>
+						</li>
+						<li class="tab-btn-item">
+							<button class="tab-btn">
+								采访
+							</button>
+						</li>
+						<li class="tab-btn-item">
+							<button class="tab-btn">
+								奖项
+							</button>
+						</li>
+						<li class="tab-btn-item">
+							<button class="tab-btn">
+								成果展示
+							</button>
+						</li>
+					</ul>
+				</div>
+				<!-- --------------------------------------------------------- -->
+
+				<!-- 展示框 -->
+
+				<div class="g-container">
+					<!-- 展示框 1-->
+					<div class="show" style="display: block;">
+						<div class="grid-list">
+							<div class="item">
+								<img src="assets/images/about-banner.jpg" / width="570" height="420">
+							</div>
+							<div class="item">
+								<div class="grid-list2">
+									<div class="item1">
+										<h2 class="title">我是人间四月天</h2>
+
+										<p class="about-text">
+											跨越山河去拥抱你，多大风浪都在一起。
+											听到最美的记忆，关于你所有的消息。
+										</p>
+									</div>
+
+									<div class="item3">
+										<span>姓名</span>
+										<h3 class="title">Deja Vu</h3>
+									</div>
+									<div class="item4">
+										<span>移动电话</span>
+										<h3 class="title">10086010010</h3>
+									</div>
+									<div class="item5">
+										<span>电子邮件</span>
+										<h3 class="title">peiqi@xzd.com</h3>
+									</div>
+									<div class="item6">
+										<span>社交媒体</span>
+										<div class="social-list">
+											<a href="http://project.x-zd.net/product/#" class="title">Wx</a>
+											<a href="http://project.x-zd.net/product/#" class="title">QQ</a>
+											<a href="http://project.x-zd.net/product/#" class="title">BOSS</a>
+											<a href="http://project.x-zd.net/product/#" class="title">GitHub</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 展示框 2-->
+					<div class="show">
+						<div class="grid-list">
+							<div class="item">
+								<div>
+									<h2 class="title">花花绿绿的世界里，我只会喜欢你。</h2>
+
+									<p class="section-text">
+										愿你在我看不到的地方安然无恙， 愿你的冬天永远不缺暖阳。
+										愿你的明天不再经历雨打风霜， 愿你的未来永远热泪盈眶。
+									</p>
+								</div>
+								<div class="progress-bar-container">
+									<h3 class="title">网页开发<span>95%</span></h3>
+									<div class="progress-bar1"></div>
+								</div>
+								<div class="progress-bar-container">
+									<h3 class="title">UI设计<span>85%</span></h3>
+									<div class="progress-bar2"></div>
+								</div>
+							</div>
+							<div>
+								<img src="assets/images/skill-banner.jpg" / width="570" height="420">
+							</div>
+						</div>
+					</div>
+					<!-- 展示框 3-->
+					<div class="show">
+
+						<div class="grid-list3">
+							<div class="imgbar">
+								<img src="assets/images/interview-1.jpg" width="376" height="420">
+							</div>
+							<div class="imgbar">
+								<img src="assets/images/interview-2.jpg" width="376" height="420">
+							</div>
+							<div class="imgbar">
+								<img src="assets/images/interview-3.jpg" width="376" height="420">
+							</div>
+						</div>
+
+
+					</div>
+					<!-- 展示框 4-->
+					<div class="show">
+						<div class="grid-list4">
+							<div class="text">
+								<div class="item">
+
+									<h2 class="title" style="line-height: 50px;"> 我全部的好脾气，因为我爱你。
+										愿我在六十岁的时候陪你看看夕阳，
+										愿我在想起你嘴角微微上扬。
+										愿我在北方的冬天为你披件衣裳，
+										愿我在一贫如洗能有你在身旁。</h2>
+								</div>
+							</div>
+							<div class="item7">
+								<div class="imgbar">
+									<img src="assets/images/awward-1.jpg">
+								</div>
+							</div>
+							<div class=" item8">
+								<div class="imgbar">
+									<img src="assets/images/awward-2.jpg">
+								</div>
+							</div>
+							<div class="item9">
+								<div class="imgbar">
+									<img src="assets/images/awward-3.jpg">
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 展示框 5-->
+					<div class="show">
+						<div class="grid-list5">
+							<div class="exhibition-1">
+								<div class="imgbar">
+									<img src="assets/images/exhibition-1.jpg" />
+								</div>
+							</div>
+							<div class="exhibition-2">
+								<div class="imgbar">
+									<img src="assets/images/exhibition-2.jpg" />
+								</div>
+							</div>
+							<div class="exhibition-3">
+								<div class="imgbar">
+									<img src="assets/images/exhibition-3.jpg" />
+								</div>
+							</div>
+							<div class="exhibition-4">
+								<div class="imgbar">
+									<img src="assets/images/exhibition-4.jpg" />
+								</div>
+							</div>
+							<div class="exhibition-5">
+								<div class="imgbar">
+									<img src="assets/images/exhibition-5.jpg" />
+								</div>
+							</div>
+							<div class="exhibition-6">
+								<div class="imgbar">
+									<img src="assets/images/exhibition-6.jpg" />
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+		</section>
+
+
+		<!-- --------------------------------------------------------- -->
+		<!-- 第四部分 -->
+		<!-- --------------------------------------------------------- -->
+
+
+		<!-- 中间小栏 -->
+		<section class="section4">
+			<div class="container">
+
+				<h2 class="title">让我来为您的下个项目出谋划策！</h2>
+
+				<div class="btn" >
+					<a href="http://project.x-zd.net/product/#" >
+						<span class="span">现在联系我!</span>
+						<div class="steam"><i class="fa-brands fa-gratipay fa-shake" width="10%"></i></div>
+					</a>
+				</div>
+			</div>
+		</section>
+
+
+
+		<!-- --------------------------------------------------------- -->
+		<!-- 第五部分 -->
+		<!-- --------------------------------------------------------- -->
+
+
+
+		<section class="section5">
+			<ul class="project">
+				<li class="project-item">
+					<div class="item-container">
+						<img src="assets/images/project-1.jpg" />
+
+					</div>
+					<div class="text-container">
+						<p class="">网页产品</p>
+
+						<h2 class="title">
+							<a href="http://project.x-zd.net/product/#" class="title">Creative &amp; experienced digital
+								design studio</a>
+						</h2>
+					</div>
+				</li>
+				<li class="project-item">
+					<div class="item-container">
+						<img src="assets/images/project-2.jpg" />
+
+					</div>
+					<div class="text-container">
+						<p class="">网页产品</p>
+
+						<h2 class="title">
+							<a href="http://project.x-zd.net/product/#" class="title">Front End Development &amp;
+								Maintenance</a>
+						</h2>
+					</div>
+				</li>
+				<li class="project-item">
+					<div class="item-container">
+						<img src="assets/images/project-3.jpg" />
+
+					</div>
+					<div class="text-container">
+						<p class="">网页产品</p>
+
+						<h2 class="title">
+							<a href="http://project.x-zd.net/product/#" class="title">Flutter Framework &amp; Warframe
+								Design</a>
+						</h2>
+					</div>
+				</li>
+			</ul>
+		</section>
+
+
+
+
+		<!-- --------------------------------------------------------- -->
+		<!-- 第六部分 -->
+		<!-- --------------------------------------------------------- -->
+
+		<section class="section6">
+			<div class="container">
+				<div class="text-container1">
+					<h2 class="title">
+						<a href="http://project.x-zd.net/product/#" class="title"> “ 缘分让我们相遇乱世以外
+
+							命运却要我们危难中相爱
+
+							也许未来遥远在光年之外
+
+							我愿守候未知里
+
+							为你等待 ”</a>
+					</h2>
+				</div>
+				<div class="text-container2">
+					<img src="assets/images/client.png" />
+					<div>
+						<p class="title ">Alexis browni JR.</p>
+
+						<p class="title">Founder of alxis co.</p>
+					</div>
+				</div>
+			</div>
+
+		</section>
+
+
+
+		<!-- --------------------------------------------------------- -->
+		<!-- 第七部分 -->
+		<!-- --------------------------------------------------------- -->
+
+		<section class="section7">
+			<div class="container">
+				<h1 class="title">保持联系</h1>
+				<div class="box-container">
+					<div class="box-1">
+						<input type="text" name="name" placeholder="姓名" autocomplete="off" required="" class="input">
+
+						<input type="email" name="email_address" placeholder="邮箱" autocomplete="off" required=""
+							class="input">
+
+						<input type="tel" name="phone" placeholder="电话" autocomplete="off" class="input">
+
+						<textarea name="message" placeholder="备注信息" required="" class="input"></textarea>
+
+						<!-- <div class="btn" style="width: 40%;">
+							<a href="#">
+								<span class="span">获取报价</span>
+								<div class="steam"><i class="fa-brands fa-amazon-pay fa-bounce"></i></div>
+							</a>
+
+						</div> -->
+
+						<div class="header-btn" style="width: 42%; >
+							<a href=" #">
+							<span class="span">获取报价</span>
+							<div class="steam"><i class="fa-brands fa-amazon-pay fa-bounce"></i></div>
+							</a>
+						</div>
+
+					</div>
+					<div class="box-2">
+						<!-- <iframe
+						  src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d898.4329239267093!2d-73.91493787358391!3d40.76299026683699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1671529019371!5m2!1sen!2sbd"
+						  width="600"
+						  height="450"
+						  style="border: 0"
+						  allowfullscreen=""
+						  loading="lazy"
+						  referrerpolicy="no-referrer-when-downgrade"
+						  class="map"
+						></iframe> -->
+						<div id="baidumap"
+							style="overflow: hidden; position: relative; background-image: url(&quot;http://webmap0.bdimg.com/image/api/bg.png&quot;); text-align: left; touch-action: none;"
+							class=" bmap-container">
+							<div id="platform"
+								style="overflow: visible; position: absolute; z-index: 5; left: 0px; top: 0px; cursor: url(&quot;http://webmap0.bdimg.com/image/api/openhand.cur&quot;) 8 8, default;">
+								<div id="mask" class=" BMap_mask"
+									style="position: absolute; left: 0px; top: 0px; z-index: 9; overflow: hidden; user-select: none; width: 500px; height: 450px; opacity: 0; background: rgb(0, 0, 0); transition: opacity 0.4s ease 0s;">
+								</div>
+								<div
+									style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 200;">
+									<div
+										style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 800;">
+									</div>
+									<div
+										style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 700;">
+										<div class="BMap_Marker BMap_noprint" unselectable="on" ""=""
+											style="position: absolute; padding: 0px; margin: 0px; border: 0px; cursor: pointer; width: 23px; height: 25px; left: 317px; top: 72px; z-index: 0; transform-origin: 10px 25px;"
+											title=""></div>
+									</div>
+									<div
+										style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 600;">
+									</div>
+									<div
+										style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 500;">
+									</div>
+									<div
+										style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 400;">
+									</div>
+								</div>
+							</div>
+							<div class="click-ripple-container">
+								<div class="click-ripple"></div>
+							</div>
+							<div class=" anchorBL" style="position: absolute; z-index: 10; inset: auto auto 15px 5px;">
+								<img src="./个人技能介绍_files/logo_hd.png" style="height:21px;width:62px;">
+							</div><canvas width="1000" height="900"
+								style="position: absolute; left: 0px; top: 0px; width: 500px; height: 450px; z-index: 0;"></canvas>
+							<div unselectable="on" class=" BMap_cpyCtrl anchorBL"
+								style="cursor: default; white-space: nowrap; text-size-adjust: none; inset: auto auto 2px 2px; position: absolute; z-index: 10;">
+								<span _cid="1" style="display: block;"><span
+										style="background: rgba(255, 255, 255, 0.701961);padding: 0px 1px;line-height: 16px;display: inline;height: 16px;">©&nbsp;2023
+										Baidu - GS(2021)6026号 - 甲测资字11111342 - 京ICP证030173号 - Data © 百度智图</span></span>
+							</div>
+						</div>
+					</div>
+					<div class="box-3">
+						<ul class="contact-list">
+							<li class="contact-item">
+								<div class="item-icon">
+									<img src="assets/images/contact-icon-1.png" width="50" height="50"
+										alt="contact icon">
+								</div>
+
+								<div>
+									<span class="title">13000000000</span>
+
+									<span class="title">13812345678</span>
+								</div>
+							</li>
+							<li class="contact-item">
+								<div class="item-icon">
+									<img src="assets/images/contact-icon-2.png" width="50" height="50" " alt=" contact
+										icon">
+								</div>
+								<div>
+									<span class="title">
+										武汉市关山大道
+										<br>中地科技园
+									</span>
+								</div>
+							</li>
+							<li class="contact-item">
+								<div class="item-icon">
+									<img src="assets/images/contact-icon-3.png" width="50" height="50" " alt=" contact
+										icon">
+								</div>
+								<div>
+									<span class="title">peiqi@xzd.com</span>
+
+									<span class="title">qiaozhi@xzd.net</span>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+		</section>
+		</main>
+		<!-- --------------------------------------------------------- -->
+		<!-- FOOTER -->
+		<!-- --------------------------------------------------------- -->
+
+		<footer class="footer">
+			<div class="container">
+				<p class="copyright">Copyright - 2023</p>
+
+				<a href="#top" class="back-top-btn">
+					<span class="span">回到顶部</span>
+
+				</a>
+			</div>
+		</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<!--
+		  - #CUSTOM CURSOR
+		-->
+
+		<div class="cursor-dot" data-cursor="" style="left: 737px; top: 100px;"></div>
+		<div class="cursor-outline" data-cursor="" style="left: 737px; top: 100px;"></div>
+
+
+
+		<!-- 百度地图 -->
+		<script type="text/javascript" src="../个人技能介绍_files/api"></script>
+		<script type="text/javascript" src="../个人技能介绍_files/getscript"></script>
+		<link rel="stylesheet" type="text/css" href="../个人技能介绍_files/bmap.css">
+
+		<!-- js外链 -->
+		<script src="assets/js/script.js"></script>
+	</body>
+</html>

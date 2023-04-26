@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#cursor {
+			  position: absolute;
+			  top: 0px;
+			  left: 0px;
+			  width: 100px;
+			  height: 100px;
+			  border-radius: 50%;
+			  background-color: #ff0;
+			  opacity: 0;
+			  pointer-events: none;
+			  z-index: 9999;
+			  transition: all 0.3s ease;
+			}
+			
+			
+			button:hover{
+				border: 2px solid saddlebrown;
+			}
+			
+			.imgDiv{
+				width: 200px;
+				height: 200px;
+				background-color: #ff0;
+				
+			}
+			.imgDiv:hover{
+				border: 2px solid saddlebrown;
+			}
+		</style>
+	</head>
+	<body>
+		<a href="#">Link 1</a>
+		<button>Button 1</button>
+		<div id="cursor"></div>
+		<div class="imgDiv">
+			<span class="span">获取报价</span>
+		</div>
+	</body>
+	
+</html>

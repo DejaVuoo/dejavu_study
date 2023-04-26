@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var num = 100; //全局变量，定义全局作用域下
+			
+			function f(){
+				var num = 200 ; //局部变量，定义在局部作用域下
+				console.log(num);
+			}
+			f() //打印的是200 因为就近原则
+		</script>
+		<script>
+			console.log(num); //100 打印的是全局作用域下的变量
+		</script>
+	</body>
+</html>

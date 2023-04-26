@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            长方形类：
+                属性：长、宽
+                行为：计算周长的方法、计算面积的方法
+        */
+       function Square(width,height){
+            this.width = width
+            this.height = height
+
+            //周长
+            this.girth = function(){
+                return (width+height)*2
+            }
+
+            //面积
+            this.area = function(){
+                return width*height
+            }
+       }
+
+       //创建对象
+       var s = new Square(10,20)
+
+       //调用方法
+      console.log(s.girth()); 
+      console.log(s.area());
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/*
+			
+			 随机生成手机号
+			
+			*/
+
+			function getMoble() {
+
+				var mobleArray = new Array("130", "131", "132", "133", "150", "166", "175", "176", "185", "186");
+
+				var i = parseInt(10 * Math.random());
+
+				var prefix = mobleArray[i];
+
+				for (var j = 0; j < 8; j++) {
+
+					prefix = prefix + Math.floor(Math.random() * 10);
+
+				}
+
+				return prefix;
+
+			}
+			/* 
+			 
+			 将任意手机号 比如12345678901 中间4位替换成 123****8901
+			 
+			 replace函数的第二个参数newvalue比较特殊，它有一下几个特殊字符串：
+			 
+			 $$  直接量符号(就是当做'$$'字符用)
+			 $&  与正则相匹配的字符串
+			 $`  匹配字符串左边的字符 
+			 $’  匹配字符串右边的字符
+			 $1,$2,$,3,…,$n  匹配结果中对应的分组匹配结果
+			 想要消除$的影响可以写成函数的返回值，函数具有一下几个参数：
+			 
+			 第一个参数：匹配到的字符串
+			 中间的参数：如果正则使用了分组匹配就为多个否则无此参数
+			 倒数第二个参数：匹配字符串的对应索引位置
+			 最后一个参数：原始字符串
+			 
+			 */
+			function getTel(tel) {
+				
+				var reg = /^(\d{3})\d{4}(\d{4})$/g;
+				
+				return tel.replace(reg, "$1****$2");
+			}
+
+			
+				var tel = getMoble()
+				
+				console.log(getTel(tel));
+		</script>
+	</body>
+</html>

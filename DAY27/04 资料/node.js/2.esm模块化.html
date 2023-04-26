@@ -1,0 +1,26 @@
+<!--
+ Copyright (c) 2023 smable<316245279@qq.com>
+ 
+ This software is released under the MIT License.
+ https://opensource.org/licenses/MIT
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- //a.js这个模块是小王开发的 -->
+    <script type="module">
+        //如何在浏览器环境中进行模块化的引入 在ES6中定义了最新的模块版标准
+        import {a,x} from './2-1.a.js'
+        import fn from './2-1.a.js'//在默认导入的情况下 可以任意指定导入的名称
+        import {c,x as _x} from './2-2.b.js'
+        console.log(fn(),a,x)
+    </script>
+</body>
+</html>

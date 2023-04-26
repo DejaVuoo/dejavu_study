@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        在浏览器中,页面中所有的script标签其实都在一个环境中,叫做全局环境
+
+        js引擎会整合所有的script标签里面的内容,产生一个全局对象window对象
+
+        window对象就代表全局环境
+
+        f1定义在全局环境中,f1就是全局函数
+
+        通过打印可以看出 f1其实就是window对象的一个方法
+
+     -->
+
+    <script>
+        function f1(){
+            console.log(1111);
+        }
+
+        console.log(window);
+
+        //验证
+        console.log(window.f1 === f1);//true  验证了全局变量是全局对象window的一个方法
+    </script>
+
+    <script>
+         window.f1()  //不会报错的
+    </script>
+</body>
+</html>

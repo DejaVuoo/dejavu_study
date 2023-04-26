@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var num1 = 10
+
+        function f1(){
+            
+            function f2(){
+                console.log(num1);
+                console.dir(f2);
+            }
+
+            f2()
+            
+            console.dir(f1);//[[Scopes]]:就是函数作用域链的数组
+        }
+
+        f1()
+
+        
+        /* 
+            [[Scopes]]:就是函数作用域链的数组
+        */
+    </script>
+</body>
+</html>

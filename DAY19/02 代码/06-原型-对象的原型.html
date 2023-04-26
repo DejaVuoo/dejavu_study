@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function Student(name, age) {
+				this.name = name
+				this.age = age
+		
+				/* this.study = function() {
+					console.log('学习');
+				} */
+			}
+			
+			console.dir(Student); //可以看出类中有一个prototype属性，可以看做是类的静态成员，可以把公共的东西放在上面
+			
+			//做法
+			Student.prototype.study = function(){
+				console.log('学习');
+			}
+			
+			//创建两个实例对象
+			var stu1 = new Student('张三', 23)
+			stu1.study()
+			var stu2 = new Student('李四', 23)
+			stu2.study()
+			
+			//打印原型对象
+			console.log(Student.prototype);
+			
+			
+			//打印对象
+			/* 
+					 age:23
+					 name:"张三"
+					 [[Prototype]]:Object   //[Prototype]就是对象的原型
+			 */
+			console.log(stu1);
+			//打印对象的原型
+			console.log(stu1.__proto__); //{study:f,constructor:f} 可以看出对象的原型指向了原型对象
+
+	
+		</script>
+	</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //获取用户输入的元素.判断这个元素在数组中的索引,若不存在,索引为-1
+
+
+        var arr = [10,20,80,30,70]
+
+
+        //获取输入的数据
+        var num = prompt('请输入一个数据')
+
+        //定义一个元素来接收
+        var index = -1  //-1代表这个索引不存在
+
+        //判断
+        for(var i=0;i<arr.length;i++){
+            if(arr[i] == num){
+                index = i
+                break
+            } 
+        }
+
+        //打印数据所在的索引
+        console.log(index);
+
+    </script>
+</body>
+</html>

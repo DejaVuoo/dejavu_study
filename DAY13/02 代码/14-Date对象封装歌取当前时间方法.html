@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function getToday() {
+				var D = new Date();
+				var date = D.getUTCDate()
+				var day = D.getUTCDay()
+				var year = D.getUTCFullYear()
+				var month = D.getUTCMonth()
+
+				var weekday = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"]
+
+				var today = `今天是${year}年${month+1}月${date}日${weekday[day]}`
+				return today
+
+			}
+
+			console.log(getToday());
+		</script>
+	</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            /* 这里一开始设置的并不是盒子最终的尺寸,而是盒子内容区域的宽高 */
+            width: 200px;
+            height: 200px;
+
+            /* 设置边框 */
+            border: 10px solid green;
+
+            background: lightblue;
+
+            /* 
+                问题
+                    添加边框之后,盒子的最终尺寸变成220
+
+                原因
+                    盒子宽度 = 左边框宽度 + 内容宽度 + 右边框宽度 = 10 + 200 + 10 = 220
+
+                解决
+                    手动内减(根据计算的结果在内容区域手动的将内容区域的宽高减去20px)
+            */
+
+            /* 重新设置内容区域的宽高 */
+            width: 180px;
+            height: 180px;
+
+        }
+    </style>
+</head>
+<body>
+    <!-- 需求:创建一个最终宽度是200px,高度是200px,边框是10px的盒子 -->
+
+    <div></div>
+</body>
+</html>

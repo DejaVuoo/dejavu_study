@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        var arr = [10,20,80,30,70]
+
+        //第一步:在循环的外面定义一个求和变量
+        var sum = 0
+
+        for(var i=0;i<arr.length;i++){
+            //第二步:在循环里面进行累加
+            sum += arr[i]
+        }
+
+        //第三步:打印最终累加后的值
+        console.log(sum);
+
+        //求平均值
+        console.log(sum/arr.length);
+
+    </script>
+</body>
+</html>

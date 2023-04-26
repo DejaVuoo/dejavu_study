@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(a);
+
+        var a = 10
+
+        console.log(a);
+
+        function a(){
+            console.log(a);
+        }
+
+        a()
+
+        /* 
+            原因
+                代码产生了歧义,定义的变量名和函数名冲突,导致程序报错
+            
+            想要报错的本质,需要了解js预编译的过程
+            
+            js预编译目的:
+                就是为了消除歧义,让代码能够从上往下执行(也称为预处理)
+        
+        */
+
+    </script>
+</body>
+</html>

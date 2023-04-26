@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.father{
+				/* 主轴默认是水平方向：元素就会沿着水平方向排布 */
+				background: cornflowerblue;
+				display: flex;/* 使用flex布局，只需要添加一个属性，就可以实现子元素间距等分 */
+				
+				flex-direction: column;/* 这个属性可以将主轴方向调整为垂直方向，将来元素就会沿着垂直方向排布*/
+			
+				/* 
+					所有的flex容器都有两个轴
+						主轴（横轴），默认水平方向，子元素就会默认沿着水平方向排布
+						
+				 
+				 
+				 */
+			}
+			.son{
+				
+				width: 100px;
+				height: 100px;
+				background: greenyellow;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div class="father"><!--father:弹性容器父元素 -->
+			<div class="son">1</div><!-- -->
+			<div class="son">2</div>
+			<div class="son">3</div>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="c1">一无所有王健林</div>
+
+    <div class="c2"><h1>不识妻美刘强东</h1></div>
+    <script>
+        //分别使用innerHTML和innerText进行设置
+        document.querySelector('.c1').innerHTML = '<h1>一分不少许家印</h1>'
+        document.querySelector('.c1').innerText= '<h1>一分不少许家印</h1>' //使用innerText设置不了样式
+
+        //分别使用innerHTML和innerText进行获取
+        console.log(document.querySelector('.c2').innerHTML);//<h1>不识妻美刘强东</h1>
+        console.log(document.querySelector('.c2').innerText);//不识妻美刘强东  获取不了样式
+
+        //结论
+            //innerText只要用于操作纯文本
+    </script>
+</body>
+</html>

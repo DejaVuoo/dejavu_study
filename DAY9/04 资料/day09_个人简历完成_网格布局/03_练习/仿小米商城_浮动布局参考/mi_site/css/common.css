@@ -1,0 +1,282 @@
+/* 抽取版心样式的公共类 */
+.container{
+    width: 1226px;
+    margin: 0 auto;
+}
+
+/* 顶部选择栏 */
+.site-topBar{
+    height: 40px;
+    background: #333;
+}
+
+/* 设置版心的样式 */
+.site-topBar .container{
+    height: 40px;
+    /* background: skyblue; */
+}
+
+/* 设置顶部字体样式(因为它下面模块的字体样式是一样的,放在父控件中) */
+.site-topBar a{
+    font-size: 12px;
+    color: #b0bbb0;
+    line-height: 40px;
+}
+
+.site-topBar a:hover{
+    color: #fff;
+}
+
+/* 设置超链接中间的分割线 */
+.site-topBar span{
+    font-size: 12px;
+    margin: 0 0.3em;
+    color: #424242;
+}
+
+/* 设置购物车的样式 */
+.site-topBar .top-cart{
+    width: 120px;
+    height: 40px;
+    background: #424242;
+    margin-left: 15px;
+    text-align: center;
+}
+
+/* 设置购物车的点击范围 */
+.site-topBar .top-cart a{
+    display: block;
+    width: 120px;
+    height: 40px;
+}
+
+/* 设置购物车光标移入效果 */
+.site-topBar .top-cart a:hover{
+    background: #fff;
+    color: #ff6700;
+}
+
+/* 设置用户信息中'消息通知'的内边距 */
+.site-topBar .top_info .message{
+    padding: 0 10px;
+}
+
+/* 去掉top-info分隔符中的margin */
+.site-topBar .top_info span{
+    margin: 0;/* 覆盖 */
+}
+
+/* 设置头部div样式 */
+.site-header{
+    height: 100px;
+    /* background: pink; */
+}
+
+/* 设置header-logo样式 */
+.site-header .header-logo{
+    width: 62px;
+    height: 56px;
+    /* background: skyblue; */
+    margin-top: 22px;
+}
+
+/* 设置header-logo中a标签的点击范围 */
+.site-header .header-logo a{
+    display: block;
+    width: 56px;
+    height: 56px;
+}
+/* 设置header-logo中a标签的图片尺寸 */
+.site-header .header-logo img{
+    width: 56px;
+    height: 56px;
+}
+
+/* 设置头部的导航条 header-nav */
+.site-header .header-nav{
+    width: 850px;
+    height: 100px;
+    /* background: lightblue; */
+}
+
+/* 设置header-nav中ul的内边距 */
+.site-header .header-nav ul{
+    padding: 12px 0 0 172px; /* 确定ul中li元素的位置 */
+}
+
+/* 设置ul中的li样式 */
+.site-header .header-nav li{
+    float: left;
+    height: 88px;
+    /* background: lightgreen; */
+    font-size: 16px;
+}
+
+/* 设置li中a的样式 */
+.site-header .header-nav li a{
+    display: block;
+    padding: 26px 10px 38px;
+}
+
+/* 设置li中a的样式鼠标移入效果 */
+.site-header .header-nav li a:hover{
+    color: #ff6700;
+}
+
+/* 设置搜索框的样式 */
+.site-header .header-search{
+    position: relative;
+    width: 296px;
+    height: 50px;
+    margin-top: 25px;
+    /* background: lightblue; */
+}
+/* 设置左边的文本框 */
+.site-header .header-search .search-text{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 245px;
+    height: 50px;
+    border: 1px solid #e0e0e0;
+    padding: 0 10px;
+    box-sizing: border-box;/* 自动内减 */
+}
+/* 设置右边的提交按钮 */
+.site-header .header-search .icon-search{
+    position: absolute;
+    left: 244px;/* 确保和文本框的边框重合 */
+    top: 0;
+    width: 52px;
+    height: 50px;
+    border: 1px solid #e0e0e0;
+    background: #fff;
+    font-size: 24px;
+    color: #616161;
+    box-sizing: border-box;/* 自动内减 */
+}
+
+/* 设置底部整个div样式 */
+.site-footer{
+    height: 472.3px;
+   /*  background: skyblue; */
+}
+
+/* 设置上面的服务选项div */
+.site-footer .footer-service{
+    height: 79.8px;
+   /*  background: green; */
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* 设置ul的样式 */
+.site-footer .footer-service ul{
+    height: 25px;
+    padding: 27px 0;/* 设置内边距,让li在中间 */
+    /* background: gold; */
+}
+
+/* 设置ul中li样式 */
+.site-footer .footer-service li{
+    float: left;
+    width: 20%;
+    border-left: 1px solid #e0e0e0;
+    box-sizing: border-box;/* 自动内减 */
+    text-align: center;
+    font-size: 16px;
+    line-height: 25px;
+}
+
+.site-footer .footer-service li:first-child{
+    border-left:none;
+}
+
+/* 设置ul中a标签鼠标移入时候的效果 */
+.site-footer .footer-service a:hover{
+    color: #ff6700;
+}
+
+/* 设置a标签中字体图标的样式 */
+.site-footer .footer-service em{
+    margin-right: 6px;
+    font-size: 24px;
+    line-height: 24px;
+    vertical-align: middle;/* 设置垂直居中,默认是基线对齐 */
+}
+
+/* 设置footer-links链接选项的div */
+.site-footer .footer-links{
+    padding: 40px 0;
+}
+
+/* 设置footer-links中的dl */
+.site-footer .footer-links dl{
+    float: left;
+    width: 160px;
+    height: 312.5px;
+}
+
+/* 设置footer-links中的dt */
+.site-footer .footer-links dt{
+    margin-bottom: 26px;
+    font-size: 14px;
+    line-height: 1.25;
+    color: #424242;
+}
+
+/* 设置footer-links中的dd */
+.site-footer .footer-links dd{
+    margin-top: 10px;
+    font-size: 12px;
+    /* 这里设置a标签的样式没有效果,会被base.css中样式覆盖 */
+    /* color: #757575; */
+}
+
+.site-footer .footer-links dd a{
+    color: #757575;
+}
+
+.site-footer .footer-links dd a:hover{
+    color: #ff6700;
+}
+
+/* 设置右边的联系方式div */
+.site-footer .col-contact{
+    width: 251.8px;
+    height: 79.6px;
+    /* background: pink; */
+    border-left: 1px solid #e0e0e0;
+    text-align: center;
+}
+/* 设置电话号码 */
+.site-footer .col-contact .phone{
+    margin-bottom: 5px;
+    font-size: 22px;
+    line-height: 1;
+    color: #ff6700;
+}
+/* 设置工作时间 */
+.site-footer .col-contact .time{
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+/* 设置里面的a标签 */
+.site-footer .col-contact a{
+    display: inline-block;/* 父元素设置的是text-align: center,最好将它转成行内块元素 */
+    width: 118px;
+    height: 28px;
+    border: 1px solid #ff6700;
+    font-size: 12px;
+    line-height: 28px;
+    color: #ff6700;
+}
+
+.site-footer .col-contact a:hover{
+    background: #ff6700;
+    color: #fff;
+}
+
+.site-footer .col-contact em{
+    font-size: 12px;
+    vertical-align: middle;
+}

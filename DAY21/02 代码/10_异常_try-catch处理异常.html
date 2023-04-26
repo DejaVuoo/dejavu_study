@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/* 
+				try {
+				    tryCode - 尝试执行代码块 //一般会把可能会出现问题的代码放在这里，这里也可以做异常的抛出
+				}
+				catch(err) {
+				    catchCode - 捕获错误的代码块 //一般书写异常的捕获与处理的代码
+				}
+				finally {
+				    finallyCode - 无论 try / catch 结果如何都会执行的代码块 //不管有没有异常，都必须要执行的代码，放在这里（日志的记录等
+				}
+				
+				
+				
+				
+			 */
+			try {
+				console.log(a);
+			} catch (error) {
+				console.log(error); //处理方式就打印异常信息
+			} finally {
+				console.log('记录日志');
+			}
+
+
+			console.log(123); //后面的代码还可以正常打印
+		</script>
+	</body>
+</html>

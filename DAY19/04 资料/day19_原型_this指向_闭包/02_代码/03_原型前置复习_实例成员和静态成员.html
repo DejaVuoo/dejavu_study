@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            构造函数中定义的属性和方法都叫做成员    
+
+                实例成员
+                    在构造函数内部,通过this添加的成员(name,age,study)都是实例成员
+                    实例成员只能通过实例化对象访问(实例化对象,就是new出来的对象)
+                
+                静态成员
+                    在构造函数本身上添加的成员,就是静态成员(直接加在Student上)
+                    静态成员只能通过构造函数访问
+
+                静态成员作用
+                    可以把一些公共的东西,比如毕业院校,所在的国家,民族等放在静态成员中
+
+                 应用场景
+                    饮水机和水杯
+                        如果把饮水机定义成实例成员,就相当于每个学生都有一台饮水机,浪费资源
+                        如果把水杯定义成静态成员,就相当于大家共用一个水杯,不太好,一般定义为实例成员
+        
+        */
+
+        function Student(name,age){
+            this.name = name
+            this.age = age
+
+            this.study = function(){
+                console.log('学习');
+            }
+        }
+
+        //创建两个实例对象
+        var stu1 = new Student('张三',23)
+        console.log(stu1);
+        stu1.study()
+
+        var stu2 = new Student('李四',23)
+        stu2.study()
+
+        //添加静态成员
+        Student.graduation = '中地数码'
+        console.log(stu1.graduation);
+        console.log(Student.graduation);
+    </script>
+</body>
+</html>

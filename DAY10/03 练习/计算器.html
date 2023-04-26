@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>计算器</title>
+		<style>
+			button {
+				padding: 10px;
+				font-size: 20px;
+				margin: 5px;
+			}
+
+			input {
+				font-size: 24px;
+				width: 200px;
+				margin: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>计算器</h1>
+		<input type="text" id="result" disabled>
+		<button onclick="clearResult()">AC</button>
+		<button onclick="clearLast()">C</button>
+		<button onclick="setOperation('+')">+</button>
+		<button onclick="setOperation('-')">-</button>
+		<button onclick="setOperation('*')">*</button>
+		<button onclick="setOperation('/')">/</button>
+		<br>
+		<button onclick="addToResult(7)">7</button>
+		<button onclick="addToResult(8)">8</button>
+		<button onclick="addToResult(9)">9</button><br>
+		<button onclick="addToResult(4)">4</button>
+		<button onclick="addToResult(5)">5</button>
+		<button onclick="addToResult(6)">6</button><br>
+		<button onclick="addToResult(1)">1</button>
+		<button onclick="addToResult(2)">2</button>
+		<button onclick="addToResult(3)">3</button>
+		<!-- <button onclick="addToResult()"></button> -->
+		<button onclick="addToResult('.')">.</button>
+		<button onclick="calculate()">=</button>
+		<script>
+			let operation = null;
+			let operand1 = null;
+			let operand2 = null;
+
+			function addToResult(value) {
+				let resultElement = document.getElementById('result');
+				if (resultElement.value === '' && value !== '.') {
+					resultElement.value = value;
+				} else {
+					resultElement.value += value;
+				}
+			}
+
+			function setOperation(op) {
+				let resultElement = document.getElementById('result');
+				operand1 = parseFloat(resultElement.value);
+				resultElement.value = '';
+				operation = op;
+			}
+
+			function clearResult() {
+				document.getElementById('result').value = '';
+			}
+
+			function clearLast() {
+				let resultElement = document.getElementById('result');
+				resultElement.value = resultElement.value.slice( -1);
+			}
+
+			function calculate() {
+				let resultElement = document.getElementById('result');
+				operand2 = parseFloat(resultElement.value);
+				let result;
+				switch (operation) {
+					case '+':
+						result = operand1 + operand2;
+						break;
+					case '-':
+						result = operand1 - operand2;
+						break;
+					case '*':
+						result = operand1 * operand2;
+						break;
+					case '/':
+						result = operand1 / operand2;
+						break;
+				}
+				resultElement.value = result;
+				operation = null;
+				operand1 = null;
+				operand2 = null;
+			}
+		</script>
+	</body>
+</html>

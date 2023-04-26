@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+		//map()通过指定函数处理数组的每个元素，并返回处理后的数组。
+		/*需求：把数组var arr=[1,3,5,8,10,11]里面每一个元素都*2*/
+		
+		
+		var arr=[1,3,5,8,10,11]
+		
+		//定义一个函数：将来数组中的每一个元素都会执行这个函数
+		
+		function operationArr(num){
+			return num * 2
+		}
+		
+		var newarr = arr.map(operationArr)
+		
+		console.log(newarr);
+		
+		
+		/*需求1：把数组var arr=[1,3,5,8,10,11]里面每一个元素都*它的索引值*/
+		
+		
+		function lArr(num,index){
+			return num * index
+		}
+		
+		var larr = arr.map(lArr)
+		
+		console.log(larr);
+		
+		
+		
+		</script>
+	</body>
+</html>

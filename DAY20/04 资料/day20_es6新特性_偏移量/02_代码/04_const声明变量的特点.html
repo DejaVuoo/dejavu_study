@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            const 声明一个只读变量，声明之后不允许改变。意味着，一旦声明必须初始化，否则会报错。
+        */
+
+        //1,const声明的变量也有块级作用域
+        if(true){
+            var num = 20
+            const num1 = 30
+        }
+        console.log(num);
+        //console.log(num1);//m1 is not defined
+
+        //2,const声明的变量,值是不能改变的
+        const num2 = 50
+        //num2 = 60
+        console.log(num2);
+
+        //3,const声明的变量,必须要赋初值,否则无法使用
+        //const num3  
+        //console.log(num3);
+
+        //对于引用数据类型,const声明的变量,虽然地址是不能改变的,但是里面值是可以改变的
+        const  arr = [1,2,3]
+        var arr1 = [4,5,6] //arr1里面其实是存着[4,5,6] 数组的地址
+        //arr = arr1  //不能修改变量arr的地址值
+
+        arr[1] = 8
+        console.log(arr);
+
+        const stu = {name:'张三',age:23}
+        //stu = {name:'李四',age:24} //本质也是把地址赋给stu 报错
+        stu.name = '李四'
+        stu.age = 24
+        console.log(stu);
+ 
+    </script>
+</body>
+</html>

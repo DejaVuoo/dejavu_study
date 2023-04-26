@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <script>
+            /* 
+                应用场景
+                    1,有3个小组,每个小组有3个成员,想保存这些成员的考试成绩
+                    var arr = [[90,80,88],[93,82,88],[98,80,85]]
+
+                    2,表示一个多边形,有很多个点组成,每个点都包含了经纬度
+                    var arr = [[10,20],[20,30],[30,40],[10,20]]
+            */
+
+            //定义一个二维数组,保存一个多边形的坐标
+            var arr = [[10,20],[20,30],[30,40],[10,20]]
+
+            //获取索引为0的点的坐标
+            //console.log(arr[0]);
+
+            //获取索引为0的点的坐标
+            //console.log(arr[0][0]);
+
+            //打印所有点的经纬度(其实就是遍历二维数组)
+
+            /* for(var i=0;i<arr.length;i++){
+                //这里获取的是每一个一维数组
+                var positionArr = arr[i]
+                //遍历一维数组
+                for(var j=0;j<positionArr.length;j++){
+                    console.log(positionArr[j]);
+                }
+            } */
+
+            //上面的简化写法
+            for(var i=0;i<arr.length;i++){
+                for(var j=0;j<arr[i].length;j++){
+                    console.log(positionArr[j]);
+                }
+            }
+        </script>
+</body>
+</html>

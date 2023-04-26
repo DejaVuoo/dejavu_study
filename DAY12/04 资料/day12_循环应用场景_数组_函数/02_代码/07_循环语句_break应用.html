@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 反复询问班主任,你爱我吗?1/0,只要回答不是1,就一直问,直到回答是1为止 */
+        /* 
+            分析
+              直接使用死循环,实现不停发问
+              当回答正确的时候,跳出循环
+        */
+        
+        while(true){
+            //一直问
+            var answer =  prompt('你爱我吗?1/0')
+
+            //判断
+            if(answer == 1){
+                break
+            }
+        }
+
+        alert('我也爱你!')
+
+    </script>
+</body>
+</html>

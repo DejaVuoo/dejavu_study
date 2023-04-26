@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+
+	</head>
+
+	<body>
+		<script>
+			for (var i = 0; i < 10; i++) {
+				setTimeout(function() {
+					console.log(i);
+				}, 1000)
+			}
+
+			//原因：因为i定义在全局变量中，在执行定时器之前，i的值已经被修改成10，执行之后打印的就是10个10
+			//解决方式一：立即执行函数
+			for (var i = 0; i < 10; i++) {
+				(function(index) {
+					setTimeout(function() {
+						console.log(index);
+					}, 1000)
+				})(i)
+			}
+			
+			//解决方式二：使用let
+			/* 解决思路：每创建一个定时器，都会形成
+			一个块级作用域，块级作用域中包含各个的值，互不影响，最后执行定时器的时候，打印的就是 */
+			for (let i = 0; i < 10; i++) {
+				setTimeout(function() {
+					console.log(i);
+				}, 1000)
+			}
+		</script>
+
+
+	</body>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: black;
+        }
+
+        .cursor-dot,
+        .cursor-outline {
+            display: none;
+        }
+
+        .cursor-dot,
+        .cursor-outline {
+            display: block;
+            position: fixed;
+            top: -60px;
+            left: -60px;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            transition-property: opacity, transform;
+            transition-duration: 300ms;
+            transition-timing-function: ease-in-out;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .cursor-dot {
+            width: 60px;
+            height: 60px;
+            background-color: white;
+            transform: translate(-50%, -50%) scale(0.1);
+        }
+
+        .cursor-dot.hovered {
+            transform: translate(-50%, -50%) scale(1); /* 缩放 */
+            mix-blend-mode: exclusion;
+        }
+
+        .cursor-outline {
+            width: 30px;
+            height: 30px;
+            border: 2px solid white;
+            opacity: 0.5;
+            transition-duration: 100ms;
+        }
+
+        .cursor-outline.hovered {
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <a style="color: white;" href="">百度一下</a>
+
+    <!-- 光标里面的小白点 -->
+    <div class="cursor-dot" data-cursor></div>
+    <!-- 光标外边的轮廓 -->
+    <div class="cursor-outline" data-cursor></div>
+
+    <script>
+
+
+        //获取a标签
+        const a = document.querySelector('a')
+
+        //获取两个跟谁物
+        const cursors = document.querySelectorAll('[data-cursor]')
+
+        //获取鼠标的位置,根据鼠标的位置 设置 跟谁物的位置
+        window.addEventListener("mousemove", function (event) {
+
+            const posX = event.clientX;
+            const posY = event.clientY;
+
+            /** 光标点位置 */
+            cursors[0].style.left = `${posX}px`;
+            cursors[0].style.top = `${posY}px`;
+
+            /** 光标轮廓位置 */
+            setTimeout(function () {
+                cursors[1].style.left = `${posX}px`;
+                cursors[1].style.top = `${posY}px`;
+            }, 80);
+
+        });
+    
+        //鼠标移入的时候添加样式
+        a.addEventListener('mouseover', function () {
+            //设置两个跟谁物的样式
+            cursors.forEach(function(item){
+                item.classList.add('hovered')
+            })
+            
+        })
+
+        //鼠标移出的时候移出样式
+        a.addEventListener('mouseout', function () {
+            //移出两个跟谁物的样式
+            cursors.forEach(function(item){
+                item.classList.remove('hovered')
+            })
+        })
+
+    </script>
+</body>
+
+</html>

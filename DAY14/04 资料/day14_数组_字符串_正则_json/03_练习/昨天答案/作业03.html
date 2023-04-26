@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // JS 封装一个函数计算距离某一天还有多少天
+        function restDate(date) {
+            var target = +new Date(date);
+            var today = +new Date();
+            var A_DAY = 1000 * 60 * 60 * 24;
+            var A_HOUR = 1000 * 60 * 60;
+            var A_MINUTE = 1000 * 60;
+            var A_SECOND = 1000;
+            var diff = target - today;
+            var restDays = Math.floor(diff / A_DAY);
+            var restHours = Math.floor((diff - restDays * A_DAY) / A_HOUR);
+            var restMinutes = Math.floor((diff - restDays * A_DAY - restHours * A_HOUR) / A_MINUTE);
+            var restSeconds = Math.floor((diff - restDays * A_DAY - restHours * A_HOUR - restMinutes * A_MINUTE) / A_SECOND)
+            return `距离 ${date} 还剩余 ${restDays}天${restHours}时${restMinutes}分${restSeconds}秒`;
+        }
+
+        //使用
+        var date = new Date('2023-5-1 18:00:00')
+        console.log(restDate(date));
+    </script>
+</body>
+</html>

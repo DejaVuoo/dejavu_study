@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            作用
+                用来连接多个条件
+            生活中的应用
+                女孩子找男朋友          高 并且 富  并且 帅     高&&富&&帅
+                男孩子找女朋友          白 或者 富  或者 美     白||富||美
+                屌丝找女朋友              非硅胶                 !硅胶
+                程序员找女朋友          new GirlFriend()
+
+            特点
+                运算的结果都是boolean类型
+
+            题目
+                弹框录入一个年份,判断这个年份是否是闰年(打印true或者false即可)
+                1,能被4整除,不能被100整除
+                2,能被400整除
+        */
+
+        //&&:同真为真,一假则假
+        console.log(true&&true);//true
+        console.log(true&&false);//false
+        console.log(false&&false);//false
+
+        //||:一真为真,同假则假
+        console.log(true||true);//true
+        console.log(true||false);//true
+        console.log(false||false);//false
+
+        //! 真变假,假变真
+        console.log(!true);
+        console.log(!false);
+
+
+    </script>
+</body>
+</html>

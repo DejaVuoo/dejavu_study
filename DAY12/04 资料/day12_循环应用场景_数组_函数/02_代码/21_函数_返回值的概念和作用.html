@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            需求:想拿到10-100的和,来判断是奇数还是偶数
+
+            之前的操作
+                将结果直接打印在控制台上,调用者无法拿到计算后的结果
+
+            解决方案
+                通过return关键字,将操作的结果返回给调用者
+            
+        */
+
+        //定义函数
+        function getSum(min, max) {
+
+            var sum = 0
+            for (var i = min; i <= max; i++) {
+                sum += i
+            }
+
+            //console.log(sum);
+            return sum  //使用return关键字将结果返回给调用者
+        }
+
+        //调用函数
+        var total = getSum(10, 100)
+        console.log(total);
+
+        //拿到结果进行判断
+        if (total % 2 == 0) {
+            console.log('结果是偶数');
+        } else {
+            console.log('结果是奇数');
+        }
+
+        /* 写个函数,求两个数的和 */
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>网格</title>
+		<style>
+			.item1 {
+				grid-area: header;
+			}
+
+			.item2 {
+				grid-area: menu;
+			}
+
+			.item3 {
+				grid-area: main;
+			}
+
+			.item4 {
+				grid-area: right;
+			}
+
+			.item5 {
+				grid-area: footer;
+			}
+
+			.grid-container {
+				/* 开启网格布局 */
+				display: grid;
+				/* 设置行和列 */
+				grid:
+					'header header header header header header'
+					'menu main main main right right'
+					'menu footer footer footer footer footer';
+				grid-gap: 10px;
+				background-color: #2196F3;
+				padding: 10px;
+			}
+                 /*设置单元格样式*/
+			.grid-container>div {
+				background-color: rgba(255, 255, 255, 0.8);
+				text-align: center;
+				padding: 20px 0;
+				font-size: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="grid-container">
+			<div class="item1">头部</div>
+			<div class="item2">菜单</div>
+			<div class="item3">主要内容区域</div>
+			<div class="item4">右侧</div>
+			<div class="item5">底部</div>
+		</div>
+
+	</body>
+</html>

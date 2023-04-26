@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="./img/off.gif" alt="">
+
+    <!-- 
+        使用标记变量来实现切换效果,不再依靠src属性进行判断
+     -->
+
+    <script>
+        //获取图片对象
+        var img =  document.querySelector('img')
+
+        //定义一个标记变量,跟灯泡的状态保持一致
+        var flag = false//表示当前灯泡是灭的
+
+        //添加事件
+        img.onclick = function(){
+            //获取图片的src属性
+            var imgSrc = img.src
+
+            //判断
+            if(flag == false){
+                img.src = './img/on.gif'
+                flag = true  //及时更新flag的状态(跟灯泡的亮灭一致)
+            }else{
+                img.src = './img/off.gif'
+                flag = false  //及时更新flag的状态(跟灯泡的亮灭一致)
+            }
+        }
+
+    </script>
+</body>
+</html>

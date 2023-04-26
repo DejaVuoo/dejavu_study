@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .btn {
+            position: relative;
+            padding: 13px 25px;
+            background-color: orange;
+            color: white;
+            border-radius: 10px;
+            transition: all 1s;
+            overflow: hidden;
+            position: relative;
+            border: 2px solid orange;
+
+            margin: 200px;
+        }
+
+        .btn:hover {
+            color: orange;
+            border: 2px solid orange;
+        }
+
+        .btn::after{
+            position: absolute;
+            left: 0;
+            top:-20px;
+
+            content: '';
+            display: block;
+            width: 150%;
+            height: 300%;
+            background: white;
+            transform: skewY(25deg) translateY(-150px);
+            transition: all 0.5s;
+            z-index: 10;
+        }
+
+        .btn:hover::after{
+            transform: skewY(25deg) translateY(0);
+        }
+
+        /* 3,使用伪元素在btn的前面生成一个按钮 */
+        .btn::before{
+            display: none;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+
+            content: '现在订购';
+            padding: 13px 25px;
+            text-align: center;
+            z-index: 20;
+        }
+        
+        .btn:hover::before{
+            display: block;
+        }
+    </style>
+    
+
+</body>
+    <!-- 
+        步骤
+            1,使用伪元素在btn的上方生成一个旋转的矩形
+            2,给旋转的矩形添加鼠标移入事件,移入的时候,它滑下来
+            3,使用伪元素在btn的前面生成一个新的按钮
+            4,给新的按钮添加鼠标移入事件,移入的时候,显示出来
+     -->
+
+    <button class="btn">现在订购</button>
+</html>

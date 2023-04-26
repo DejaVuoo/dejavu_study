@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            键盘事件,不需要写html元素,直接添加到document上即可
+
+            onkeydown	某个键盘按键被按下。	
+            onkeypress	某个键盘按键被按下并松开。	
+            onkeyup	某个键盘按键被松开。
+        */
+        //onkeydown	某个键盘按键被按下。
+        /* document.onkeydown = function(){
+            console.log('键盘被按下');
+        } */
+
+        //onkeyup	某个键盘按键被松开。
+        /* document.onkeyup = function(){
+            console.log('键盘被松开');
+        }  */
+
+        //onkeypress 某个键盘按键被按下并松开。
+        //onkeypress 只能监听数字和字母的按下,不能监听一些特殊按键的按下操作,可以用它来监听是否按下了大小写
+        document.onkeypress = function(){
+            console.log('键盘被按下');
+        } 
+
+        /* 
+            注意： 在所有浏览器中 onkeypress 事件只能监听字母和数字，不能监听一些特殊按键（ALT、CTRL、SHIFT、ESC、箭头等）。
+            监听一个用户是否按下按键请使用 onkeydown 事件,所有浏览器都支持 onkeydown 事件
+        */
+
+    </script>
+</body>
+</html>

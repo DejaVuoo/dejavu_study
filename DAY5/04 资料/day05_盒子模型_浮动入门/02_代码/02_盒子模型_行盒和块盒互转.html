@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            行级元素(行盒)
+                不能独占一行,设置宽高没有效果,宽高是由内容决定
+
+            块级元素(块盒)
+                独占一行,设置宽高是有效果的
+                如果不设置宽度,默认跟父元素一样宽
+                如果不设置高度,默认是由内容撑开
+
+            display属性
+                block	此元素将显示为块级元素，此元素前后会带有换行符。
+                inline	默认。此元素会被显示为内联元素，元素前后没有换行符。
+                inline-block	行内块元素。（CSS2.1 新增的值）
+                    
+        */
+        span{
+            background: lightblue;
+            width: 100px;
+            height: 100px;
+
+            /* 转成块级元素 */
+            display: block;
+        }
+
+        div{
+            background: lightgreen;
+            width: 100px;
+            height: 100px;
+
+            /* 块级元素默认display是block,这个属性就可以控制行级元素和块级元素是互转 */
+            /*  display: block; */
+
+            /* 转成行级元素 */
+            display: inline;
+
+            /* 转成行内块元素:兼顾了行级和块级元素的特点,可以设置宽高,也可以在一行显示 */
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <span>span</span>
+
+    <div>div</div>
+    <div>div</div>
+    <div>div</div>
+</body>
+</html>

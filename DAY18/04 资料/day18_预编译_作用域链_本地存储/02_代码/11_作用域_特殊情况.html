@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function f1(){
+             a = 10  //a是局部变量,还是全局变量
+            console.log(a);
+        }
+
+        f1()
+
+        console.log(window); //可以看到a是window的一个属性,说明现在a是全局变量,不建议这么写
+
+    </script>
+</body>
+</html>

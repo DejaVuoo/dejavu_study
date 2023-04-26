@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/* Number.NaN 非数字
+	
+			Number.MAX VALUE 最大值
+			
+			Number.MIN VALUE 最小值
+			 
+			 */
+			
+			console.log(Number.MAX_VALUE);//1.7976931348623157e+308是 JavaScript 能够表示的最大数字
+			console.log(Number.MIN_VALUE);//5e-324
+			
+			/* 
+			 Number.parseFloat()	 将字符串转换成浮点数，和全局方法parseFloat()作用一致。Number可以省略
+		
+			 Number.parseInt()	 	将字符串转换成整型数字，和全局方法parseInt()作用一致。Number可以省略
+		 
+			 Number.isInteger() 	判断传递的参数是否为整数。
+			
+			 isNaN()			判断传递的参数是否为isNaN()。
+			 
+			 toFixed()			返回指定小数位数的表示形式。
+			 
+			 
+			 */
+			console.log(parseInt('100'));//100
+			console.log(parseFloat('100.88'));//100.88
+			console.log(Number.isInteger(100.88));//false
+			console.log(isNaN('abc'));//true
+			console.log(10.918.toFixed(2);//1g.92四舍五入
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

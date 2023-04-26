@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/* 
+				概念：
+					是一个函数，有权方法另外一个函数作用域内的变量，这个变量所在的函数叫做闭包
+					
+					f2有权访问f1函数作用域内的num变量，num变量所在的函数f1就是闭包
+					
+					这种方式是从f2的内部去访问f1里面的变量
+			 */
+
+			function f1() {
+				var num = 10
+
+				function f2() {
+					console.log(num);
+				}
+				f2()
+			}
+			f1()
+		</script>
+	</body>
+</html>

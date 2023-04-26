@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.father{
+			width:200px;
+			height:200px;
+			background:lightblue;
+			}
+		
+			.son{
+			
+			/* 不设置宽度，只设置高度，将来宽度跟父元素保持一致*/ */
+			height:100px;
+			background:lightgreen;
+			/* 添加左右内边距* */
+			padding:0 20px;
+			/* 现象
+					父子元素最终的宽度都没有被撑大 
+			
+			   原因
+					因为子元素没有设置内容区域的宽度，后面设置了内边距之后，浏览器会自动帮我们调整（将内容区域宽度减小）
+			 
+			 */
+			}
+		</style>
+	</head>
+	<body>
+		<div class="father">father</div>
+		<div class="son">son</div>
+		
+	</body>
+</html>

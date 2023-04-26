@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			div {
+				width: 600px;
+				margin: 100px auto;
+			}
+
+			.message {
+				display: inline-block;
+				font-size: 12px;
+				color: #999;
+				background: url('img/mess.png') no-repeat left center;
+				padding-left: 20px;
+			}
+
+			.wrong {
+				color: red;
+				background-image: url('img/wrong.png');
+			}
+
+			.right {
+				color: green;
+				background-image: url('img/right.png');
+			}
+		</style>
+	</head>
+	<body>
+		<div class="register">
+			<input type="password" id="ipt" />
+			<p class="message" id='tip'>请输入6~16位密码</p>
+		</div>
+		<script>
+			// 首先判断的事件是表单失去焦点 blur
+			// 如果输入正确则提示正确的信息颜色为绿色小图标变化
+			// 如果输入不是6到16位，则提示错误信息颜色为红色 小图标变化
+			// 因为里面变化样式较多，我们采取className修改样式
+
+			var inputBox = document.getElementById('ipt');
+			var tip = document.getElementById('tip');
+
+
+
+			inputBox.addEventListener('blur', function() {
+				//判断输入密码长度
+				//首先要拿到输入的密码，判断 this.value 长度
+				var length = this.value.length;
+
+				//判断 密码是否在6到16之间
+				if (length >= 6 && length <= 16) {
+
+					console.log('输入密码格式正确');
+					tip.className = 'message right'
+					tip.innerText = '输入密码格式正确'
+				} else {
+
+					console.log('输入密码格式错误');
+					tip.className = 'message wrong'
+					tip.innerText = '输入密码格式错误'
+				}
+			})
+		</script>
+	</body>
+</html>

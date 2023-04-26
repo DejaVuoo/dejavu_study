@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            background: lightblue;
+            margin: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+
+    <script>
+        //获取盒子对象
+         var box = document.querySelector('.box')
+
+         //添加事件
+         box.addEventListener('mousemove',function(e){
+                //首先获取鼠标在页面中的坐标
+                //console.log(e.pageX,e.pageY);
+                let mx = e.pageX
+                let my = e.pageY
+
+                //其次获取盒子在页面中的距离
+                let bx = this.offsetLeft
+                let by = this.offsetTop
+
+                //然后用鼠标距离页面的坐标,减去盒子在页面中的距离
+                let x = mx - bx
+                let y = my - by
+
+                //最后将坐标填充到盒子上面
+                this.innerHTML = `x坐标:${x},y坐标:${y}`
+         })
+    </script>
+</body>
+</html>

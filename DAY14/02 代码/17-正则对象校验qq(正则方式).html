@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/*
+			 写一个方法校验qq号
+			 1,必须是5-15位
+			 2,第一位不能是0
+			 3,全部都是数字
+			 
+			 
+			 */
+			function checkQQ(qq) {
+				//创建正则表达式对象方式一
+				// var regExp = new RegExp('^[1-9][0-9][4,14}$')
+
+				var regexp = /^[1-9]\d{4,14}$/ //这里就不担心被转义，直接使用//创建出来的的就是正则对象
+
+
+
+				//调用方法进行校验
+				var res = RegExp.test(qq)
+
+				//将校验的结果返回
+				return res
+
+
+
+
+			}
+
+			//使用函数
+			var flag = checkQQ('12345')
+			console.log(flag);
+		</script>
+	</body>
+</html>

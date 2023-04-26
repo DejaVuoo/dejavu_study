@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //手机类
+        class Phone{
+            //打电话
+            call(){
+                console.log('打电话');
+            }
+        }
+
+        //新一代手机,不仅可以打电话,还可以打电话的同时进行视频(保留原有功能的基础上,扩展新功能)
+        class NewPhone extends Phone{
+            //打电话
+            call(){
+                //使用super关键字,调用父类的方法(在继承的环境下使用)
+                super.call()
+                console.log('同时视频');
+            }
+        }
+
+        //创建新手机.调用打电话方法
+        const p = new NewPhone()
+        p.call()
+
+
+
+    </script>
+</body>
+</html>

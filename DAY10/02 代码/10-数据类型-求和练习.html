@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/*
+			弹框录入两个整数，求两个数的和
+			问题
+			得到的是两个数拼接的结果
+			原因
+			直接从弹框中获取的数据是字符串类
+			解决
+			使用Number()将数据转成数值类型
+			*/
+
+			var num1 = prompt('请输入第一个整数')
+			console .log(typeof num1);
+			var num2 = prompt('请输入第二个整数')
+			//求和
+			console .log(parseInt(num1) + parseInt(num2));
+			
+			/*
+			
+			parseInt和Number的区别
+			相同点
+				都可以将数字类型的字符串转成数值
+			不同点
+				parseInt可以逐个解析，直到遇到非数字的字符才结束
+				Number.不能逐个解析，只要有非数字的字符，直接显示NaN
+			
+			
+			*/
+		   var n1 =parseInt('111aaa')
+		   console.log(n1);//111
+		   
+		   var n2 =Number('111aaa')/*  */
+		   console .log(n2);//NAN ]
+		   // 
+	
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            /* 开启网格布局 */
+            display: grid;
+
+            /* 设置行和列 */
+            grid-template-rows: 1fr 1fr 1fr;/* 3行 */
+            grid-template-columns: 1fr 1fr 1fr 1fr;/* 4列 */
+
+            background: skyblue;
+            padding: 10px;
+            gap: 10px;
+        }
+
+        /* 设置单元格样式 */
+        .container>div{
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px 0;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        /* 设置子元素的跨行跨列 */
+        .item1{
+            grid-column-start: 1;
+            grid-column-end: 5;
+        }
+
+        .item2{
+            grid-row-start: 2;
+            grid-row-end: 4;
+        }
+
+        .item3{
+            grid-column-start: 2;
+            grid-column-end: 4;
+        }
+
+        .item5{
+            grid-column-start: 2;
+            grid-column-end: 5;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item1">头部</div>
+        <div class="item2">菜单</div>
+        <div class="item3">主要内容区域</div>
+        <div class="item4">右侧</div>
+        <div class="item5">底部</div>
+    </div>
+</body>
+</html>

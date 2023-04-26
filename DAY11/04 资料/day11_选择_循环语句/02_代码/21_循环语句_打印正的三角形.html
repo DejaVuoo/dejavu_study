@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+                ☆
+                ☆☆
+                ☆☆☆
+                ☆☆☆☆ 
+        */
+
+        /* 
+            外层控制行数,内层控制列数
+                现在有4行,所以外层循环的次数就是4
+
+            内层循环控制是每一次循环打印星星的个数,可以找规律
+                行数i                      每一行要打印的星星的个数
+                  1                                 1
+                  2                                 2
+                  3                                 3
+                  i                                 i                                     
+        */
+       var str = ''
+       for(var i=1;i<=4;i++){
+          for(var j=1;j <= i;j++){
+             str += '☆'
+          }
+          str += '\n'
+       }
+       console.log(str);
+    </script>
+</body>
+</html>

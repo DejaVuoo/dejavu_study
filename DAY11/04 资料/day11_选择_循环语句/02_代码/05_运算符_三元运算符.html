@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            三元:有3个元素参与运算  num++：一元运算符  num1+num2:二元运算符
+
+            语法
+                表达式或者变量a ? 表达式或者变量b : 表达式或者变量c
+        */
+
+        // 用三元表达式求2个数的最大值
+        var num1 = 10
+        var num2 = 20
+
+        var max = num1 > num2 ? num1 : num2
+        console.log(max);
+
+        // 用三元表达式求3个数的最大值
+        var n1 = 10
+        var n2 = 20
+        var n3 = 15
+
+        var temp = n1 > n2 ? n1 : n2;
+        var getMax = temp > n3 ? temp : n3
+        console.log(getMax);
+    </script>
+</body>
+</html>

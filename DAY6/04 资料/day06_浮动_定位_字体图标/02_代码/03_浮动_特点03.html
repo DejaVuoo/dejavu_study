@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            特点03
+                浮动元素有特殊的显示效果
+                    行级元素:浮动之后可以设置宽高,相当于变成了块级元素,将来在布局的时候,不需要再加上display:block属性
+                    块级元素:浮动之后,就不会独占一行,一行可以显示多个,可以实现水平布局
+        */
+
+        /* 行级元素设置浮动之后,相当于一个块级元素,可以设置宽高 */
+        span{
+            width: 200px;
+            height: 200px;
+            background: lightblue;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <span class="s1">sp01</span>
+    <span class="s2">sp02</span>
+</body>
+</html>

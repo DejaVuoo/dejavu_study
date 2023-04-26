@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			
+			/* 设置密码输入框盒子样式 */
+			.password{
+				position: relative;  
+				width: 230px;
+				border-bottom: 1px solid #ccc; /* 给盒子设置一个底边样式*/
+				margin: 100px auto;
+			}
+			/* 设置输入框样式 */
+			.password input{
+				width: 170px; /* 输入框的宽度，注意不要超过盒子的宽度*/
+				height: 30px;
+				border: 0; /* 去除输入框默认样式 */
+				outline: none; /* 去除轮廓属性*/
+			}
+			/* 设置眼睛图标样式 */
+			.password img{
+				position: absolute;
+				top: 2px;
+				right: 2px;
+				width: 24px;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 创建密码输入栏 -->
+		<div class="password">
+			<!-- 添加眼睛 -->
+			<label for="">
+				<img src="img/close.png" id="eye"/>
+			</label>
+			<!-- 输入框 -->
+			<input type="password" placeholder="请输入密码"/ id="pwd">
+			
+		</div>
+		<script>
+			var eyeimg = document.getElementById('eye'); //获取图片对象
+			var Ipassword = document.getElementById('pwd'); //获取输入框
+			var open = false //设置眼睛初始状态 true是开
+			eyeimg.addEventListener('click',function(){ //给图片设置点击事件
+				eyeimg.src = open ? ("img/close.png" , Ipassword.type = 'password') : ("img/open.png" , Ipassword.type = 'text' ) ;
+				open = !open ;
+			})
+				
+			
+			
+		</script>
+	</body>
+</html>

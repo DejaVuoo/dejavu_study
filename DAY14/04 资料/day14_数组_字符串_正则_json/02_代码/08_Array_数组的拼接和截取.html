@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //var arr1 = [1,2,3]  var arr2 = [4,5,6]  拼接
+
+        //var arr3 = [1,3,4,6,8,9]  截取前面3个元素,返回一个新数组。
+
+        //concat()	连接两个或更多的数组，并返回结果。
+        var arr1 = [1,2,3]  
+        var arr2 = [4,5,6] 
+        var res1 = arr1.concat(arr2)
+        console.log(res1);
+
+        //slice()	选取数组的一部分，并返回一个新数组。
+        var arr3 = [1,3,4,6,8,9]
+        var res2 = arr3.slice(0,3) /* 包含前面,不包含后面 */
+        console.log(res2);
+
+        //join() 把数组的所有元素放入一个字符串。
+        var res3 = arr3.join(',')
+        console.log(res3);//1,3,4,6,8,9
+    </script>
+</body>
+</html>

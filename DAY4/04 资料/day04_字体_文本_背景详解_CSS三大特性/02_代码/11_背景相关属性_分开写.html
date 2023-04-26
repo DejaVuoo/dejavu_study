@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            background-color	设置或检索对象的背景颜色。	1
+            background-image	设置或检索对象的背景图像。
+
+            background-position	设置或检索对象的背景图像位置。必须先指定background-image属性。
+                取值,可以是关键字
+                     或者百分百
+                     或者是像素值
+
+
+            background-repeat	设置或检索对象的背景图像如何铺排填充。必须先指定background-image属性。
+
+                默认情况下，重复background-image的垂直和水平方向。
+
+                repeat	背景图像将向垂直和水平方向重复。这是默认
+                repeat-x	只有水平位置会重复背景图像
+                repeat-y	只有垂直位置会重复背景图像
+                no-repeat	background-image 不会重复
+        
+            background-size	检索或设置对象的背景图像的尺寸大小。
+        */
+        div{
+            width: 400px;
+            height: 400px;
+
+            background-color: lightblue;
+
+            background-image: url(./img/1.jpg); 
+
+            background-repeat: no-repeat;
+
+            background-position:center center;
+
+            background-size:100% 100%
+        }
+
+    </style>
+
+</head>
+<body>
+    <div></div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/*求n-m之间的整数和*/
+			function getSum(a, b) {
+				if (a > b) {
+					console.log('请确保a小于导于b');
+
+					return //return,用于结束函数，它后面的代码就不会再执行
+
+				}
+				var sum = 0
+
+				for (var i = a; i <= b; i++) {
+					sum += i
+				}
+				return sum
+			}
+			var sum = getSum(1, 10)
+			console.log(sum);
+		</script>
+	</body>
+</html>

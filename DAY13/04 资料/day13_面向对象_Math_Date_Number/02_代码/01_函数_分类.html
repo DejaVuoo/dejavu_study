@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            1,命名函数(有名字的函数)
+        */
+       function getMax(num1,num2){
+            return num1 > num2 ? num1 : num2
+       }
+
+       //调用:有参数就给,有返回值就接
+       var max = getMax(10,20)
+       console.log(max);
+
+       /* 
+            2,匿名函数(没有名字的函数)
+       */
+       var f = function (num1,num2){
+            return num1 > num2 ? num1 : num2
+       }
+
+       console.log(f);//这个变量就代表这个函数,可以看做是函数名
+
+       //调用:通过变量名调用
+       var res = f(20,30)
+       console.log(res);
+
+    </script>
+</body>
+</html>

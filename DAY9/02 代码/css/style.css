@@ -1,0 +1,415 @@
+/* 声明全局属性 */
+:root {
+  --blue: #2980b9;
+  --black: #333;
+  --white: #fff;
+  --light-color: #777;
+  --light-bg: #eee;
+  --box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 设置页面元素的默认样式 */
+* {
+	/* 设置文本中每个单词以大写开头*/ 
+  font-family: "Microsoft YaHei", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /*去掉轮廓*/
+  outline: none;
+  /*去掉边框*/
+  border: none;
+  text-decoration: none;
+  /*设置文本中每个单词以大写开头*/
+  text-transform: capitalize;
+  transition: all 0.2s linear;
+}
+
+/* 设置滚动条整体部分样式 */
+html::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* 设置滚动条的轨道样式 */
+html::-webkit-scrollbar-track {
+  background: var(--blue);
+}
+
+/* 设置滚动条里面的上下移动小方块的样式 */
+html::-webkit-scrollbar-thumb {
+  background: var(--white);
+  border-radius: 50px;
+}
+/* 设置主体container的样式 */
+/* 没有设置高度，将来由子元素撑开 */
+.container{
+	display: flex;
+	padding: 100px 10%;
+	background: linear-gradient(45deg,royalblue,lawngreen);
+	
+}
+/*公共样式*/
+/* 标题 */
+.title{
+	font-size: 25px;
+	color: var(--blue);
+	margin-bottom: 15px;
+}
+
+/*设置个人概要样式*/
+.container .profile{
+	
+	position:sticky;/* 粘性定位 */
+	top:20px;
+	left:0;
+	
+	flex: 400px; /*初始宽度是400px,能放大，能缩小*/
+	padding: 20px 30px;/*用于约束内容*/
+	background: var(--white);
+	border-right: 2px solid var(--black);
+	text-align: center;
+	align-self: flex-start;/*不要拉伸，从上面对其*/
+}
+/*设置头像*/
+.container .profile img{
+	height:150px;
+	width:150px;
+	border:1px solid var(--black);
+	margin-bottom: 10px;
+	border-radius: 50%;
+	
+}
+/*设置头像下的文字*/
+.container .profile h3{
+	color:var(--black);
+	font-size:20px;
+	
+}
+.container .profile p{
+	padding: 5px 0;
+	color: var(--blue);
+	font-size: 15px;
+	
+}
+	
+.container .share {
+	margin: 10px 0;
+	
+}	
+.container .share a{
+	height:50px;
+	width:50px;
+	background:var(--light-bg);
+	color: var(--black);
+	font-size: 20px;
+	line-height: 50px;
+	border-radius: 50px;
+}
+	.container .share a:hover{
+		background:var(--blue);
+		color:var(--white);
+		box-shadow:var(--box-shadow);
+		
+}
+/*设置联系按钮的样式*/
+.container .profile .btn{
+	display: inline-block;
+	background: var(--blue);
+	padding: 7px 20px;
+	margin-top: 10px;
+	font-size: 17px;
+	color: var(--white);
+	border-radius: 10px;
+	box-shadow: var(--box-shadow);
+}
+/*设置详细信息样式*/
+.container .information{
+	
+	flex:1000px;/* 初始宽度是1000px,能放大，能缩小 */
+	padding: 20px 30px;/* 用于约束内容 */
+	background: var(--white);
+	border-right: 1px solid var(--black);
+	display: inline-block;
+	
+}
+.information .about p{
+	color: var(--light-color);
+	font-size: 17px;
+	line-height: 2;
+	margin-bottom: 15px;
+	
+}
+/*使用f1ex布局来设置个人详细信息样式*/
+.information .about .box-container{
+	display: flex;
+	gap: 15px;
+	flex-wrap: wrap;/*换行*/
+	
+}
+.information .about .box{
+	flex:250px;
+}
+.information .about .box h3{
+	padding: 10px;
+	color: var(--black);
+	font-size: 15px;
+}
+.information .about .box span{
+	color: var(--light-color);
+}
+/* 设置技术栈模块样式 */
+.information.services{
+	padding: 20px 0;
+	
+}
+.information .services .box-technic{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+	justify-content: space-between;
+	
+	
+}
+.information .services .skill{
+	display: flex;
+	flex: 50px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--light-bg);
+	border-radius: 10px;
+	font-size: 15px;
+	font-weight: 700;
+	color: var(--light-color);
+	box-sizing: border-box;
+	margin: 20px 0;
+	padding: 10px;
+	
+	
+}
+.information .services .skill img{
+	object-fit: contain;
+	width: 50px;
+	height: 56px;
+	margin: 10px;
+}
+/* 设置熟练度模块样式 */
+/* .information .proficiency .box1{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+	justify-content: space-between;
+	
+}
+ */
+.g-container {
+	display: grid;
+	grid-template-rows: 1fr 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 20px;
+	background-color: var(--white);
+	padding: 10px;
+	
+}
+
+.g-container>div {
+	/* background-color: rgba(255, 255, 255, 0.8); */
+	/* text-align: center; */
+	/* padding: 20px 0; */
+	font-size: 30px;
+	/* justify-content: space-between; */
+
+
+}
+
+/* .g-container .progress-bar-container h3 {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 0;
+	color: var(--black);
+	font-size: 20px;
+
+
+} */
+/* .information .proficiency .box-skills{
+	flex: 300px;
+	line-height: 2;
+	
+} */
+/* .information .proficiency .progress-bar-container{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 50px;
+	flex: 250px;
+	
+	
+} */
+.information .proficiency .progress-bar-container h3{
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 0;
+	color: var(--black);
+	font-size: 15px;
+	
+	
+}
+/* 进度条样式 */
+
+.progress-bar1,.progress-bar2,.progress-bar3,.progress-bar4,.progress-bar5,.progress-bar6,.progress-bar7,.progress-bar8
+{
+	
+	position: relative;
+	display: block;
+	flex: 250px;
+	height: 15px;
+	border-radius: 10px;
+	overflow: hidden;
+	background: #eee;
+	border: 1px solid lawngreen;
+}
+.progress-bar1::before,.progress-bar2::before,.progress-bar3::before,.progress-bar4::before,.progress-bar5::before,.progress-bar6::before,.progress-bar7::before,.progress-bar8::before{
+	content: "";
+	position: absolute;
+	
+	height: 100%;
+	transform: scaleX(0);
+	transform-origin: left center;
+	background-image:linear-gradient(45deg,#0f0,#0ff);
+	animation: 3s progress ease-out forwards;
+}
+
+.progress-bar1::before{
+	width: 95%;
+}
+.progress-bar2::before{
+	width: 80%;
+}
+.progress-bar3::before{
+	width: 65%;
+}
+.progress-bar4::before{
+	width: 70%;
+}
+.progress-bar5::before{
+	width: 90%;
+}
+.progress-bar6::before{
+	width: 75%;
+}
+.progress-bar7::before{
+	width: 65%;
+}
+.progress-bar8::before{
+	width: 70%;
+}
+@keyframes progress{
+	
+	to{
+		transform: scaleX(1);
+	}
+}
+
+/* 设置学习工作经历的样式 */
+.information .experience{
+	margin: 20px 0;
+}
+.information .experience .box-ex{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 15px;
+	
+}
+.information .experience .box2{
+	flex: 350px;
+	padding: 20px;
+	background: var(--light-bg);
+	border-radius: 10px;
+	
+}
+/* 设置文本样式 */
+.information .experience .box2 span{
+color:var(--blue);
+font-size:15px;
+}
+.information .experience .box2 h3{
+padding:5px 0;
+color:var(--black);
+font-size:17px;
+}
+.information .experience .box2 p{
+color:var(--light-color);
+font-size:13px;
+line-height: 2;
+}
+/* 设置 联系方式布局 */
+.information .contact .box-contact{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 15px;
+}
+.information .contact .box-contact .box3{
+	flex:200px;
+	
+	display: flex;
+	gap: 15px;
+	
+}
+.information .contact .box-contact i{
+	height: 40px;
+	width: 40px;
+	font-size: 15px;
+	background: var(--blue);
+	color: var(--white);
+	line-height: 40px;
+	text-align: center;
+	border-radius: 50%;
+}
+.information .contact .box-contact h3{
+	padding-bottom:5px;
+	color:var(--black);
+	font-size:17px;
+}
+.information .contact .box-contact p{
+	color:var(--light-color);
+	font-size:14px;
+	line-height:2;
+}
+/* 在1200px 宽度以内显示的样式 */
+@media (max-width:1200px){
+	.container{
+		flex-direction: column;/*将横轴设置为垂直方向，元素就垂直排布*/
+		padding: 20px;
+		justify-content: center;
+	}
+	.container .profile{
+		position: static;/*去掉之前的粘性定位*/
+		padding: 20px; 
+		margin: 0 auto;
+		margin-bottom: 20px;
+		border-right: none;
+		border-radius: 5px ;
+		box-shadow: var(--box-shadow);
+		
+	}
+	.container .information{
+	padding:20px;
+	border-radius:5px;
+	box-shadow:var(--box-shadow);
+	}
+}
+/* 在600px 宽度以内显示的样式 */
+@media (max-width:600px){
+	.container .profile{
+		width:100%;
+	}
+	.container .profile .bnt{
+		width: 100%;
+	}
+	.container .information .about p{
+		font-size:12px;
+	}	
+	.container .information .experience .box2 p{
+		font-size:12px;
+	}
+}

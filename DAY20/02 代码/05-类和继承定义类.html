@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/* 
+				class类名{
+					constructor(参数1，参数2){
+						this.属性名1=参数1
+						this.属性名2=参数2
+						}
+						方法名（参数列表）{
+							方法体
+						}
+					}
+				
+			 */
+
+
+
+
+
+			//定义类
+			class Student {
+				constructor(name, age) {
+					this.name = name
+					this.age = age
+				}
+				study() {
+					console.log('学习');
+				}
+			}
+
+			//创建对象
+			const stu1 = new Student('张三',23)
+				
+			console.log(stu1);
+			console.log(stu1.name);
+			stu1.study()
+			
+			const stu2=new Student('李四',23)
+			
+			//验证是否有内存浪费
+			console.log(stu1.study === stu2.study);//true 说明在一个空间，没有内存浪费
+		</script>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<img src="ad.jpg"/>
+		
+		
+		<script>
+			
+			var img = document.querySelector('img');
+			
+			function f1(){
+				console.log('5');
+				var img = document.querySelector('img');
+				img.style.display='none'
+			}
+			var timer1 = setTimeout('f1()',5000)
+		</script>
+	</body>
+</html>

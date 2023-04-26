@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            针对上一节的问题
+                由于margin-left的值是写死的,如果son的宽度发生改变,就不能居中了
+            解决
+                让son向左偏移自身的50%
+
+            又出现了一个问题
+                改变son的宽度之后,又不能居中了,因为margin-left的值是写死的
+        */
+        .father{
+            position: relative;
+            width: 800px;
+            height: 400px;
+            background: lightblue;
+        }
+
+        .son{
+            position: absolute;
+            left:50%;/* 代表占父元素宽度的一半 */
+            /* margin-left:-50%; */ /* 50%代表占父元素宽度的一半,这会导致子元素又回到了原点*/
+            transform: translateX(-50%);/*transform:位移属性 translateX:沿x轴移动, %是相对于它自身 */
+            top:100px; 
+
+            width: 200px;
+            height: 200px;
+            background: green;
+        }
+
+
+
+        
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+</body>
+</html>

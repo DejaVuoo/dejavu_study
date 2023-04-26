@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/* 
+				在这个例子中，outerFunction 返回了一个内部函数 innerFunction，
+				该函数可以访问 outerFunction 中声明的变量 message。即使 outerFunction 已经执行完毕并返回了，
+				我们仍然可以通过调用 innerFunction 来访问 message 变量的值，并在控制台上输出它。
+				这个例子演示了闭包的一种用法：返回一个函数，该函数可以访问其外部函数的作用域。
+				
+				当一个函数返回一个内部函数时，闭包就产生了。闭包可以用来创建“私有变量”或“私有函数”，
+				这些变量或函数只能通过返回的内部函数进行访问，而无法从外部访问。
+			 */
+		
+			function outerFunction() {
+			  const message = 'Hello';
+			
+			  function innerFunction() {
+			    console.log(message);
+			  }
+			
+			  return innerFunction;
+			}
+			
+			const inner = outerFunction(); // 调用outerFunction并将其返回值存储在变量inner中
+			inner(); // 输出 "Hello"
+		</script>
+	</body>
+</html>

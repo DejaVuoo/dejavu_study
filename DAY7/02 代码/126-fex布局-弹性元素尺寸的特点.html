@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+		.father{
+		/*主轴默认是水平方向：元素就会沿着水平方向排布*/
+		display:flex;
+		background:lightblue;
+		height:300px;
+		/*水平居中*/
+		justify-content:center;
+		/*垂直居中*/
+		align-items:center;
+		gap: 50px; /*给子元素设置水平方向上的间隙*/
+		}
+		.son{
+		
+		/* width:100px; */ /*如果去掉了子元素的宽度，它的宽度就是由内容来决定的*/
+		/* /* height:100px; */ /*如果去掉了子元素的高度，它的高度就是由内容来决定的 */
+		background:green;}
+		.son:nth-child(2){
+			align-self: stretch;/*就会直接拉伸的跟父元素一样高*/
+		}
+		/* 
+		 弹性元素尺寸总结
+			如果给了宽高，就按照给的走，如果不给就按照内容走，如果有拉伸，就会拉伸的跟父元素一样高
+		 
+		 
+		 
+		 
+		 
+		 */
+		</style>
+	</head>
+	<body>
+		<div class="father">
+				<div class="son">1</div>
+				<div class="son">2</div>
+				<div class="son">3</div>
+		</body>
+	</body>
+</html>

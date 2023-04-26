@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <script>
+        function f(){
+            var a = 10  //a就是局部变量
+            console.log(a);
+        }
+
+        f()
+
+        /* 
+            可以通过断点调试的方式查看
+                需要进入函数内部,就可以看到'本地'(局部对象--局部环境)
+                方法执行完之后,局部变量就在内存中消失了
+
+                可以看出,变量a其实是本地(局部对象AO)的一个属性
+
+        */
+
+      </script>
+</body>
+</html>

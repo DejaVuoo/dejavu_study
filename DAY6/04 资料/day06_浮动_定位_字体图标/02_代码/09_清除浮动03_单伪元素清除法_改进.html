@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father{
+            background: lightblue;
+        }
+
+        .son{
+            width: 200px;
+            height: 200px;
+            background: green;
+
+            /* 设置子元素浮动 */
+            float: left;
+        }
+
+        /* 解决方式三:使用伪元素改进*/
+        /* 进一步改进:将清除浮动的代码单独放在一个通用的类clearfix里面,将来需要清除的时候,直接加上类名即可,提高复用性 */
+        .clearfix::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="father clearfix"> <!-- 将来需要清除的时候,直接加上clearfix类名即可 -->
+        <div class="son"></div>
+    </div>
+</body>
+</html>

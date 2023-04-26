@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father{
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 100px; /* 为了和body进行区分,body默认在左上角,让father偏移100px */
+            background: lightblue;
+        }
+        .son1{
+            width: 100px;
+            height: 100px;
+            background: green;
+
+            /* 绝对定位特点
+                1,脱标,不占位置
+                2,参照的原点:最近有定位的元素
+                    父元素没有定位,一层层往上找,如果都没有,就参照body的左上角
+            */
+
+            /* 添加绝对定位 */
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        .son2{
+            width: 110px;
+            height: 110px;
+            background: purple;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son1"></div>
+        <div class="son2"></div>
+    </div>
+</body>
+</html>

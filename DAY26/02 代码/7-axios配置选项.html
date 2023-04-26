@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script>
+			axios.defaults.baseURL = "http://localhost:3000" //配置所有axios请求的oaseURL
+			axios.defaults.timeout = 3000
+			//添加一个请求拦截器
+			axios.interceptors.request.use(function(config) {
+				return config
+			})
+			//添加一个响应拦截器
+			axios.interceptors.response.use(function(response) {
+				return response.data
+			})
+			document.querySelector('button').onclick = function() {
+				axios({
+					url: "/word",
+					method: 'POST',
+					data: {
+						content: 'haha'
+					},
+
+				})
+			}
+
+			document.querySelectorAll('button')[1].onclick = function() {
+				axios.get('/word').then(res => {
+					console.log(res, 123)
+				})
+			}
+		</script>
+	</body>
+</html>

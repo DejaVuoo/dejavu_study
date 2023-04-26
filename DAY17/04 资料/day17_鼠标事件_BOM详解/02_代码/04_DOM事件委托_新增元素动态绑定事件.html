@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>aaa</li>
+        <li>bbb</li>
+        <li>ccc</li>
+    </ul>
+
+    <button>动态添加li元素</button>
+
+    <script>
+        //动态的新增li元素
+        document.querySelector('button').addEventListener('click',function(){
+            var li = document.createElement('li')
+            li.innerHTML = 'ddd'
+            document.querySelector('ul').appendChild(li)
+        })
+
+        //使用传统方式给li元素绑定事件,只能给已经存在的li元素绑定事件,无法给动态生成的li元素绑定事件
+       /* var lis = document.querySelectorAll('li')
+       lis.forEach(function(item){
+            item.onclick = function(){
+                alert(this.innerHTML)
+            }
+       }) */
+
+       //使用事件委托实现.可以为动态生成的元素绑定事件
+       document.querySelector('ul').addEventListener('click',function(e){
+            alert(e.target.innerHTML)
+       })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			div{
+				width: 400px;
+				height: 600px;
+				background: lavenderblush;
+				line-height: 600px;
+			}
+			
+			/* 
+			 问题
+				设置1ine-height=元素内容的高度之后，文字可以垂直居中，但是图片并没有，仍然沿着基线排布
+			 解决
+				vertical-align:middle让图片居中对齐
+			 
+			 
+			 */
+			
+			img{
+				vertical-align: middle;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<img src="1.jpg">鬼刀
+		</div>
+	</body>
+</html>

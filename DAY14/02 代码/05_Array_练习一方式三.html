@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//有一个包含工资的数组[1500,1200,2000,2100,2200,1800]把超过2000的删除，剩余的放到一个新的数组打印新的数组
+
+			//使用filter方法进行过滤
+			var arr = [1500, 1200, 2000, 2100, 2200, 1800]
+		
+		
+			function checkValue(num) {
+				return num <= 2000
+			}
+			var result = arr.filter( checkValue)
+			console.log(result);
+		</script>
+	</body>
+</html>

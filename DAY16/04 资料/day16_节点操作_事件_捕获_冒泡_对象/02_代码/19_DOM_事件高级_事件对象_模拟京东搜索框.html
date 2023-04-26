@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+
+    <script>
+        /* 监听键盘操作:使用keyup松开的时候监听,文本框就不会残留s这个字符 */
+        document.addEventListener('keyup',function(e){
+            console.log(e.keyCode);
+
+            //判断
+            if(e.keyCode == 83){
+                //让文本框聚焦
+                document.querySelector('input').focus()//onfocus是属性,focus()是聚焦方法
+            }
+        })
+    </script>
+</body>
+</html>

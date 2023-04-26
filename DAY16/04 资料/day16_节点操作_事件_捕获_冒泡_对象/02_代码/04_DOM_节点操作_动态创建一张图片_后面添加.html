@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <img src="./img/ldh.jpg" alt=""> -->
+
+    <button>在后面添加一张图片</button>
+
+    <script>
+        document.querySelector('button').onclick = function(){
+            //创建img元素对象
+            var img = document.createElement('img')  //仅仅存在于内存中
+
+            //给img的src属性赋值
+            img.src = './img/ldh.jpg'
+
+            //将img元素添加到body中
+            document.querySelector('body').appendChild(img)
+        }
+    </script>
+</body>
+</html>

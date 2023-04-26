@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.box{
+				/* 
+				 修改轴向之后，布局技巧
+					 首先要明确，水平和垂直方向上到底是哪个轴
+						 如果是主轴，对齐用justify-content,属性
+						 如果是侧轴，对齐用align-items属性
+				 */
+				display: flex;
+				width: 100px;
+				height: 100px;
+				border: 1px solid #000;
+			
+			/* 
+			 可以通过f1ex-direction来修改主轴的方向，让元素沿着垂直方向排布
+			 row默认值。灵活的项目将水平显示，正如一个行一样。
+			 column灵活的项目将垂直显示，正如一个列一样。
+			 */
+			flex-direction:column;/*主轴已经被修改为垂直方向上，元素就会沿着垂直方向排布*/
+			
+			/*想实现元素水平居中，现在水平方向上市侧轴，侧轴元素居中，用align-item*/
+			align-items:center;
+			
+			/* 想实现元素垂直居中，现在垂直方向上市主轴，主轴元素居中，用justify-content*/
+			justify-content:center;
+			
+			
+			
+			
+			}
+			.img{
+				width:32px;
+				height:32px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box">
+		<img src="media.png"alt="">
+		<span>煤体</span>
+		</div>
+	</body>
+</html>

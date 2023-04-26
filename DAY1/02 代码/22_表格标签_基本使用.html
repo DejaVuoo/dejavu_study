@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!--table 定义表格
+				border边框（设为1,有边框）
+				width宽度
+				height高度
+				align表格相对于周围元素的对齐方式
+				cellpadding规定单元边沿与其内容之间的空白
+				celllspacing规定单元格之间的空白。
+			tr 定义表格中的行
+				align定义表格行的内容对齐方式
+			
+			td 定义表格中的单元格
+			
+			th 定义表头（就是在td的基础上居中并且加粗）
+			
+			需求
+				1,整个表格居中
+				2,表格边框重合
+				3,表格中行内容是居中
+			
+			
+			-->
+		<table border="1" width="500px" height="100px" style="text-align: center;" cellspacing="0">
+			<tr>
+				<th colspan="4">学员信息</th>
+			</tr>
+			<tr>
+				<th>姓名</th>
+				<th>年龄</th>
+				<th>性别</th>
+				<th>毕业院校</th>
+			</tr>
+			<tr>
+				<td>dejavu</td>
+				<td>23</td>
+				<td>男</td>
+				<td rowspan="3">新中地</td>
+			</tr>
+			<tr>
+				<td>dejavu</td>
+				<td>23</td>
+				<td>男</td>
+				
+			</tr>
+			<tr>
+				<td>dejavu</td>
+				<td>23</td>
+				<td>男</td>
+				
+			</tr>
+			<tr></tr>
+		</table>	
+			
+	</body>
+</html>

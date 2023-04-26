@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var arr=[1,2,3,6,8,9,2]
+			//遍历
+			arr.forEach(function(item,index){ //item数组中的元素，index是索引
+			console.log(item,index);
+			})
+			
+			
+			/*反转数组[1,2,3,6,8,9]然后排序*/
+			var arr=[1,2,3,6,8,9,2]
+			var narr= arr.reverse();
+			narr.sort(function(a,b){
+				return b-a
+			})
+			console.log(narr);
+		</script>
+	</body>
+</html>

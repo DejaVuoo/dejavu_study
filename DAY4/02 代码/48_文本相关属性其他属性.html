@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			/* 
+			 line-height设置行高
+				 normal默认。设置合理的行间距。
+				 设置数字此数字会与当前的字体尺寸相乘来设置行间距。假如设置1，行间距就是1*font-size大小
+				 单位还可以是em假如设置2em,行间距就是2*font-size大小
+				 单位还可以是像素，就是固定的行间距
+				 如果写0的话，没有行高，内容就会重叠到一块
+			 
+			 text-indent规定文本块首行的缩进
+				
+			 
+			 
+			 */
+			div{
+				font-size: 30px;
+				line-height: 1; /*  行高就是1倍的字体大小，行与行之间没有间隙，可以方便我们自己精准布局*/
+				line-height: 2em; /* 行高就是2倍的字体大小 */
+				text-indent: 2em;
+			
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div>忙或不忙不足以成为断了我想你的理由</div>
+		
+		<div>忙或不忙不足以成为断了我想你的理由</div>
+	</body>
+</html>

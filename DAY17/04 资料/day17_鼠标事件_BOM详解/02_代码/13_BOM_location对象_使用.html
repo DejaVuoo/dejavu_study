@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="btn1">跳转到百度</button>
+    <button class="btn2">刷新</button>
+    <button class="btn3">获取</button>
+
+    <script>
+        /* 
+            属性
+                href  设置或者返回url地址
+        */
+
+        //跳转
+        document.querySelector('.btn1').addEventListener('click',function(){
+            location.href = 'http://www.baidu.com'
+        })
+
+        //刷新
+        document.querySelector('.btn2').addEventListener('click',function(){
+            location.reload()
+        })
+
+        //获取
+        document.querySelector('.btn3').addEventListener('click',function(){
+            console.log(location.href);//http://127.0.0.1:5501/13_BOM_location%E5%AF%B9%E8%B1%A1_%E4%BD%BF%E7%94%A8.html
+        })
+    </script>
+</body>
+</html>

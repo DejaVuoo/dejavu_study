@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/* 
+			 应用场景
+					 1,有3个小组，每个小组有3个成员，想保存这些成员的考试成绩
+					 var arr=[90,80,88],[93,82,88],[98,80,85]]
+					 
+					 2,表示一个多边形，有很多个点组成，每个点都包含了经纬度
+					 var arr=[[10,20],[20,30],[30,40],[10,20]]
+			 */
+
+			//定义一个二维数组，保存一个多边形的坐标
+			var arr = [
+				[10, 20],
+				[20, 30],
+				[30, 40],
+				[10, 20]
+			]
+
+			//获取索引为0的点的坐标
+			console.log(arr[0]);
+			//获取索引为0的点的坐标
+			console.log(arr[0][0]);
+			//打印所有点的经纬度（其实就是遍历二维数组)
+
+			for (var i = 0; i <= arr.length; i++) {
+				//这里获取的是每一个一维数组
+				var positionArr =  arr[i]
+				
+				//遍历一维数组
+				for (var j = 0; j < arr[i].length; j++) {
+					console.log(arr[i][j]);
+				}
+
+			}
+		</script>
+	</body>
+</html>

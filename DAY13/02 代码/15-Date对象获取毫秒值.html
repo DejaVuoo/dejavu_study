@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/* getTime()  返回1970年1月1日至今的毫秒数。
+				valueof()
+				返回Date对象的原始值。原始值返回1970年1月1日午夜以来的毫秒数
+			 
+			 
+			 
+			 
+			 
+			 */
+			//时间戳：1970年1月1日至今的毫秒数
+			
+			
+			
+			//获取当前时间的时间戳（当前时间距离1970年的毫秒值
+			
+			
+			var date = new Date()
+			console.log(date.getTime());//1680770741360
+			console.log(date.valueOf());//1680770741360
+			
+			//简单方式
+			var d = +new Date()
+			console.log(d);
+			
+			
+			//H5新增方式（不需要创建对象，直接使用类名调用
+			console.log(Date.now());
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

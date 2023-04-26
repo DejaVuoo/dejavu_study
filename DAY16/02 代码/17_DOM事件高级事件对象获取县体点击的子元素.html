@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>aaa</li>
+			<li>bbb</li>
+			<li>ccc</li>
+		</ul>
+		<script>
+			/* 
+			 将事件绑定到ul上
+			 */
+			var ul = document.querySelector('ul')
+			
+			//给ul添加点击事件
+			ul.addEventListener('click',function(e){
+				// console.log(this.innerHTML);//这里面的this代表父元素
+				console.log(e.target.innerHTML);//e.target可以获取具体点击的子元素
+			})
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.b1{
+				
+				width: 768px;
+				height: 542px;
+				background: url("product.jpeg");
+			}
+			.b1::after{
+				display: block;
+				content: "";
+				width: 768px;
+				height: 542px;
+				background-image: linear-gradient(transparent,rgb(0,0,0,.5),rgb(0,0,0));
+				opacity: 0;
+				transition: all 1s;
+			}
+			.b1:hover::after{
+				opacity: 0.5;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="b1"></div>
+	</body>
+</html>

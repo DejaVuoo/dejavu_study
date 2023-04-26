@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            行级元素(行盒)
+                不能独占一行,设置宽高没有效果,宽高是由内容决定
+
+            块级元素(块盒)
+                独占一行,设置宽高是有效果的
+                如果不设置宽度,默认跟父元素一样宽
+                如果不设置高度,默认是由内容撑开
+                    
+        */
+        span{
+            background: lightblue;
+            width: 100px;
+            height: 100px;
+        }
+
+        div{
+            background: lightgreen;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <span>span</span>
+
+    <div>div</div>
+</body>
+</html>

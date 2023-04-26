@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+
+	</head>
+
+	<body>
+		<script>
+			//函数作为参数的案例
+				function calculate(num1, num2, callback) {
+				  const result = num1 + num2;
+				  callback(result);
+				}
+				
+				// 定义一个回调函数
+				function displayResult(result) {
+				  console.log(`计算结果是：${result}`);
+				}
+				
+				// 调用calculate函数，并将displayResult作为回调函数传递
+				calculate(5, 10, displayResult); // 输出 "计算结果是：15"
+
+
+			//写一个函数作为返回值的案例
+				function createMultiplier(multiplier) {
+					return function(number) {
+						return number * multiplier;
+					};
+				}
+
+				// 调用createMultiplier函数并将返回的函数存储在double变量中
+				const double = createMultiplier(2);
+
+				// 调用double函数来将传递的参数加倍
+				console.log(double(5)); // 输出10
+				console.log(double(10)); // 输出20
+		</script>
+
+	</body>
+
+</html>

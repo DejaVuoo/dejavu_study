@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        1,写一个事件源
+        2,写一个监听器(事件处理函数)
+        3,绑定监听器和事件源(通过一个属性,将二者绑定起来)
+     -->
+     <button>秋香</button>
+
+     <script>
+        //监听器:事件处理函数
+        function myClick(){
+            alert('真香')
+        }
+
+        //绑定监听器和事件源
+        var btn = document.querySelector('button')
+        btn.onclick = myClick  //myClick就代表整个函数,不能加()
+     </script>
+</body>
+</html>

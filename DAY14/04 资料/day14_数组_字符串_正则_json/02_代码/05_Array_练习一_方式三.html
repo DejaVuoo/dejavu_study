@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      //有一个包含工资的数组 [1500,1200,2000,2100,2200,1800] 把超过2000的删除,剩余的放到一个新的数组 打印新的数组
+
+      /* 使用filter方法进行过滤 */
+
+      var arr =  [1500,1200,2000,2100,2200,1800] 
+
+      //定义一个用于过滤的函数(将来数组中的每一个元素都会执行这个函数)
+      function checkValue(value){
+         return value <= 2000
+      }
+
+      //调用filter方法对数组中的每一个元素进行过滤
+      var newArr = arr.filter(checkValue)
+
+      console.log(newArr);
+    </script>
+</body>
+</html>

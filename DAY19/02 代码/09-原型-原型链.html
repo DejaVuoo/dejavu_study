@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function Student(name, age) {
+				this.name = name
+				this.age = age
+		
+			}
+		
+			//做法
+			Student.prototype.study = function() {
+				console.log('学习');
+			}
+		
+			//创建两个实例对象
+			var stu1 = new Student('张三', 23)
+			stu1.study()
+			var stu2 = new Student('李四', 23)
+			stu2.study()
+		
+			//通过对象的原型找到原型对象
+			console.log(stu1.__proto__);//找的是本类
+			//原型对象也是一个对象，也有proto,属性，打印原型对象的原型
+			console.log(stu1.__proto__.__proto__);//找的是父类object
+			//继续向上找原型
+			console.log(stu1.__proto__.__proto__.__proto__);//找的父类的父类没有了，就是null
+			/*给js的Array类，扩展一个求数字类型数组内部元素和的方法(sum方法)*/
+		</script>
+	</body>
+</html>

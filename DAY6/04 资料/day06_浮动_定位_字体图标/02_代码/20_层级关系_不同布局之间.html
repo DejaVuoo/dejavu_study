@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* 
+            c2是定位 c1是浮动 c2在c1之上  说明定位的优先级要比浮动高
+        */
+        .c1{
+            float: left;
+            width: 110px;
+            height: 110px;
+            background: lightblue;
+        }
+        .c2{
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background: gray;
+        }
+        .c3{
+            width: 100px;
+            height: 100px;
+            background: green;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="c1"></div>
+    <div class="c2"></div>
+    <div class="c3"></div>
+</body>
+</html>

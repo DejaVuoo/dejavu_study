@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+            判断月份属于哪个季节: 12,1,2冬季  3,4,5春季 6,7,8夏季 9,10,11秋季 
+        */
+        //获取月份
+        var month = prompt('请输入一个月份')
+        
+        //判断
+        if(month == 12 || month == 1 || month == 2){
+            console.log('冬季');
+        }else if(month == 3 || month == 4 || month == 5){
+            console.log('春季');
+        }else if(month == 6 || month == 7 || month == 8){
+            console.log('夏季');
+        }else if(month == 9 || month == 10 || month == 11){
+            console.log('冬季');
+        }else{
+            console.log('你输入的不是一个月份');
+        }
+           
+    </script>
+</body>
+
+</html>

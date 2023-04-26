@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.father{
+			background: cornflowerblue;
+			display: flex;
+			/* 	justify-content 	设置或检索弹性盒于元素在主轴（横轴）方向上的对齐方式。
+					
+					flex-start	默认值。从行首起始位置开始排列。
+				
+					flex-end	从行尾位置开始排列。
+				
+					center	居中排列。
+				
+					space-between	均匀排列每个元素，首个元素放置于起点，末尾元素放置于终点	。
+			
+					space-evenly	均匀排列每个元素，每个元素之间的间隔相等。
+				
+					space-around	均匀排列每个元素，每个元素周围分配相同的空间 
+					
+					*/
+				
+			justify-content: flex-start;/* 默认居左*/
+			justify-content:flex-end; /*居右 */
+			justify-content:center;/*居中 */
+			justify-content:space-between;/* 容器两端没有间隙，中间间隙等分*/
+			justify-content:space-evenly;/*容器所有间隙都等分 */
+			justify-content:space-around;/*容器中间间隙是两端间隙的2倍 */
+			/* 
+			 记忆技巧(space空格的意思，evenly等分的意思）
+					 space-.between:空格在子元素的中间（两端没有空格--用的最多）
+					 space-around:空格环绕在子元素的周围（两端是有空格）
+					 space-evenly:所有的间距都是等分的（包含两端的间距）
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 */
+			
+			
+			}
+			
+			
+			
+			.son{
+				
+				width: 100px;
+				height: 100px;
+				background: greenyellow;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div class="father">
+			<div class="son">1</div>
+			<div class="son">2</div>
+			<div class="son">3</div>
+	</body>
+</html>

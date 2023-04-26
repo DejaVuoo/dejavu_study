@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<ul id='box'>
+			<li>锄禾日当午</li>
+			<li>老爸真辛苦</li>
+			<li>上午打麻将</li>
+			<li>下午斗地主</li>
+		</ul>
+		
+		
+		
+		
+		
+		
+		
+		
+		<script>
+			/* 
+			document.querySelector()返回文档中匹配指定的CSS选择器的第一元素
+			
+			document.querySelectorAll()返回文档中匹配的cSS选择器的所有元素节点列表 
+			 
+			 */
+			//获取u1元素
+			var ul = document.querySelector('#box')
+			console.log(ul);
+			
+			//获取1i元素
+			var lis = document.querySelectorAll('li')
+			console.log(lis);
+			
+			//传统getE1 lementsBy和H5方式的区别（通过获取li元素为例)
+			var li = document.querySelector('li')/*如果有多个元素，默认获取的是第一个，s会帮我们自动优化*/
+			console.log(li);
+			var res = document.getElementsByTagName('li')/* 获取的还是所有满足条件的元素 */
+			console.log(res[0]);
+			
+			
+		</script>
+		
+		
+	</body>
+</html>

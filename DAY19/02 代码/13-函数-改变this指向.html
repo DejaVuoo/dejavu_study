@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function getMax(num1, num2) {
+				return num1 > num2 ? num1 : num2
+			}
+
+			//调用方式一：常规方式
+			var res = getMax(10, 20)
+
+			console.log(res);
+
+			//调用方式二：使用call,需要将调用者传进去
+			var res1 = getMax.call(window, 20, 30)
+
+			console.log(res1);
+
+			//通过方式二，就可以改变方法中的this指向
+			//创建一个字面量对象来调用方法
+			var stu = {
+				name: '张三',
+				age: 23
+			}
+			var res2 = getMax.call(stu, 20, 30) //改变了方法中的this指向
+			console.log(res2);
+		</script>
+	</body>
+</html>

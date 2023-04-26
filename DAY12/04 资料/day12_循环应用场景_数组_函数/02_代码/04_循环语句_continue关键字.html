@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 模拟电梯上行过程中,一共有11层,第7层不停 */
+
+        for(var i = 1;i<=11;i++){
+            if(i == 7){
+                continue //跳过当前循环
+            }
+            console.log(i + '层到了');
+        }
+
+        /* 
+            continue 只能用在循环语句中
+        */
+
+        /* if(true){
+            continue;//只能用在循环中
+        } */
+    </script>
+</body>
+</html>

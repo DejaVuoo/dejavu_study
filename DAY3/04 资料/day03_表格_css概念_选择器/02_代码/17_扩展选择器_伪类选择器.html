@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a:link {color:#FF0000;} /* 未访问的链接 */
+        a:visited {color:#00FF00;} /* 已访问的链接 */
+        a:hover {color:#FF00FF;} /* 鼠标划过链接 */
+        a:active {color:#0000FF;} /* 已选中的链接 */
+
+        /* 设置div默认样式 */
+        div{
+            width: 100px;
+            height: 100px;
+            background: blue;
+        }
+
+        /* 需求:当鼠标移入div上面的时候,div背景变成绿色 */
+        div:hover{
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <a href="http://www.baidu.com">百度</a>
+
+    <div></div>
+</body>
+</html>

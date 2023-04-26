@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //创建学生类
+        function Student(name,age,home){
+            this.name = name
+            this.age = age
+            this.home = home
+
+            //自我介绍
+            this.sayHello=function(){
+                /* 我叫张三,今年18岁,来自湖北 */
+                console.log(`我叫${this.name},今年${this.age}岁,来自${this.home}`);
+            }
+        }
+
+        //创建4个学生对象
+        var stu1 = new Student('张三',23,'湖北')
+        var stu2 = new Student('李四',24,'湖南')
+        var stu3 = new Student('王五',25,'山东')
+        var stu4 = new Student('赵六',26,'山西')
+
+        //定义数组
+        var arr = [stu1,stu2,stu3,stu4]
+
+        //获取随机索引 0 - arr.length-1
+        var index = Math.floor(Math.random()*arr.length)
+
+        //打印获取的学生
+        var stu = arr[index]
+        console.log(stu);
+
+        //调用获取的学生的自我介绍方法
+        stu.sayHello()
+
+    </script>
+</body>
+</html>

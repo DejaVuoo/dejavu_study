@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/* 反复询问班主任，你爱我吗？1/0，只要回答不是1，就一直问，直到回答是1为止 */
+			/* 
+				分析
+					循环次数不确定，但是循环的条件是确定的，建议使用whi1e
+				
+				循环条件：回答不是1
+				循环体：一问一答过程
+				
+				步骤
+					先把循环的架子搭起来
+					再写循环体
+				
+				
+				
+				
+			 */
+			var answer = 0
+			while (answer != 1) {
+				answer = prompt('你爱我吗?1/0')
+			}
+			alert('我也爱你，么么哒!')
+
+			/*类似：请用户输入登录账号和密码.（账户123密码888）只要1个不正确，就全部重新输入.直到正确为止.*/
+			/* var admin = 0
+			while (admin !=123){
+				admin = prompt('请用户输入登录账号')
+				var password = 0
+				while (password !=888){
+					password = prompt('请用户输入账号密码')
+				}
+			} */
+			var admin = 0
+			var password = 0
+			//while (!(admin=='123'&& password =="888"))
+			while (admin != 123 || password != 888) {
+				
+				admin = prompt('请用户输入登录账号')
+				password = prompt('请用户输入账号密码')
+				if(password !=888){
+					alert('账号或密码错误')
+				}
+			}
+			alert("登录成功")
+			/*
+			 
+			 对&表达式取反，里面运算符都要取反
+			 !(admin=='123'&& password =="888") === admin != 123 || password != 888*/
+		</script>
+	</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="formData" name="formData" action="success.html" method="get">
+        <label for="username">用户名：</label>
+        <input type="text" id="username" value="ikun" placeholder="请输入用户名"><br>
+        <label for="password">密码：</label>
+        &nbsp;&nbsp;&nbsp;<input type="password" id="password" value="jinitaimei" placeholder="请输入密码"><br>
+        <span>性别：</span>
+        
+        &nbsp;&nbsp;<input type="radio" name="sex" id="male" value="male" checked><label for="male">男</label>
+        &nbsp;<input type="radio" name="sex" id="female" value="female"><label for="female">女</label><br>
+        <span>爱好：</span>
+        &nbsp;&nbsp;<input type="checkbox" name="favour" id="c" value="chang" checked><label for="c">唱</label>
+        &nbsp;<input type="checkbox" class="aihao" name="favour" id="t" value="jump" checked><label for="t">跳</label>
+        &nbsp;<input type="checkbox" class="aihao" name="favour" id="r" value="rap"><label for="r">rap</label>
+        &nbsp;<input type="checkbox" class="aihao" name="favour" id="l" value="basketBall"><label for="l">篮球</label><br>
+        <span>照片：</span>
+        &nbsp;&nbsp;&nbsp;<input type="file" value="选择文件" id="file" accept=".jpg, .jpeg, .png" multiple>
+        <br/>
+        <span>学科：</span>
+        &nbsp;&nbsp;&nbsp;<select name="happy">
+                <option value="d2">命运2</option> 
+                <option value="2042" selected>2042</option>
+                <option value="8">老八蜜汁小憨包</option>
+            </select>
+            <br/>
+        <label for="pj" style="float:left">评价：</label>
+        &nbsp;&nbsp;&nbsp;&nbsp;<textarea name="textarea" cols="30" rows="10" placeholder="请输入" id="pj"></textarea>
+		<br/>
+		<div>
+			
+			<button type="submit">提交</button>
+			<button type="reset">重置</button>
+			<button type="button">按钮</button>
+		</div>
+            
+    </form>
+    
+    <br>
+    <br>
+    
+</body>
+<style>
+    .aihao{
+        background-color: aqua;
+    }
+</style>
+</html>

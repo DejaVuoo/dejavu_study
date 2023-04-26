@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Student(name,age){
+            this.name = name
+            this.age = age
+            console.log('构造函数中的this:');
+            console.log(this); //this指向当前创建的那个对象
+        }
+
+
+        //做法
+        Student.prototype.study = function(){
+            console.log('学习');
+            console.log('原型对象中的this:');
+            console.log(this); //this指向当前调用方法的那个对象
+        }
+
+        //创建两个实例对象
+        var stu1 = new Student('张三',23) //创建stu1的时候,this指向stu1这个对象
+        stu1.study()
+
+        var stu2 = new Student('李四',23) //创建stu2的时候,this指向stu2这个对象
+        stu2.study()
+
+    
+
+    </script>
+</body>
+</html>

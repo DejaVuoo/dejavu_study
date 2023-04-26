@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //逻辑与的短路问题
+            //如果左边的表达式不成立(已经确定整个表达式false),右边就不会再执行了,可以提高效率
+
+        var num1 = 3
+        var num2 = 4
+
+        console.log((num1++ < 2) && (num2++ > 3));//false
+        console.log(num1);//4
+        console.log(num2);//4
+
+        //逻辑或的短路问题
+            //如果左边的表达式成立(已经确定整个表达式true),右边就不会再执行了,可以提高效率
+
+        var num3 = 3
+        var num4 = 4
+
+        console.log((num3++ > 2) || (num2++ > 3));//true
+        console.log(num3);//4
+        console.log(num4);//4
+    </script>
+</body>
+</html>

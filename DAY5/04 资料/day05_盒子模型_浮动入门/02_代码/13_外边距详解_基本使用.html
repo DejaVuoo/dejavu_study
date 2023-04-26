@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 因为body设置了一个8像素的外边距,有时候为了精准布局,需要清除body的默认外边距 */
+        *{
+            margin: 0;
+        }
+
+        div{
+            width: 200px;
+            height: 200px;
+            background: lightblue;
+
+            /* 设置自己的外边距 */
+            margin: 10px 20px 30px 40px; /* 取值也是上右下左 */
+
+            /* 设置单一方向上的外边距 */
+            margin-top: 100px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

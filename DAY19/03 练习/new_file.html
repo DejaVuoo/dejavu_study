@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Colorful Rain</title>
+    <meta charset="UTF-8">
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background: black;
+      }
+      canvas {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas></canvas>
+    <script>
+      // 获取画布
+      const canvas = document.querySelector('canvas');
+      const ctx = canvas.getContext('2d');
+
+      // 定义一个雨滴类
+      class Raindrop {
+        constructor() {
+          this.x = Math.random() * canvas.width; // 随机 x 坐标
+          this.y = Math.random() * canvas.height; // 随机 y 坐标
+          this.speed = 0.5 + Math.random() ; // 随机速度
+          this.color = `hsl(${Math.random() * 360}, 80%, 50%)`; // 随机颜色
+        }
+
+        // 更新雨滴位置
+        update() {
+          this.y += this.speed;
+          if (this.y > canvas.height) {
+            this.y = 0;
+            this.x = Math.random() * canvas.width;
+          }
+        }
+
+        // 绘制雨滴
+        draw() {
+          ctx.beginPath();
+          ctx.strokeStyle = this.color;
+          ctx.lineWidth = 2;
+          ctx.moveTo(this.x, this.y);
+          ctx.lineTo(this.x, this.y + 10);
+          ctx.stroke();
+        }
+      }
+
+      // 创建雨滴数组
+      const raindrops = [];
+      for (let i = 0; i < 100; i++) {
+        raindrops.push(new Raindrop());
+      }
+
+      // 绘制画面
+      function draw() {
+        // 清除画布
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // 更新和绘制雨滴
+        raindrops.forEach(raindrop => {
+          raindrop.update();
+          raindrop.draw();
+        });
+
+        // 循环调用自己
+        requestAnimationFrame(draw);
+      }
+
+      // 启动绘制
+      draw();
+    </script>
+  </body>
+</html>

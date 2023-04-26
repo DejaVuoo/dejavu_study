@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/* 
+			 find()
+			 返回符合传入测试（函数）条件的数组元素。
+			 filter()
+			 检测数值元素，并返回符合条件所有元素的数组。s
+			 */
+			var arr = [11, 5, 86, 14, 40, 72, 18, 3, 7, 25]
+
+			//找到数组里面的偶数
+			function checkValue(num) {
+				return num % 2 == 0
+			}
+			/*使用find方法：返回符合测试条件的第一个数组元素值，如果没有符合条件的则返回undefined。*/
+			var res = arr.find(checkValue)
+			console.log(res);
+			//使用fi1ter方法：返回数组，包含了符合条件的所有元素。如果没有符合条件的元素则返回空数组。
+			var result = arr.filter(checkValue)
+			console.log(result);
+		</script>
+	</body>
+</html>

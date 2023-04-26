@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport"
+			content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<script src="js/mui.js"></script>
+		<script type="text/javascript">
+			/* 
+				需求：想拿到10-180的和，来判断是奇数还是偶数
+				
+				之前的操作
+					将结果直接打印在控制台上，调用者无法拿到计算后的结果
+				
+				解决方案
+					通过return关键字，将操作的结果返回给调用者
+					
+			
+			 
+			 */
+
+
+			function getSun(min, max) { //形式参数
+
+				var sum = 0
+
+				for (var i = min; i <= max; i++) {
+					sum += i
+				}
+				/* console.log(sum); */
+				return sum
+			}
+			//调用函数
+			var total = getSun(10, 100) //实际参数
+
+			console.log(total);
+
+
+			//拿到结果进行判断
+			if (total % 2 == 0) {
+				console.log('结果是偶数');
+			} else {
+				console.log('结果是奇数');
+			}
+
+
+			function getsum(num1, num2) {
+				var sum = num1 + num2
+				return sum
+			}
+			var num1 = +prompt('请输入第一个数')
+			var num2 = +prompt('请输入第二个数')
+			var sum = getsum(num1, num2)
+
+			alert('两个数之和为:' + sum)
+
+			function getyear(y1) {
+				if ((y1 % 4 == 0 && y1 % 100 != 0) || (y1 % 400 == 0)) {
+					return y1 + '年是闰年！'
+				} else {
+					return y1 + '年是平年'
+				}
+
+			}
+			console.log(getyear(2024));
+
+			
+		</script>
+	</body>
+
+</html>

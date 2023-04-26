@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			span{
+				background:lightblue;
+				width:100px;
+				height:100px;
+				/* 转成块级块元素 */
+				display: block;
+				}
+			div{background:lightgreen;
+				width:100px;
+				height:100px;
+				
+				/*块级元素默认display是block,这个属性就可以控制行级元素和块级元素是互转*/
+				/* display:block;* */
+				/*转成行级元素*/
+				display:inline;
+				/*转成行内块元素*/
+				display:inline-block;
+				}
+				a{
+					display:inline-block;
+					width:100px;
+					height:100px;
+					line-height: 100px;
+					text-decoration: none;
+					background-color: aliceblue;
+					text-align: center;
+					color: #55ffff;
+				}
+				a:hover{
+					color: #ff0000;
+					background-color: #ffaa00;
+					}
+				body{
+					text-align: center;
+				}	
+		</style>
+	</head>
+	<body>
+		<a href="">首页</a>
+		<a href="">专家团队</a>
+		<a href="">课程体系</a>
+		<a href="">就业实训</a>
+		<a href="">行业动态</a>
+		
+		
+		
+	</body>
+</html>

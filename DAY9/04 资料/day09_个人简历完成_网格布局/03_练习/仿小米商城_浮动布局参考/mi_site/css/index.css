@@ -1,0 +1,127 @@
+/* 设置主体部分home-hero-container样式 */
+.home-hero-container{
+    height: 644px;
+    background: pink;
+}
+
+/* 设置上面区域home-hero-swiper(轮播图所在区域) */
+.home-hero-container .home-hero-swiper{
+    position: relative;
+    height: 460px;
+    background: skyblue;
+}
+
+/* 设置轮播图 swiper-wrapper 的样式 */
+.home-hero-container .swiper-wrapper{
+    height: 460px;
+    background: green;
+}
+
+/* 设置轮播图中图片的样式 */
+.home-hero-container .swiper-wrapper img{
+    width: 1226px;
+}
+
+
+/* 设置上一张按钮,类似设置精灵图 */
+.home-hero-container .swiper-button-prev{
+    position: absolute;
+    top: 50%;
+    left: 234px;
+    margin-top: -35px;/* 向上移动自身高度的一半 */
+    width: 41px;
+    height: 69px;
+    background: url(../uploads/icon-slides.png) -83px 0;
+    cursor: pointer;/* 光标移上去变成小手 */
+}
+/* 设置光标移入按钮的时候,切换图片*/
+.home-hero-container .swiper-button-prev:hover{
+    background-position: 0 0;
+}
+
+/* 设置下一张按钮,类似设置精灵图 */
+.home-hero-container .swiper-button-next{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -35px;/* 向上移动自身高度的一半 */
+    width: 41px;
+    height: 69px;
+    background: url(../uploads/icon-slides.png) -124px 0;
+    cursor: pointer;/* 光标移上去变成小手 */
+}
+/* 设置光标移入按钮的时候,切换图片*/
+.home-hero-container .swiper-button-next:hover{
+    background-position: -41px 0;
+}
+
+/* 设置轮播图指示器swiper-pagination */
+.home-hero-container .swiper-pagination{
+    position: absolute;
+    right: 30px;
+    bottom: 20px;
+    width: 400px;
+    height: 21px;
+   /*  background: skyblue; */
+    text-align: right;/* 内容右对齐 */
+}
+
+/* 设置指示器里面的小圆点 */
+.home-hero-container .swiper-pagination a{
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border: 2px solid #fff;
+    /* hsla():是一个函数,使用色相,饱和度,亮度,透明度来定义颜色 */
+    border-color: hsla(0,0%,100%,.3);
+    border-radius: 10px;
+    overflow: hidden;
+    background: rgba(0,0,0,.4);
+    opacity: 1;
+}
+
+/* 设置指示器里面选中的小圆点样式  */
+.home-hero-container .swiper-pagination a.active{/* 交集选择器 */
+    background: hsla(0,0%,100%,.3);
+    border-color: rgba(0,0,0,.4);
+}
+
+/* 设置site-category侧边栏 */
+.home-hero-container .site-category{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 234px;
+    height: 460px;
+    padding: 20px 0;/* 让导航栏ul有上下间隙 */
+    background: rgba(105,101,101,.6);
+    box-sizing: border-box;
+}
+/* 设置li元素 */
+.home-hero-container .site-category li{
+    height: 42px;
+    /* background: skyblue; */
+}
+/* 设置li中的a */
+.home-hero-container .site-category li a{
+    position: relative;
+    display: block;
+    height: 42px;
+    padding-left:30px;
+    line-height: 42px;
+    color: #fff;
+}
+.home-hero-container .site-category li a:hover{
+    background: #ff6700;
+}
+
+/* 设置li中a标签后面的箭头 */
+.home-hero-container .site-category em{
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    font-size: 16px;
+    line-height: 16px;
+    color: #e0e0e0;
+}
+

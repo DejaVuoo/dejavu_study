@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father{
+            width: 300px;
+            height: 300px;
+            background: lightblue;
+
+            /* 解决方案:让父元素外边距上有东西分隔 */
+            /* border-top: 1px solid red; */
+            /* padding: 1px; */
+            /* overflow: hidden; */
+            /* display: inline-block; */
+            /* float: left; */
+        }
+
+        .son{
+            width: 100px;
+            height: 100px;
+            background: green;
+
+            /* 上外边距 */
+            margin-top: 100px;
+        }
+
+        /* 
+            现象
+                给子元素设置margin-top,会导致父元素一起往下移动
+            原因
+                父子元素的margin-top是紧贴在一起的,给子元素设置margin-top会作用在父元素上,导致二者一起塌陷
+        */
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+</body>
+</html>

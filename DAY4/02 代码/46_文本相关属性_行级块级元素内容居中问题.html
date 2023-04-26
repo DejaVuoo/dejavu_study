@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			/* 设置行级和块级元素的背景，了解这两个元素所占的默认宽度 */
+			a,div{
+				background-color: lightcoral;
+			}
+			/* 设置a标签内容居中 */
+			a{
+				text-align: center;/* 无效 */
+				text-decoration: none;
+			}
+			
+			
+			/* 对于a标签中的内容，想让它相对于外面元素居中，只能我a标签的父元素body,又因为a标签是行仃内元素，设置居中，只需要设置body的text-align:center */
+			body{
+				text-align: center;
+			}
+			/* 设置div标签内容居中 */
+			div{
+				text-align: center;
+			}
+			/* 
+			 对于行级元素（宽度是由内容决定的），设置里面文本居中，需要我它的父控件	(其实也是设置行级元素本身相对于父控件的居中)
+			 对于块级元素（宽度是默认独占一行），设置里面的文本居中，直接在这个块级元素上设置就行(text-align:center;)
+			 
+			 
+			 */
+			
+			
+			
+			
+		</style>
+	</head>
+	<body>
+		<a href="">百度</a>
+		<div>中地</div>
+	</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            1,创建一个盒子(div)
+            2,设置盒子的大小为要展示的图片的大小
+            3,设置精灵图为盒子背景图片
+            4,获取要展示的小图在精灵图上的坐标,取负值,设置到background-position属性上
+        */
+        div{
+            width: 30px;
+            height: 30px;
+
+            background-image: url(./img/sprites.png);
+
+            background-position: -113px -65px;
+        }
+    </style>
+</head> 
+<body>
+    <div></div>
+</body>
+</html>

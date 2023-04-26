@@ -1,0 +1,192 @@
+/* 声明全局属性 */
+:root {
+  --blue: #2980b9;
+  --black: #333;
+  --white: #fff;
+  --light-color: #777;
+  --light-bg: #eee;
+  /* 阴影样式 */
+  --box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 设置页面元素的默认样式 */
+* {
+  /* 字体系列 */
+  font-family: "Microsoft YaHei", sans-serif;
+  margin: 0;
+  padding: 0;
+  /* 自动内减,防止边框和内边距撑大盒子 */
+  box-sizing: border-box;
+  /* 去掉轮廓 */
+  outline: none;
+  /* 去掉边框 */
+  border: none;
+  text-decoration: none;
+  /* 设置文本中每个单词以大写开头 */
+  text-transform: capitalize;
+  transition: all 0.2s linear;
+}
+
+/* 设置滚动条整体部分样式 */
+html::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* 设置滚动条的轨道样式 */
+html::-webkit-scrollbar-track {
+  background: var(--blue);
+}
+
+/* 设置滚动条里面的上下移动小方块的样式 */
+html::-webkit-scrollbar-thumb {
+  background: var(--white);
+  border-radius: 50px;
+}
+
+/* 设置主体container的样式 */
+/* 没有设置高度,将来由子元素撑开 */
+.container{
+  display: flex;
+  padding: 100px 10%;
+  background:linear-gradient(45deg,deeppink,var(--blue));
+}
+
+/* 公共样式 */
+/* 标题 */
+.title{
+  font-size: 25px;
+  color: var(--blue);
+  margin-bottom: 15px;
+}
+
+/* 设置个人概要样式 */
+.container .profile{
+  flex: 400px; /* 初始宽度是400px,能放大,能缩小 */
+  padding: 20px 30px;/* 用于约束内容 */
+  background: var(--white);
+  border-right: 2px solid var(--black);
+  text-align: center;
+
+  align-self: flex-start;/* 不要拉伸,从上面对齐 */
+}
+
+/* 设置头像 */
+.container .profile img{
+  height: 150px;
+  width: 150px;
+  border: 2px solid var(--black);
+  object-fit: cover;/* 保持原有尺寸比例 */
+  margin-bottom: 10px;
+  border-radius: 50%;
+}
+
+/* 设置头像下的文字 */
+.container .profile h3{
+  color: var(--black);
+  font-size: 20px;
+}
+
+.container .profile p{
+  padding: 5px 0;
+  color: var(--blue);
+  font-size: 15px;
+}
+
+/* 设置分享a标签样式 */
+
+.container .share{
+  margin: 10px 0;
+} 
+
+.container .share a{
+  height: 50px;
+  width: 50px;
+  background: var(--light-bg);
+  font-size: 20px;
+  color: var(--black);
+  line-height: 50px;
+  border-radius: 50%;
+} 
+.container .share a:hover{
+  background: var(--blue);
+  color: var(--white);
+  box-shadow: var(--box-shadow);
+}
+
+/* 设置联系按钮的样式 */
+.container .profile .btn{
+  display: inline-block;
+  background: var(--blue);
+  padding: 7px 20px;
+  margin-top: 10px;
+  font-size: 17px;
+  color: var(--white);
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
+}
+
+
+/* 设置详细信息样式 */
+.container .information{
+  flex: 1000px; /* 初始宽度是1000px,能放大,能缩小 */
+  padding: 20px 30px;/* 用于约束内容 */
+  background: var(--white);
+}
+
+
+.information .about p{
+  margin-bottom: 10px;
+  color: var(--light-color);
+  font-size: 17px;
+  line-height: 2;
+}
+
+/* 使用flex布局来设置个人详细信息样式 */
+.information .about .box-container{
+  display: flex;
+  flex-wrap: wrap;/* 换行 */
+  gap: 15px;
+}
+
+.information .about .box{
+  flex: 250px;
+}
+
+.information .about .box h3{
+  padding: 10px 0; /* 上下有间隙 */
+  color: var(--black);
+  font-size: 15px;
+}
+
+.information .about .box span{
+  color: var(--light-color);
+}
+
+/* 设置技术栈模块样式 */
+.information .services{
+  padding: 20px 0;/* 跟上面有间隙 */
+}
+
+.information .services .box-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.information .services .box-container .box{
+  flex: 50px;
+  padding: 20px; /* 让内容跟边距有间距 */
+  background: var(--light-bg);
+  text-align: center;
+  border-radius: 5px;
+}
+
+.information .services .box-container img{
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.information .services .box-container h3{
+  font-size: 15px;
+  color: var(--light-color);
+}

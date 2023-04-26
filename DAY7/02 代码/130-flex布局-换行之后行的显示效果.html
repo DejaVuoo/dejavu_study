@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.b0{
+				height: 300px;
+				background: royalblue;
+				display: flex;
+				flex-wrap:wrap;
+				/* 
+				 设置换行之后行的显示效果：使用align-content属性
+					 flex-start	 元素位于容器的开头。
+				
+					 flex-end	 元素位于容器的结尾。
+				
+					 center	 元素位于容器的中心。
+				
+					 space-between	 元素位于各行之间留有空白的容器内。
+				
+					 space-around	 元素位于各行之前、之间、之后都留有空白的容器内。
+				 
+				
+				 */
+				
+				align-content:flex-start;
+				align-content:flex-end;
+				align-content:center;
+				align-content:space-between;
+				align-content:space-around;
+				align-content:space-evenly;	/*间距等分*/
+			}
+			.b2{
+				height: 100px;
+				width: 100px;
+				background: greenyellow;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="b0 ">
+			
+			
+			<div class="b2 clearfix">1</div>
+			<div class="b2 clearfix">2</div>
+			<div class="b2 clearfix">3</div>
+			<div class="b2 clearfix">3</div>
+			<div class="b2 clearfix">5</div>
+			<div class="b2 clearfix">6</div>
+			<div class="b2 clearfix">7</div>
+			<div class="b2 clearfix">8</div>
+			
+	</body>
+</html>

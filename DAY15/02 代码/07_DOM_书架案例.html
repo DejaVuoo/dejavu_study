@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--这本书名为<<abc>>,zhangsan编著的书，折扣为:0.8折，折扣后价格为:96-->
+
+</head>
+<body>
+    书名：<input type="text" id="bookname" name="bookname"  ><br/>
+    作者：<input type="text" id="bookauthor" name="bookauthor" ><br/>
+    价格：<input type="text" id="bookprice" name="bookprice" ><br/>
+    折扣：<input type="text" id="booksale" name="booksale" ><br/>
+    <input type="button" id="totalBtn" value="计算折扣价" onclick="gettext()">
+		<!-- <button onclick="gettext()"	 id="totalBtn"	>计算折扣价</button> -->
+    <script>
+        //通过三种方法获取 书名 作者 价格 折扣 中的数据
+		/* getElementById()
+		getElementsByTagName()
+		querySelector() */
+		
+		//提示:获取输入的文本框中的数值 使用的是 元素对象.value  这个方法
+		function gettext(){
+			var bookname = document.getElementById('bookname').value;
+			var bookauthor = document.getElementsByTagName('input')[1].value
+			var bookprice = document.getElementById('bookprice').value;
+			var booksale = document.querySelector('#booksale').value
+			var price= bookprice*(booksale/10)
+			alert(`这本书名为《${bookname}》,${bookauthor}编著的书，折扣为：${booksale}折，折扣后价格为：${price}`)
+		}
+		
+		
+		
+		
+		
+		
+		
+    </script>
+</body>
+</html>

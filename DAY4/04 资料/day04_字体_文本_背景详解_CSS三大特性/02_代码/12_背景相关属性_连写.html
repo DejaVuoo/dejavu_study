@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* background	复合属性。设置对象的背景特性。
+
+                可以在一个声明中设置所有的背景属性。
+
+                写法:一般按照 background-color,background-image,background-position,background-repeat
+
+                各值之间用空格分隔，不分先后顺序。可以只有其中的某些值，
+
+
+        标准写法
+            background:bg-color bg-image position/bg-size bg-repeat bg-origin bg-clip bg-attachment initial|inherit;
+
+            注意:bg-size要么单独放在最后面,要么写在background-position后面
+        */
+
+        /* div{
+            width: 400px;
+            height: 400px;
+
+            background-color: lightblue;
+
+            background-image: url(./img/1.jpg); 
+
+            background-repeat: no-repeat;
+
+            background-position:center center;
+
+            background-size:100% 100%
+        } */
+
+        /* 使用复合属性改进 */
+        div{
+            width: 400px;
+            height: 400px;
+
+            background:lightblue url(./img/1.jpg) no-repeat center center/100% 100% 
+        }
+
+    </style>
+
+</head>
+<body>
+    <div></div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            case穿透产生的原因
+                因为break用于结束switch语句的,如果忘记写了,会产生case穿透
+            
+            case穿透的执行情况
+                case穿透会从满足条件的那个case语句开始,依次往后面执行,即使后面的case不满足条件,也会执行语句体
+                直到遇到下一个break才停止
+
+            case穿透的利用
+                使用case穿透简化代码
+        
+        */
+
+        //判断一个数是奇数还是偶数
+        
+        //获取输入的数
+        var num = prompt('请输入一个数')
+
+        //判断
+        switch(num%2){
+            case 1:
+                alert('奇数')
+               
+            case 0:
+                alert('偶数')
+                
+            default:
+                alert('你输入的不是一个整数')
+                break
+        }
+
+        /* 
+            判断月份属于哪个季节: 12,1,2冬季  3,4,5春季 6,7,8夏季 9,10,11秋季 
+        */
+    </script>
+</body>
+</html>

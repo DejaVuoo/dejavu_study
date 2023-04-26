@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 1,找到奇数个li元素设置成红色 */
+        li:nth-child(odd){
+            color: red;
+        }
+        
+        li:nth-child(2n+1){
+            color: grey;
+        }
+        /* 2,找到偶数个li元素设置成绿色 */
+        li:nth-child(even){
+            color: green;
+        }
+        li:nth-child(2n){
+            color: lightblue;
+        }
+        
+        /* 3,找到前5个li元素设置成紫色 */
+        li:nth-child(-n+5){  /* n必须放在前面 */
+            color: purple;
+        }
+        
+        /* 4,找到从第5个li元素以后的元素设置成蓝色 */
+        li:nth-child(n+5){  /* n必须放在前面 */
+            color: blue;
+        }
+        
+    </style>
+</head>
+<body>
+    <ul>
+        <li>我是li元素</li>
+        <li>我是li元素</li>
+        <li>我是li元素</li>
+        <li>我是li元素</li>
+        <li>我是li元素</li>
+        <li>我是li元素</li>
+        <li>我是li元素</li>
+        <li>我是li元素</li>
+        <li>我是li元素</li>
+    </ul>
+</body>
+</html>

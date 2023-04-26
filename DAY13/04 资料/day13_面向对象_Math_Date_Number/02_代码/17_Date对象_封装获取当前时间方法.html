@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //封装一个方法,调用这个方法,就可以打印当前时间(在控制台上打印: 今天是2023年4月6号,星期四)
+        function getToday(){
+            //获取当前时间对象
+            var d = new Date()
+
+            //获取年
+            var year = d.getFullYear()
+
+            //获取月
+            var month = d.getMonth() + 1
+
+            //获取日
+             var date = d.getDate()
+
+            //获取星期
+             var  week = d.getDay()
+
+             //定义一个数组保存星期
+             var arr = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六']
+
+             //拼接当前时间
+             var today =  `今天是${year}年${month}月${date}号,`+arr[week]
+
+             return today
+        }
+
+        //调用方法获取当前时间并打印
+        console.log(getToday());
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = ''
+        for(var i = 1;i <=5 ;i++){
+            for(var j=1;j<=5;j++){
+                str += '*'
+
+                //在内层循环里面使用break,只会结束它当前所在的内层循环,不影响外层循环
+                if(j == 2){
+                    break
+                }
+            }
+            str += '\n'
+        }
+        console.log(str);
+    </script>
+</body>
+</html>

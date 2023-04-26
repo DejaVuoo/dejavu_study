@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function Student(name, age) {
+				this.name = name
+				this.age = age
+
+			}
+
+
+			//做法
+			Student.prototype.study = function() {
+				console.log('学习');
+			}
+
+			//创建两个实例对象
+			var stu1 = new Student('张三', 23)
+			stu1.study()
+			var stu2 = new Student('李四', 23)
+			stu2.study()
+
+			//原型对象（在构造函数上），本质是Student的一个静态成员
+			console.dir(Student);
+			console.dir(Student.prototype);
+			//对象的原型（在对象上），本质是对象的一个属性
+			console.log(stu1);
+			console.log(stu1.__proto__);
+			//验证对象的原型是不是指向原型对象
+			console.log(stu1.__proto__ === Student.prototype); //true
+			
+			/* 
+				对象的原型应用场景
+					为对象查找方法提供了一个途径
+						例如查我stu的study方法，先去构造函数中找，有没有study方法
+						发现是没有的，就会通过对象的原型，找到原型对象Student.prototype(对象的原型指向原型对象)
+						看原型对象上有没有study方法，如果有就调用，如果没有的话，会通过原型链往上找
+			 */
+		</script>
+	</body>
+</html>

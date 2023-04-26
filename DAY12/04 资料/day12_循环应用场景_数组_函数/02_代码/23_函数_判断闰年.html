@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        写一个函数,判断一个年份是否是闰年 year
+            1,能被4整除,不能被100整除 
+            2,能被400整除 
+
+         有参数,参数是一个年份
+         有返回值,true或者false
+       */
+       var year =  prompt('请输入一个年份')
+
+       function isRunYear(year){
+            return (year%4==0 && year%100!=0) || (year%400==0) 
+       }
+
+       //调用函数,拿到结果
+       var res = isRunYear(2023)
+       console.log(res);
+
+       //根据结果再次输出
+       if(res){
+          console.log(year+'是闰年');
+       }else{
+        console.log(year+'是平年');
+       }
+
+    </script>
+</body>
+</html>

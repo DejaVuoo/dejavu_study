@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            
+
+            分析
+                可以将a标签转成行内块元素,实现元素水平排布,并且可以设置宽高
+        
+
+            css样式书写顺序
+                1,布局属性  display
+                2,宽高属性
+                3,辅助背景颜色
+                4,盒子模型相关属性
+                5,其他样式(字体,文本,行高)
+                6,点缀样式(圆角,阴影)
+
+            弊端
+                行内块元素布局弊端:如果元素换行的话,中间会有间隙,不换行的话,代码可读性比较差
+        */
+        nav a{
+            /* 1,布局属性  display */
+            display: inline-block;
+            /* 2,宽高属性 */
+            width: 80px;
+            height: 50px;
+            /* 3,辅助背景颜色 */
+            background: pink;
+            /* 4,盒子模型相关属性 */
+            /* 5,其他样式(字体,文本,行高) */
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            line-height: 50px;
+            /* 6,点缀样式(圆角,阴影) */
+        }
+        nav a:hover{
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="">新闻新闻1新闻1新闻1新闻11</a><a href="">新闻2</a><a href="">新闻3</a><a href="">新闻4</a><a href="">新闻5</a>
+    </nav>
+</body>
+</html>

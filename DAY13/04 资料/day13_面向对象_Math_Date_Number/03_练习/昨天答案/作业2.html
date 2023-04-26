@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 作业2:定义一个函数,求数组中某个元素的索引,如果不存在,返回-1 */
+
+        function getIndex(arr,key){  //key表示要查找的元素
+            for(var i=0;i<arr.length;i++){
+                if(arr[i] == key){
+                    return i
+                }
+            }
+            return -1
+        }
+
+        //使用
+        var arr = [1,2,3,4,5,7]
+
+        var index = getIndex(arr,4)
+
+        console.log(index);
+    </script>
+</body>
+</html>

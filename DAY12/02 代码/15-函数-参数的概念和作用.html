@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport"
+			content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<script src="js/mui.js"></script>
+		<script type="text/javascript">
+			
+			/* 
+				 函数的参数
+					 其实就是一个媒介，调用者可以通过参数将要操作的数据传递到函数内部，进行操作
+					 可以提高程序的通用性和扩展性
+				
+				参数的分类
+					形式参数
+						写在函数定义语句中小括号里面（其实就是一个占位符）
+					实际参数
+						写在函数调用语句中的（里面传递的就是具体的数值）	
+					
+			 
+			 */
+			
+			
+			function getSun(min,max) {  //形式参数
+
+				var sum = 0
+				
+				for (var i = min; i <= max; i++) {
+					sum += i
+					}
+					console.log(sum);
+				} 
+				//调用函数
+				getSun(10,100) //实际参数
+				/* 
+				 
+				 弊端
+					程序的调用无法拿到函数操作后的结果，就没办法进行进一步的操作
+					比如：想拿到10-180的和，来判断是奇数还是偶数
+					 
+				 */
+		</script>
+	</body>
+
+</html>

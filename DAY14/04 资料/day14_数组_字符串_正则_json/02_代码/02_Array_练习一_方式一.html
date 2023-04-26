@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      //有一个包含工资的数组 [1500,1200,2000,2100,2200,1800] 把超过2000的删除,剩余的放到一个新的数组 打印新的数组
+
+      //直接遍历当前数组,将超过2000的删除
+
+      var arr =  [1500,1200,2000,2100,2200,1800] 
+
+      for(var i = 0;i < arr.length;i++){
+        if(arr[i] > 2000){
+            arr.splice(i,1)
+            i--;//防止因为删除前一个元素之后,导致后面一个元素漏掉(删除之后,数组长度会变化,后面的元素会往前移动)
+        }
+      }
+
+      console.log(arr);
+    </script>
+</body>
+</html>

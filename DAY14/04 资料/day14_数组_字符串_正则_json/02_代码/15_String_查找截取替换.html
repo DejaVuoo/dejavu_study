@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = '有钱人终成眷属,没钱人亲眼目睹'
+
+        //查找索引为3处的字符( charAt()	返回在指定位置的字符。)
+        console.log(str.charAt(3));
+        console.log(str[3]);
+
+        //查找第一个'钱'所在的索引
+        console.log(str.indexOf('钱'));
+
+        //查找最后一个'钱'所在的索引
+        console.log(str.lastIndexOf('钱'));
+
+        //将'眷属'截取出来打印
+        //substr()	从起始索引号提取字符串中指定数目的字符。
+        console.log(str.substr(5,2));
+        //substring()	提取字符串中两个指定的索引号之间的字符。
+        console.log(str.substring(5,7));
+
+        //将第一个'钱'替换成'情'
+        //replace()	在字符串中查找匹配的子串，并替换与正则表达式匹配的子串。
+        var res1 = str.replace('钱','情')
+        console.log(res1);
+
+        //将里面的'人'替换成'的'
+        //replaceAll()	在字符串中查找匹配的子串，并替换与正则表达式匹配的所有子串。
+        var res2 = str.replaceAll('人','的')
+        console.log(res2);
+
+        
+        //'1,2,3,4,5' ---> 数组
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function a() {
+            console.log(1);
+            Promise.resolve().then(function () {
+                console.log(2);
+            });
+        }
+
+        setTimeout(function () {
+            console.log(3);
+
+            Promise.resolve().then(a)
+
+        }, 0);
+
+        Promise.resolve().then(function () {
+            console.log(4);
+        });
+
+        console.log(5);
+
+        /*  5 4  3  1  2
+
+            1,渲染主程序 执行全局js代码
+            2,执行20行的时候,计时器线程启动,因为定时为0秒,所以计时器线程会立即将回调函数fn3,放到延时队列中等待执行
+            3,执行27行的时候,将fn4函数放在微队列中
+            4,执行第31行,打印5,然后执行全局js任务完成
+            5,然后再从微队列中取出fn4执行,打印4
+            6,然后再从延时对列中取出fn3执行,先打印3,然后把a函数放到微队列中,当前这个任务也执行完了
+            7,在从微队列中取出a函数执行,打印1,又把fn2放到微队列中
+            8,在从微队列中取出fn2函数执行,打印2
+
+        */
+    </script>
+</body>
+
+</html>

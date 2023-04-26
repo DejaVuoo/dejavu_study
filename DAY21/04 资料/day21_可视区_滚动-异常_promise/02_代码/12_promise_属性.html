@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1,创建promise对象
+            //必须要传一个函数作为参数
+            //在这个函数里面,一般会有两个形参,resolve,reject
+        const p1 =  new Promise((resolve,reject)=>{})
+        
+
+        //2,打印promise对象,可以看出它有两个属性
+            //状态属性 PromiseState
+                //默认值 pending  准备中
+
+            //结果属性 PromiseResult
+                //默认值 undefined
+        console.log(p1);
+
+        //3,如何修改promise状态属性
+            //1,调用resolve()方法,当前promise状态就会从pending转成fulfill状态
+        const p2 =  new Promise((resolve,reject)=>{ resolve() })
+        console.log(p2);
+            //2,调用reject()方法,当前promise状态就会从pending转成rejected状态
+        const p3 =  new Promise((resolve,reject)=>{ reject() })
+        console.log(p3);
+
+        //4,如何修改promise结果属性
+            //调用resolve()方法的时候,传递参数,它会将传递的参数保存在结果属性中
+        const p4 =  new Promise((resolve,reject)=>{ resolve('success') })
+        console.log(p4);  
+            //调用reject()方法的时候,传递参数,它会将传递的参数保存在结果属性中
+        const p5 =  new Promise((resolve,reject)=>{ reject('failed') })
+        console.log(p5);   
+        
+        //5,promise的状态是不可逆的
+        const p6 =  new Promise((resolve,reject)=>{ resolve(),reject()})
+        console.log(p6); 
+
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father{
+            display: flex;
+            height:300px;
+            background: lightblue;
+
+            /* 
+                flex-wrap	该属性控制flex容器是单行或者多行，同时横轴的方向决定了新行堆叠的方向。
+                    nowrap	默认值。规定灵活的项目不拆行或不拆列。
+                    wrap	规定灵活的项目在必要的时候拆行或拆列。
+
+                现象
+                    随着父级元素宽度的缩小,子级元素会被挤压,宽度也会变小,不会自动换行
+
+                原因
+                    flex-wrap 属性规定了flex子项不拆行或不拆列(默认的)
+
+                解决
+                    flex-wrap:wrap
+
+            */
+            flex-wrap:wrap;
+        }
+
+        .son{
+            width: 100px;
+            height: 100px;
+            background: gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son">1</div>
+        <div class="son">2</div>
+        <div class="son">3</div>
+        <div class="son">4</div>
+        <div class="son">5</div>
+        <div class="son">6</div>
+        <div class="son">7</div>
+        <div class="son">8</div>
+    </div>
+</body>
+</html>

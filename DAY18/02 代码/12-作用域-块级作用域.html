@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			if (true) {
+				var num 1 = 10 //var是es5中的语法，不受{}的影响，它是在全局作用域中
+				let num 2 = 20 //let是es6中的语法，它所在的区域就是块级作用域，出了这个作用域就没办法使用
+			}
+			console.log(window); //可以看到num1这个属性，说明它在全局作用域中
+			console.log(num1);
+			console.log(num2);
+		</script>
+	</body>
+</html>

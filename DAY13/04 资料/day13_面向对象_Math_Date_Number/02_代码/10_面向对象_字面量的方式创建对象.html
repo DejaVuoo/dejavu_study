@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //创建人类
+        var p1 = {} //空的对象,没有属性和方法
+        console.log(p1);
+        console.log(typeof p1);//object 是所有类的基类,所有的类都直接或者是间接继承object类
+
+        //创建带有属性和方法的人类
+        var p2 = {
+            name:'张三',
+            age:23,
+            eat:function(){
+                console.log('吃饭');
+            }
+        }
+        console.log(p2);
+
+        //访问属性 方式一:最常用
+        console.log(p2.name);
+
+        //访问属性 方式二:不常用
+        console.log(p2['name']);
+    </script>
+</body>
+</html>

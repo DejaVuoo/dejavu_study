@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+        }
+
+        .c{
+            background: lightblue;
+        }
+
+        .c1{
+            border: 5px solid green;
+            border-radius: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="c"></div>
+
+    <script>
+        //获取元素
+        var div =  document.querySelector('div')
+        
+        //批量设置(直接使用className会将之前元素自带的class覆盖掉)
+        //div.className = 'c1'
+
+        //方式一
+        //div.className = 'c c1' //将之前的class属性手动加上去
+
+        //方式二
+        console.dir(div) //可以看到它里面有一个classList属性,存放的就是它calss属性的数组
+        div.classList.add('c1')
+
+
+    </script>
+</body>
+</html>

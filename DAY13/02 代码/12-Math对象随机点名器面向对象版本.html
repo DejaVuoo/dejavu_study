@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function Person(name, age, home) {
+				this.name = name
+				this.age = age
+				this.home = home
+				this.sayhi = function() {
+					console.log(`我叫${this.name},今年${this.age}岁,来自${this.home}`);
+				}
+			}
+
+
+			var p1 = new Person('张三', 23, '湖北')
+
+			var p2 = new Person('李四', 24, '湖南')
+			var p3 = new Person('王五', 26, '山东')
+			var p4 = new Person('赵六', 25, '山西')
+
+
+
+
+			var arr = [p1, p2, p3, p4]
+
+			console.log(arr[Math.floor(Math.random() * arr.length)]);
+			
+		</script>
+	</body>
+</html>

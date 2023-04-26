@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="username" /><input type="checkbox" id="remember" name=""/>记住用户名
+		<script>
+			//获取表单元素
+			var username = document.querySelector('#username');
+			var remember = document.querySelector('#remember');
+			//判断 本地存储有没有要获取的数据
+			if(localStorage.getItem('username')){ 
+				username.value = localStorage.getItem('username'); //如果本地储存有username的值,就把值取(getItem)出来赋给表单的值,如果没有就算了
+				remember.checked = true
+			}
+			
+			//给复选框添加事件,勾选就储存,不勾就删除
+			remember.addEventListener('change',function(){
+				if(this.checked){ 
+					localStorage.setItem('username',username.value)
+				} else {
+					localStorage.removeItem('username')
+				}
+			})
+		</script>
+	</body>
+</html>

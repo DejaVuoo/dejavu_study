@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//手机类
+			class Phone {
+				//打电话
+				call() {
+					console.log('打电话');
+				}
+			}
+
+			//新一代手机，不仅可以打电话，还可以打电话的同时进行视频（保留原有功能的基础上，扩展新功能）
+			class NewPhone extends Phone{
+				//打电话
+				call() {
+					//使用super关键字，调用父类的方法
+					super.call()
+					console.log('同时视频')
+				}
+			}
+			
+			//创建新手机.调用打电话方法
+			const p = new NewPhone()
+			p.call()
+		</script>
+	</body>
+</html>

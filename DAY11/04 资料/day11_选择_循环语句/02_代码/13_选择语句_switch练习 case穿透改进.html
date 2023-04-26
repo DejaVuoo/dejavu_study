@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+            判断月份属于哪个季节: 12,1,2冬季  3,4,5春季 6,7,8夏季 9,10,11秋季 
+
+            case穿透的改进
+                如果多个case,执行的语句体是一样的,就可以考虑使用case穿透来简化代码
+        */
+        //获取月份
+        var month = prompt('请输入一个月份')
+        
+        //判断
+        switch (Number(month)) {  /* 这个地方switch不会自动将变量转成number类型.需要手动转换 */
+            case 12:
+            case 1:
+            case 2:
+                console.log('冬季');
+                break
+            case 3:
+            case 4:
+            case 5:
+                console.log('春季');
+                break
+            case 6:
+            case 7:
+            case 8:
+                console.log('夏季');
+                break
+            case 9:
+            case 10:
+            case 11:
+                console.log('秋季');
+                break
+            default:
+                console.log('你输入的不是一个月份');
+                break
+        }
+    </script>
+</body>
+
+</html>

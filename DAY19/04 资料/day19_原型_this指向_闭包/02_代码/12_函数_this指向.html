@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>按钮</button>
+    <script>
+        //命名函数
+        function f1(){
+            console.log('命名函数中的this:');
+            console.log(this);
+        }
+
+        f1()
+
+        //匿名函数
+        var f2 = function (){
+            console.log('匿名函数中的this:');
+            console.log(this);
+        }
+
+        f2()
+
+        //构造函数
+        function Student(){
+            console.log('构造函数中的this:');
+            console.log(this);
+        }
+
+        var s = new Student()
+
+        //字面对象中定义的方法(函数)
+        var t = {
+            name:'张三',
+            age:23,
+            eat:function(){
+                console.log('字面量对象中的this:');
+                console.log(this);
+            }
+        }
+        t.eat()
+
+        //事件处理函数
+        document.querySelector('button').addEventListener('click',function(){
+            console.log('事件函数中的this:');
+            console.log(this);
+        })
+
+        //定时器里面的函数
+        function run(){
+            console.log('定时器函数中的this:');
+            console.log(this);
+        }
+        setTimeout(run,2000);//需要加上分号,否则会影响下面的立即执行函数
+
+        //立即执行函数
+        (function(){
+            console.log('立即执行函数中的this:');
+            console.log(this);
+        })()
+
+        /* 
+12_函数_this指向.html:15 命名函数中的this:
+12_函数_this指向.html:15 Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+12_函数_this指向.html:22 匿名函数中的this:
+12_函数_this指向.html:23 Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+12_函数_this指向.html:30 构造函数中的this:
+12_函数_this指向.html:31 Student {}
+12_函数_this指向.html:41 字面量对象中的this:
+12_函数_this指向.html:42 {name: '张三', age: 23, eat: ƒ}
+12_函数_this指向.html:62 立即执行函数中的this:
+12_函数_this指向.html:63 Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+12_函数_this指向.html:55 定时器函数中的this:
+12_函数_this指向.html:56 Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+        */
+    </script>
+</body>
+</html>

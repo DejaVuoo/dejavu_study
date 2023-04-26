@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        /* 
+            onload 事件会在页面或图像加载完成后立即发生。
+
+            操作
+                将script代码放在body上面,就会报null错误
+
+            原因
+                浏览器加载html页面是从上往下,读一行执行一行,将script代码放在body上面,执行js代码的时候
+                元素并没有加载出来
+            
+            解决
+                方式一:将script代码放在body下面
+                方法二:监听window对象的load事件,在页面加载完成之后,执行事件处理函数
+
+        */
+
+        window.addEventListener('load',function(){
+            var btn = document.querySelector('button')
+
+            btn.addEventListener('click',function(){
+                alert('咨询')
+            })
+        })
+        
+    </script>
+
+</head>
+<body>
+    <button>点我</button>
+
+    
+</body>
+</html>

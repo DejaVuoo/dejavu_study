@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father{
+				width: 200px;
+				height: 200px;
+				background: royalblue;
+			}
+			.son{
+				width: 100px;
+				height: 100px;
+				background: greenyellow;
+			}
+    </style>
+
+
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <script>
+        /*
+            stopPropagation()不再派发事件。
+            
+            实现需求：点击子元素，只会触发子元素的事件，不会向上冒泡，触发父元素事件
+        */
+
+        //给document添加点击事件
+        document.addEventListener('click', function (e) {
+            console.log(e);
+            alert('document')
+        }, false)
+        
+        //给父亲添加点击事件
+        document.querySelector('.father')
+        addEventListener('click', function () {
+            alert('father')
+        },false)
+
+        //给儿子添加点击事件
+        document.querySelector('.son').addEventListener('click', function (e) {
+            alert('son')
+            e.stopPropagation()//阻止事件冒泡
+        }, false)
+    </script>
+</body>
+
+</html>

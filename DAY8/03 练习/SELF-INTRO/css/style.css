@@ -1,0 +1,381 @@
+/* 声明全局属性 */
+:root {
+  --blue: #2980b9;
+  --black: #333;
+  --white: #fff;
+  --light-color: #777;
+  --light-bg: #eee;
+  --box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 设置页面元素的默认样式 */
+*{
+  /* 设置字体样式 */
+  font-family: "Microsoft YaHei", sans-serif;
+  /* 去除内外边距 */
+  margin: 0;
+  padding: 0;
+  /* 去除盒子之间的间距 */
+  box-sizing: border-box;
+  /* 去除轮廓 */
+  outline: none;
+  /* 去除边框 */
+  border: none;
+  text-decoration: none;
+  /* 设置文本中每个单词首字母大写开头 */
+  text-transform: capitalize;
+  transition: all 0.2s linear;
+}
+
+/* 设置滚动条整体部分样式 */
+html::-webkit-scrollbar{
+  width: 10px;
+}
+
+/* 设置滚动条的轨道样式 */
+html::-webkit-scrollbar-track{
+  background: var(--blue);
+}
+
+/* 设置滚动条里面的上下移动小方块的样式 */
+html::-webkit-scrollbar-thumb{
+  background: var(--white);
+  border-radius: 50px;
+}
+
+/* 设置主体container样式 */
+/* 没有设置高度，将来由子元素撑开 */
+.container{
+display: flex;
+padding: 100px  10%;
+background-image: linear-gradient(45deg,deeppink,var(--blue));
+}
+/* 公共样式 */
+/* 标题 */
+.title{
+  font-size: 25px;
+  color: var(--blue);
+  margin-bottom: 15px;
+}
+
+/* 设置个人概要样式 */
+.container .porfile{
+  flex: 400px;/* 初始宽度400 能放大能缩小  */
+  padding: 20px 30px;/*  用于约束内容  */
+  background:var(--white) ;
+  border-right: 2px solid var(--black);
+  text-align: center;
+  align-self: flex-start;
+
+}
+/* 设置头像 */
+.container .porfile img{
+  width: 150px;
+  height: 150px;
+  border: 2px solid var(--black);
+  object-fit: cover;
+  margin-bottom: 10px;
+  border-radius: 50%;
+}
+/* 设置头像下文字 */
+.container .porfile h3{
+  color: var(--black);
+  font-size: 20px;
+}
+.container .porfile p{
+  padding: 5px 0;
+  color: var(--blue);
+  font-size: 15px;
+}
+.container .share{
+  margin: 10px 0;
+}
+.container .share i{
+  height: 50px;
+  width: 50px;
+  background: var(--light-bg);
+  font-size: 20px;
+  color: var(--black);
+  line-height: 50px;
+  border-radius: 50%;
+}
+.container .share i:hover{
+  background: var(--blue);
+  color: var(--white);
+  box-shadow: var(--box-shadow);
+}
+/* 设置联系按钮样式 */
+.container .porfile .btn{
+  display: inline-block;
+  background: var(--blue);
+  padding:7px 20px;
+  margin-top: 10px;
+  font-size: 17px;
+  color: var(--white);
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
+}
+
+
+/* 设置初始效果 */
+.container .information{
+  flex: 1000px;/* 初始宽度400 能放大能缩小  */
+  padding: 20px 30px;/*  用于约束内容  */
+  background:var(--white) ;
+  border-right: 2px solid var(--black);
+}
+
+.information .about p{
+    margin-bottom: 10px;
+    color: var(--light-color);
+    font-size: 17px;
+    line-height: 2;
+    text-indent: 2em;
+}
+/* 使用flex布局，设置个人详细信息样式 */
+.information .about .box-container{
+    display: flex;
+    flex-wrap: wrap;/* 换行 */
+    gap: 15px;
+    justify-content: space-between;
+}
+
+.about .box-container .box{
+    flex: 10px;
+}
+.about .box-container .box h3{
+    padding:10px 0;
+    color: var(--black);
+    font-size: 10px;
+}
+
+.information .about .box span{
+  color: var(--light-color);
+}
+
+/* 设置技术栈模块 */
+.information .services{
+  padding: 20px 0;
+}
+
+.information .services .skill{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+.information .services .skill .d1{
+ flex: 50px;
+ padding: 10px;/* 内边距 */
+ background: var(--light-bg);
+ text-align: center;
+ border-radius: 5px;
+}
+
+.information .services .skill span{
+ color: var(--light-color);
+ font-size: 15px;
+
+}
+
+.information .services .skill img{
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+
+
+/* 设置技能熟练度 */
+.proficiency{
+  padding: 20px 0;
+}
+.proficiency .box{
+  display: flex;
+  /* flex-wrap: wrap; */
+  justify-content: space-between ;
+
+}
+.proficiency .box .box-1{
+  display: inline-block;
+  width: 49%;
+}
+.proficiency .box .box-2{
+  display: inline-block;
+  width: 49%;
+
+}
+
+.information .proficiency .type{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+
+.information .proficiency .box-big1 .ability{
+  height: 15px;
+  background-color: var(--light-bg);
+  border-radius: 25px;
+}
+.information .proficiency .box-big1 .skills{
+  width: 95%;
+  height: inherit;
+  background-color: var(--blue);
+  border-radius: 25px; 
+}
+
+.information .proficiency .box-big2 .ability{
+  height: 15px;
+  background-color: var(--light-bg);
+  border-radius: 25px;
+}
+.information .proficiency .box-big2 .skills{
+  width: 80%;
+  height: inherit;
+  background-color: var(--blue);
+  border-radius: 25px; 
+}
+
+.information .proficiency .box-big3 .ability{
+  height: 15px;
+  background-color: var(--light-bg);
+  border-radius: 25px;
+}
+.information .proficiency .box-big3 .skills{
+  width: 65%;
+  height: inherit;
+  background-color: var(--blue);
+  border-radius: 25px; 
+}
+
+.information .proficiency .box-big4 .ability{
+  height: 15px;
+  background-color: var(--light-bg);
+  border-radius: 25px;
+}
+.information .proficiency .box-big4 .skills{
+  width: 70%;
+  height: inherit;
+  background-color: var(--blue);
+  border-radius: 25px; 
+}
+
+
+
+
+
+.information .proficiency .box-big5 .ability{
+
+  height: 15px;
+  background-color: var(--light-bg);
+  border-radius: 25px;
+}
+.information .proficiency .box-big5 .skills{
+  width: 90%;
+  height: inherit;
+  background-color: var(--blue);
+  border-radius: 25px; 
+}
+
+.information .proficiency .box-big6 .ability{
+
+  height: 15px;
+  background-color: var(--light-bg);
+  border-radius: 25px;
+}
+.information .proficiency .box-big6 .skills{
+  width: 75%;
+  height: inherit;
+  background-color: var(--blue);
+  border-radius: 25px; 
+}
+
+.information .proficiency .box-big7 .ability{
+
+  height: 15px;
+  background-color: var(--light-bg);
+  border-radius: 25px;
+}
+.information .proficiency .box-big7 .skills{
+  width: 65%;
+  height: inherit;
+  background-color: var(--blue);
+  border-radius: 25px; 
+}
+
+.information .proficiency .box-big8 .ability{
+
+  height: 15px;
+  background-color: var(--light-bg);
+  border-radius: 25px;
+}
+.information .proficiency .box-big8 .skills{
+  width: 70%;
+  height: inherit;
+  background-color: var(--blue);
+  border-radius: 25px; 
+}
+
+
+/* 设置工作经历样式 */
+.information .strdy{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 0;
+  gap: 15px;
+} 
+.strdy .strdy1{
+  background: var(--light-bg);
+  padding: 10px 20px;
+}
+.strdy .strdy2{
+  background: var(--light-bg);
+  padding: 10px 20px;
+  
+}
+.strdy .p1{
+  padding: 5px 0;
+  color: var(--blue);
+}
+.strdy .p2{
+  padding: 5px 0;
+  font-size: 17px;
+  font-weight: bold;
+}
+.strdy .p3{
+  padding: 5px 0;
+  color: var(--light-color);
+  line-height: 2;
+}
+
+/* 设置联系方式模块 */
+.Contact{
+  padding:20px 0;
+}
+.Contact .JOJO{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: space-between;
+}
+.Contact .JOJO .box{
+  text-align:center;
+}
+.Contact .JOJO .brand{
+  width: 60px;
+  height: 60px;
+  background: var(--blue);
+  font-size: 30px;
+  color: var(--white);
+  border-radius: 90px;
+  text-align:center ;
+  line-height: 60px;
+}
+
+.Contact .JOJO p{
+  color: var(--light-color);
+  font-size: 10px;
+  text-align: center;
+}

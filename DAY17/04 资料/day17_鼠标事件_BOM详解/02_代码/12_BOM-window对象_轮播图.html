@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+	<style>
+		#img{
+            display: block;
+			margin:auto;
+		}
+	</style>
+</head>
+<body>
+
+    <img id="img" src="img/a1.jpg" width="50%">
+
+    <script>
+        /*
+            分析：
+                1.定义一个方法，修改图片对象的src属性
+                2.定义一个定时器，每隔3秒调用方法一次。
+         */
+
+         // 1.定义一个方法，修改图片对象的src属性
+         var num = 1
+         function updateSrc(){
+            num++
+
+            //判断
+            if(num > 9){
+                num = 1 //当num超过9的时候重置为1
+            }
+
+            //获取图片对象
+            var img = document.querySelector('img')
+            img.src = `img/a${num}.jpg`
+         }
+
+         //2.定义一个定时器，每隔3秒调用方法一次。
+         setInterval(updateSrc,1000)
+
+    </script>
+</body>
+</html>

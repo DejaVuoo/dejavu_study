@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<a href="#">Link 1</a>
+		<button>Button 1</button>
+		<div class="header-btn">
+			<a href="http://project.x-zd.net/product/#">
+				<button class="span">现在联系我！</button>
+				
+			</a>
+		<script>
+			// 获取页面中所有的 a 标签和 button 标签
+			const links = document.querySelectorAll('a, button');
+			
+			// 创建一个 div 元素作为跟随鼠标移动的圆型图案
+			const circle = document.createElement('div');
+			circle.style.position = 'absolute';
+			circle.style.width = '40px';
+			circle.style.height = '40px';
+			circle.style.borderRadius = '50%';
+			circle.style.backgroundColor = '#fff';
+			circle.style.opacity = '0.5';
+			circle.style.pointerEvents = 'none'; // 禁止图案响应鼠标点击事件
+			
+			// 绑定鼠标移动事件监听器，显示/隐藏圆型图案
+			document.addEventListener('mousemove', (event) => {
+			  if (event.target.tagName === 'A' || event.target.tagName === 'BUTTON') {
+			    // 显示圆型图案，并跟随鼠标移动
+			    circle.style.top = `${event.clientY - circle.offsetHeight / 2}px`;
+			    circle.style.left = `${event.clientX - circle.offsetWidth / 2}px`;
+			    document.body.appendChild(circle);
+			  } else {
+			    // 隐藏圆型图案
+			    circle.remove();
+			  }
+			});
+		</script>
+	</body>
+</html>

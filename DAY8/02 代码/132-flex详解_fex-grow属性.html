@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			/* 
+			flex-grow
+				定义项目的放大比例，默认为阳，即如果父元素存在剩余空间，也不放大
+				操作
+			1,动态设置父元素宽度为浏览器50%，拖动浏览器，发现子元素并没有放大,因为f1ex-grow默认是0，不放大
+			
+			 */
+			.box{
+				display: flex;
+				/* width:300px */
+				width: 50%;
+				height:100px;
+				background:lightblue;
+				margin:0 auto;
+			}
+			.c1{
+				/* width:100px; */
+				flex-grow: 1;
+				height:100px;
+				background:royalblue;
+			}
+			.c2{
+				/* width:100px; */
+				flex-grow: 1;
+				height:100px;
+				background:lawngreen;
+			}
+			.c3{
+				/* width:100px; */
+				flex-grow: 1;
+				height:100px;
+				background:mediumspringgreen;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="c1"></div>
+			<div class="c2"></div>
+			<div class="c3"></div>
+		</div>
+	</body>
+</html>

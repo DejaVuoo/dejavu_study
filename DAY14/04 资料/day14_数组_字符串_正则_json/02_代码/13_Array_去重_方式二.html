@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //数组去重 [10,9,8,8,9]  [10,9,8]
+        /* 
+            使用include的方法
+
+            思路
+                定义一个新的数组,用于存储最终的数据
+                先遍历原数组,拿到每一个元素,在放入新数组之前做一个判断(如果新数组中没有这个元素才放进去)
+        */
+       //原数组
+       var arr = [10,9,8,8,9]
+
+       //定义新数组
+       var newArr = []
+
+       //遍历原数组
+       arr.forEach(function(item){
+         if(newArr.includes(item) == false){
+            newArr.push(item)
+         }
+       })
+
+       //打印新数组
+       console.log(newArr);
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button>发送post请求</button>
+		<button>发送delete请求</button>
+		<!--axios是一个第三方库-->
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script>
+			//发送一个get请求返回的是一个promise对象
+			console.log(axios);
+			axios.get('http://localhost:3000/word').then(res => {
+				console.log(res.data);
+			})
+
+			//发送一个post请求
+			document.querySelectorAll('button')[0].onclick = function() {
+				axios.post('http:localhost:3000/word',{
+					content: 'hello'
+				})
+			}
+			
+			//发送一个delete请球
+			document.querySelectorAll('button')[1].onclick = function(){
+			axios.delete('http://localhost:3000/word/1')
+			}
+		</script>
+	</body>
+</html>

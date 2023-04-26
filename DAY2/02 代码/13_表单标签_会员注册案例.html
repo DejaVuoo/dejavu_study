@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        form标签:表单标签:一个包含表单元素的区域,用于定义表单要提交的范围和提交的地址
+            重要属性
+                action:设置表单提交的地址,默认是提交到当前页面
+                method:设置表单提交的方式(默认是get方式)
+                    get:把数据拼接在地址栏后面,以名称和值的方式成对拼接,相对的不安全,只能提交少量数据
+                    post:把数据拼接在请求体里面,相对的安全,可以提交大量数据,主要用于文件上传,或者提交一些敏感数据
+        
+        input标签:输入项标签 根据type属性值的不同,显示不同的样式,方便用户输入或者选择
+            重要属性
+                type
+                    text    文本框(默认)
+                    password 密码框(里面的内容不以明文显示)
+                    radio   单选框
+                    checkbox    复选框
+                    file    文件框
+                    submit  提交按钮(将页面数据提交到后台)
+                    reset   重置按钮(恢复页面到刚打开时候的效果)
+                    button  普通按钮(将来结合css一起使用)
+
+                checked
+                    checked 单选和复选框的默认选中(布尔属性,只要存在这个属性名,就能默认选中)
+        
+        select标签:选择框标签, 对于取值是固定的几个值,可以考虑使用下拉选择框
+            option:定义下拉选择框的选项(不是标签,而是属性)
+                重要属性
+                    selected
+                        selected 设置下拉选择框的默认选中
+
+        
+        textarea标签:文本域标签,主要用于个人简历,商品评价
+            重要属性
+                cols  列数(宽度,以平均字符计算) 
+                rows  行数(高度) 
+
+        通用属性
+            name
+                如果表单元素想要把数据提交到后台,必须要有name属性
+                还可以为单选和复选框进行分组,同一组的单选框,一次只能选择一个
+            value
+                对于单选和复选,需要指定value属性的值,用于在后台区分用户选择了哪一个选项
+                可以设置下拉选择框option标签的值,设置之后,提交到后台使用的就是value里面的值,否则就是使用标签体里的值
+                可以设置submit,reset,button,文本框,密码框上面的默认文字
+
+     -->
+
+    <h1>青春不常在,抓紧谈恋爱</h1>
+    <hr>
+
+    <form action="./success.html" method="get">
+        昵称: <input type="text" name="username" placeholder="请输入呢称">
+        <br><br>
+        性别: <input type="radio" name="gender" value="man" checked>男
+        <input type="radio" name="gender" value="woman">女
+        <br><br>
+        所在城市:
+            <select name="city">
+                <option value="01">北京</option>
+                <option value="02">上海</option>
+                <option value="03">广州</option>
+                <option value="04" selected>深圳</option> <!-- 默认选中 -->
+            </select>
+        <br><br>
+        婚姻状况:
+        <input type="radio" name="marriage" value="single" checked>未婚
+        <input type="radio" name="marriage" value="double">已婚
+        <input type="radio" name="marriage" value="secret">保密
+        <br><br>
+        喜欢的类型
+        <input type="checkbox" name="type" value="ka" checked>可爱
+        <input type="checkbox" name="type" value="xg" checked>性感
+        <input type="checkbox" name="type" value="yj">御姐
+        <br><br>
+        个人介绍
+        <br><br>
+        <textarea name="textarea" cols="30" rows="10" placeholder="清输入"></textarea>
+        <br>
+        <h3>我承诺</h3>
+        <ul>
+            <li>年满18岁,单身</li>
+            <li>抱着严肃的态度</li>
+            <li>真诚寻找另一半</li>
+        </ul>
+        <input type="checkbox" name="agree" value="1">我同意所有条款
+        <br><br>
+        <input type="submit" value="免费注册">
+        <input type="reset" value="重置">
+    </form>
+
+</body>
+
+</html>

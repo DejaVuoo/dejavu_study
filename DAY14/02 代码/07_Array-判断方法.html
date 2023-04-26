@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			
+			//every()检测数值元素的每个元素是否都符合条件。每一个元素都是偶数，控制台输出ok,否则就是o
+			
+			//some()检测数组元素中是否有元素符合指定条件。只要有一个元素，控制台输出ok,否则就是o
+			
+			var arr=[1,3,5,8,10,11]
+			//定义一个筛选元素的方法
+			function checkValue(item){
+			return item%2==0
+			}
+			//every
+			if(arr.every(checkValue)){
+			console.log('ok');
+			}else{
+			console.log('no');
+			}
+			
+			//some
+			if(arr.some(checkValue)){
+			console.log('ok');
+			}else{
+			console.log('no');
+			}
+			
+		</script>
+	</body>
+</html>

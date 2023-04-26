@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         /* 反转数组 [1,2,3,11,6,8,9]  然后排序 */
+        
+         var arr =  [1,2,3,11,6,8,9]
+
+         //反转
+         arr.reverse()
+
+         console.log(arr);
+
+         //排序(升序)
+         arr.sort(function(a,b){return a-b})
+         console.log(arr);
+
+         //降序(降序)
+         arr.sort(function(a,b){return b-a})
+         console.log(arr);
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/* 
+			 逻辑'与'的短路问题
+			 如果左边的表达式不成立（已经确定整个表达式fa1se),右边就不会再执行了，可以提高效率
+			 
+			 
+			 
+			 */
+
+
+
+			var num1 = 3
+			var num2 = 4
+			console.log((num1++ > 2) && (num2++ > 3)); //false
+			console.log(num1); //4
+			console.log(num2); //4
+		
+			//逻辑'或'的短路问题
+			//如果左边的表达式不成立（已经确定整个表达式ture),右边就不会再执行了，可以提高效率
+			
+			var num3 = 3
+			var num4 = 4
+			console.log((num3++ > 2) || (num4++ > 3)); //ture
+			console.log(num3); //4
+			console.log(num4); //4
+		
+		
+		
+		
+		
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/* 
+			 if 语句
+			 	语法
+			 		if(条件表达式){
+			 			语句体
+			 		}
+			 	作用
+			     	主要用于判断一个条件
+				执行流程
+					如果条件表达式成立，就执行语句体，否则就算了	
+			 
+			 
+			 
+			 
+			 */
+			//请输入李凯钱包里的钱，有没有100块，有的话，中午请吃饭
+			var money = prompt('请输入李凯钱包里的钱')
+			
+			//判断
+			if(money >=100){
+				console.log('中午请吃饭');
+			}
+			
+			//再增加一个条件：如果没有100元，放学别走
+			if(money <100){
+				console.log('放学别走');
+			}
+		</script>
+	</body>
+</html>

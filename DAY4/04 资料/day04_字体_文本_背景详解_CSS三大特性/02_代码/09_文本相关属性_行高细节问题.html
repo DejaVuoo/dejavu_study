@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+
+            /* 1,在网页精准布局的时候,可以设置行高为1,来取消行高默认上下间隙 */
+           /* line-height: 1; */
+
+
+           /* 
+            问题
+                先设置行高=元素高度,然后再设置font字体,就会出现文字没有垂直居中的效果
+
+            原因
+                设置字体连写,其实按照font-style font-weight font-size/line-height font-family 来设置的
+                 font-size后面是有line-height,如果没有设置的话,会被默认的行高给覆盖
+
+             line-height: 200px;
+             font: italic 700 40px 楷体;
+           
+           */
+
+           /* 解决方式一:把行高的设置写在font里面 */
+           /* font: italic 700 40px/200px 楷体; */
+
+           /* 解决方式二:把设置行高的代码放在font后面 */
+           font: italic 700 40px 楷体;
+           line-height: 200px; /* 推荐使用这种方式,一般会把设置行高的属性放在最后面 */
+
+        }
+    </style>
+</head>
+<body>
+    <div>中地</div>
+</body>
+</html>

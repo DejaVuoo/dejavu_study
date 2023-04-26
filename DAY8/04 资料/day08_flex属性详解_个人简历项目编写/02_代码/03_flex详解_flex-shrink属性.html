@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            flex-shrink
+	            定义项目的缩小比例,默认为1,即 如果父元素空间不足,将会缩小
+
+            操作
+              1,将子元素的宽度调整为150px,此时父元素还是300px,装不下这3元素,但是显示却没有问题
+                审查元素,发现子元素的宽度变成了100px
+            原因
+                flex-shrink定义的缩小比例默认是1,父元素空间不足,将会缩小
+
+            需求
+                不想让c1缩小,怎么办
+            做法
+                设置c1 flex-shrink的值为0
+        */
+        .box{
+            display: flex;
+            width: 300px;
+            height: 100px;
+            background: lightblue;
+            margin: 0 auto;
+        }
+        .c1{
+            width: 150px;
+            height: 100px;
+            background: green;
+            flex-shrink: 0;
+        }
+        .c2{
+            width: 150px;
+            height: 100px;
+            background: purple;
+        }
+        .c3{
+            width: 150px;
+            height: 100px;
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+    </div>
+</body>
+</html>

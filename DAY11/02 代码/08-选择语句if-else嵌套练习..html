@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/*
+			请用户输入自己的性别.如果性别是女的.就直接显示你妈妈喊你回家吃饭.
+			否则：再判断是否成年（满18岁）.如果成年，就显示给你点刺激的东西看.否则：你妈妈喊你回家吃饭 
+			 */
+			//获取用户的性别
+			var gender = prompt('请输入性别？男/女')
+			//判断
+			if (gender == "女") {
+				alert('你妈妈喊你回家吃饭');
+			} else {
+				//获取用户年龄
+				var age = prompt('请输入年龄？')
+				//判断
+				if (age >= 18) {
+					alert('给你点刺激的东西看');
+				} else {
+					alert('你妈妈喊你回家吃饭');
+				}
+			}
+		</script>
+	</body>
+</html>

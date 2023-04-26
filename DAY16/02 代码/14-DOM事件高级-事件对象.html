@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button>按钮</button>
+		<script>
+		//点击事件
+		document.querySelector('button').addEventListener('click',function(e){
+		console.log(e);//事件对象
+		})
+		
+		document.onkeydown = function(e){
+		console.log(e);//事件对象
+		}
+	</body>
+</html>

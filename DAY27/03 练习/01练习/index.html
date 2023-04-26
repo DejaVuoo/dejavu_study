@@ -1,0 +1,194 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="referrer" content="never">
+    <title>萍萍酱biubiubiu</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        ul,ol{list-style:none;}
+        a{text-decoration:none;}
+        img{border:0;}
+        .dis-f{
+            display: flex;
+            gap: 10px;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .pos-r{position: relative;}
+        .pos-a{position: absolute;}
+        .container{
+            width: 700px;
+            height: 440px;
+            margin: 10px auto;
+            padding: 20px;
+            border: 1px solid #000;
+        }
+        .container>.box{
+            padding-right: 10px;
+        }
+        .container>.box>a{
+            display: inline-block;
+            /* width: 100%;
+            height: 100%; */
+        }
+        .container>.box>a>img{
+            width: 115px;
+            height: 170px;
+        }
+        .container>.box>a>p{
+            width: 115px;
+            text-align: center;
+            color: #000;
+        }
+        .container>.box>a>p>span{
+            color: #ff0303;
+        }
+        .container>.box>.details{
+            display: none;
+            z-index: 9;
+            top:0px;
+            left: 100%;
+            width: 338px;
+            padding: 25px;
+            font-size: 13px;
+            color: #777777;
+            background-color: white;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 5px 5px #00000088;
+            box-sizing: border-box;
+            transition: 0.3s;
+            /* height: 376px; */
+        }
+        .container>.box:hover .details{
+            display: block;
+        }
+        .container>.box>.details>a{
+            display: block;
+            font-size: 20px;
+            color: #062cac;
+        }
+        .container>.box>.details>a:hover{
+            background-color: #cccccc;
+        }
+        .container>.box>.details>div{
+            color: #ff0303;
+            margin: 10px 0;
+        }
+        .container>.box>.details>p{
+            margin: 10px 0;
+            /* color: #000; */
+        }
+        .container>.box>.details>p>span:nth-of-type(1){
+            font-weight: bold;
+            color: #000000;
+        }
+        .container>.box>.details>.keyword{
+            width: 88%;
+        }
+        .container>.box>.details>.keyword>span:nth-of-type(n+2){
+            display: inline-block;
+            margin: 3px;
+            padding: 2px 5px;
+            font-size: 12px;
+            border-radius: 15px;
+            background-color: #eeeeee;
+        }
+        .container>.box>.details>button{
+            margin-right: 20px;
+            padding: 4px 8px;
+            background-color: white;
+            border: 1px solid #777777;
+        }
+        .container>.box>.details>.evaluate{
+            /* display: inline-block; */
+            width: 100%;
+            padding: 6px;
+            border: 1px solid #cccccc;
+            background-color: #d4d3d3;
+        }
+        .star{
+            display: inline-block;
+            width: 75px;
+            height: 15px;
+            margin-right: 10px;
+            /* border: 1px solid #777777; */
+            background-image: url(img/ic_rating_m.png);
+            background-repeat: no-repeat;
+            vertical-align: middle;
+            /* background-position: ; */
+        }
+    </style>
+</head>
+<body>
+    <div class="container dis-f">
+        <!-- <div class="box pos-r">
+            <a href="${MovieUrl}" class="">
+                <img src="${MovieImgurl}" alt="">
+                <p>${MovieTitle}&nbsp;<span>${MoviePingfen}</span></p>
+            </a>
+            <div class="details pos-a">
+                <a href="" >${MovieTitle}</a>
+                <div><span class='star' style="background-position: 0px ${-starTop}px;"></span><span>${MoviePingfen}</span></div>
+                <p class='keyword'><span>主演：</span>${actorsStr}</p>
+                <p class='releaseDate'><span>上映日期：</span>${MovieTime}</p>
+                <p class=''><span>时长：</span>${MovieDuration}</p>
+                <p class=''><span>类型：</span>${MovieType}</p>
+                <button>想看</button><button>看过</button>
+                <p class="evaluate">${MoviePingjia}</p>
+            </div>
+        </div> -->
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        const container=document.querySelector('.container')
+        axios.get('http://localhost:3000/MovieCollector')
+        .then(res=>{
+                Data=res.data
+                len=Data.length;
+                // console.log(Data,len);
+                Data.forEach(e=> {
+                    MovieTitle=e.title;
+                    MovieUrl=e.info.url;
+                    MovieImgurl=e.info.imgurl;
+                    Yanyuan=e.info.yanyuan;
+                    
+                    sliceIndex=Yanyuan.lastIndexOf(')')+3; 
+                    MovieTime=Yanyuan.slice(0,sliceIndex) ;
+                    MovieYanyuan=Yanyuan.slice(sliceIndex,Yanyuan.length);
+                    MovieActors=MovieYanyuan.split('/')
+                    console.log(MovieActors);
+                    let actorsStr='';
+                    MovieActors.forEach((item)=>{
+                        actorsStr+=`<span>${item}</span>`
+                    })
+                    MoviePingfen=e.info.pingfen;
+                    MoviePingjia=e.info.pingjia;
+                    MovieDuration=e.info.duration;
+                    MovieType=e.info.type;
+                    console.log(+MoviePingfen);
+                    starTop=(10-Math.round(+MoviePingfen))*15
+                    console.log(starTop);
+                    // Number()
+                    
+                    container.innerHTML+=`<div class="box pos-r">
+                                                <a href="${MovieUrl}" class="">
+                                                    <img src="${MovieImgurl}" alt="">
+                                                    <p>${MovieTitle}&nbsp;<span>${MoviePingfen}</span></p>
+                                                </a>
+                                                <div class="details pos-a">
+                                                    <a href="${MovieUrl}" >${MovieTitle}</a>
+                                                    <div><span class='star' style="background-position: 0px ${-starTop}px;"></span><span>${MoviePingfen}</span></div>
+                                                    <p class='keyword'><span>主演：</span>${actorsStr}</p>
+                                                    <p class='releaseDate'><span>上映日期：</span>${MovieTime}</p>
+                                                    <p class=''><span>时长：</span>${MovieDuration}</p>
+                                                    <p class=''><span>类型：</span>${MovieType}</p>
+                                                    <button>想看</button><button>看过</button>
+                                                    <p class="evaluate">${MoviePingjia}</p>
+                                                </div>
+                                            </div>`
+                });
+            })
+    </script>
+</body>
+</html>

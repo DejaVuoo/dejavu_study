@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            getTime()	返回 1970 年 1 月 1 日至今的毫秒数。
+            valueOf()	返回 Date 对象的原始值。原始值返回1970年1月1日午夜以来的毫秒数
+        */
+
+        //时间戳: 1970 年 1 月 1 日至今的毫秒数
+
+        //获取当前时间的时间戳(当前时间距离1970年的毫秒值)
+        var date = new Date()
+        console.log(date.getTime()); //1680770741360  
+        console.log(date.valueOf()); //1680770741360  
+
+        //简单方式
+        var d = +new Date()
+        console.log(d);
+
+        //H5新增方式(不需要创建对象,直接使用类名调用)
+        console.log(Date.now());//只能获取当前的时间的时间戳
+
+
+        //计算 你来到这个世界多少天,不足一天也按一天计算
+
+
+    </script>
+</body>
+</html>

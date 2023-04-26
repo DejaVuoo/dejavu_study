@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动态表格</title>
+
+    <style>
+        table{
+            border: 1px solid;
+            margin: auto;
+            width: 500px;
+        }
+
+        td,th{
+            text-align: center;
+            border: 1px solid;
+        }
+        div{
+            text-align: center;
+            margin: 50px;
+        }
+    </style>
+
+</head>
+<body>
+
+<div>
+    <input type="text" id="name" placeholder="请输入姓名" autocomplete="off">
+    <input type="text" id="age"  placeholder="请输入年龄" autocomplete="off">
+    <input type="button" value="添加" id="add">
+</div>
+
+    <table id="tb">
+        <caption>学生信息表</caption>
+        <tr>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>操作</th>
+        </tr>
+
+        <tr>
+            <td>张三</td>
+            <td>23</td>
+            <td><a href="JavaScript:void(0);" onclick="drop(this)">删除</a></td>
+        </tr>
+
+        <tr>
+            <td>李四</td>
+            <td>24</td>
+            <td><a href="JavaScript:void(0);" onclick="drop(this)">删除</a></td>
+        </tr>
+
+    </table>
+
+</body>
+<script>
+    /* 
+        方式二:使用HTML的DOM特有的方法来实现
+
+        步骤
+            table元素的方法
+                insertRow() 方法用于在表格中的指定位置插入一个新行。
+            tr元素的方法
+                insertCell() 方法用于在 HTML 表的一行的指定位置插入一个空的 <td> 元素。
+    
+    */
+   // 1,获取按钮,添加点击事件
+   document.querySelector('#add').addEventListener('click',function(){
+        //获取table元素
+        var table = document.querySelector('#tb')
+
+        //调用table对象的方法插入一行
+        var tr = table.insertRow()
+
+        //调用tr对象的方法插入三个单元格
+        var nameTd = tr.insertCell()
+        var ageTd = tr.insertCell()
+        var deleteTd = tr.insertCell()
+
+        //给三个单元格赋值
+        nameTd.innerHTML = document.querySelector('#name').value 
+        ageTd.innerHTML = document.querySelector('#age').value 
+        deleteTd.innerHTML = `<td><a href="JavaScript:void(0);" onclick="drop(this)">删除</a></td>`
+   })
+
+   //删除功能
+   function drop(obj){
+     //先找到a标签所在的行
+     var tr = obj.parentNode.parentNode
+     //再找到table
+     var table = obj.parentNode.parentNode.parentNode
+     //删除
+     table.removeChild(tr)
+   }
+    
+    
+</script>
+</html>

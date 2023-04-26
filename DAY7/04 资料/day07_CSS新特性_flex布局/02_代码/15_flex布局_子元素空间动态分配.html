@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father{
+            /* 主轴默认是水平方向:元素就会沿着水平方向排布 */
+            display: flex;
+            background: lightblue;
+            height: 300px;
+            
+            gap: 10px;/* 给子元素设置水平方向上的间隙 */
+        }
+
+        .son{
+            width: 100px; 
+            height: 100px; 
+            background: green;
+        }
+
+        .son:nth-child(2){
+            flex: 1;    /* 占父元素剩余尺寸的份数 */
+        }
+
+        .son:nth-child(3){
+            flex: 2;    /* 占父元素剩余尺寸的份数 */
+        }
+
+
+        
+    </style>    
+</head>
+<body>
+    <div class="father"> 
+        <div class="son">1</div> 
+        <div class="son">2</div>
+        <div class="son">3</div>
+    </div>
+</body>
+</html>

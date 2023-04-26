@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<img src="angel.gif"/>
+		<script>
+			
+			//先获取图片对象
+			var img =document.querySelector('img')
+			document.addEventListener('mousemove',function(e){
+				
+				//page:鼠标在页面文档的x和y轴坐标
+				var x = e.pageX-25;
+				var y = e.pageY-50;
+				//将坐标设置为img对象的偏移值
+				img.style.position='absolute';
+				img.style.left =`${x}px`
+				img.style.top = `${y}px`
+			})
+			
+			
+			
+		</script>
+		
+		
+	</body>
+</html>

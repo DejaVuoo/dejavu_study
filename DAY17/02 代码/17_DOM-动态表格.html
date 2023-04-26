@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>动态表格</title>
+
+		<style>
+			table {
+				border: 1px solid;
+				margin: auto;
+				width: 500px;
+			}
+
+			td,
+			th {
+				text-align: center;
+				border: 1px solid;
+			}
+
+			div {
+				text-align: center;
+				margin: 50px;
+			}
+			
+		</style>
+
+	</head>
+	<body>
+
+		<div>
+			<input type="text" id="name" placeholder="请输入姓名" autocomplete="off">
+			<input type="text" id="age" placeholder="请输入年龄" autocomplete="off">
+			<input type="button" value="添加" id="add">
+		</div>
+
+		<table id="tb">
+			<thead>
+				<caption>学生信息表</caption>
+				<tr>
+					<th>姓名</th>
+					<th>年龄</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- <tr>
+				<td>张三</td>
+				<td>23</td>
+				<td><a href="JavaScript:void(0);" onclick="drop(this)">删除</a></td>
+				</tr> -->
+			</tbody>
+
+			
+		</table>
+				
+	</body>
+	<script>
+		//准备好的数据
+		var arr = [{
+				name: '张三',
+				age: '23'
+			},
+			{
+				name: '李四',
+				age: '24'
+			}
+		]
+
+		
+		//将准备好的数组中的数据添加到表格里
+		var tbody = document.querySelector('tbody')
+		
+		function data(){
+			tbody.innerHTML = ''
+			arr.forEach((item, index) => {
+				
+				var tr = document.createElement('tr')
+				tr.innerHTML = `
+				<td>${arr[index].name}</td>
+				<td>${arr[index].age}</td>
+				<td><a href="JavaScript:void(0);" onclick="drop(this)">删除</a></td>
+				`;
+				tbody.appendChild(tr);
+			})
+		}
+		
+		
+		
+		/* arr.forEach(function(item, index) {
+			var tr = document.createElement('tr')
+			tr.innerHTML = `
+			<td>${arr[index].name}</td>
+			<td>${arr[index].age}</td>
+			<td><a href="JavaScript:void(0);" onclick="drop(this)">删除</a></td>
+			`;
+			table.appendChild(tr);
+		}) */
+
+		//新增人员模块
+		
+		
+	
+		//获取按钮
+		var add = document.querySelector('#add')
+		//添加按钮点击事件
+		add.addEventListener('click', function() {
+			//获取输入框的值
+			var name = document.querySelector('#name').value
+			var age = document.querySelector('#age').value
+			arr.push({
+				name: name,
+				age: age
+			});
+			
+			data()
+		})
+	</script>
+</html>

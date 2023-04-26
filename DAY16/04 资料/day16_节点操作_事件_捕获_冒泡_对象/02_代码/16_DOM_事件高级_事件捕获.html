@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father{
+            width: 200px;
+            height: 200px;
+            background: lightblue;
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+
+    <script>
+        /* 
+            addEventListener:第三个参数是true,执行的就是事件捕获阶段的处理函数
+            顺序: document > father > son
+        */
+
+        //给document添加点击事件
+        document.addEventListener('click',function(){
+            alert('document')
+        },true)
+
+        //给父亲添加点击事件
+        document.querySelector('.father').addEventListener('click',function(){
+            alert('father')
+        },true)
+
+        //给儿子添加点击事件
+        document.querySelector('.son').addEventListener('click',function(){
+            alert('son')
+        },true)
+    </script>
+</body>
+</html>

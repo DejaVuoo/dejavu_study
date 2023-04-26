@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/* 
+				分析点击事件中鼠标事件对象的属性
+					
+					给document添加一个点击事件
+			 */
+			document.addEventListener('click',function(e){
+				console.log(e);//PointerEvent
+				//client:表示鼠标在可视区域的x和y轴坐标
+				console.log(e.clientx);
+				console.log(e.clientY);
+				
+				console.log('--------------------');
+				//page:鼠标在页面文档的x和y轴坐标
+				console.log(e.pagex);
+				console.log(e.pagey);
+				
+				console.log('---------------------');
+				//screen:鼠标在电脑屏幕的x和y轴坐标
+				console.log(e.screenx);
+				console.log(e.screenY);
+			})
+		</script>
+	</body>
+</html>

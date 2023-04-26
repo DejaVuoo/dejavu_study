@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 需求:选中用户名对应的文本框,将里面的字体颜色设置成红色 */
+        [type=text]{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form action="./success.html">
+
+        <label for="username">用户名:</label> 
+        <input type="text" id="username" name="username" value="张三三"><br>
+
+        <label for="password">密码:</label> 
+        <input id="password" type="password" name="password" value="123"><br>
+
+        <button type="submit">登录</button>
+    </form>
+</body>
+</html>

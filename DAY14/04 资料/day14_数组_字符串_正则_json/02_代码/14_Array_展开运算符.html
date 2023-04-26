@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+    </ul>
+
+    <script>
+        var arr = [1,2,3]
+
+        console.log(...arr);
+
+        /* 
+            作用:可以把伪数组(跟数组很类似,但并不是数组)转成数组,进而可以调用数组的方法
+        */
+
+        //获取li元素
+        var lis = document.querySelectorAll('li')
+        console.log(lis);//其实是一个伪数组
+        console.log(typeof lis);//object 
+
+        //lis.reverse()//报错  因为它不是数组,不能使用数组的方法
+
+        //转成数组
+        var liArr = [...lis]
+        console.log(liArr);
+        liArr.reverse() //就不报错了
+
+    </script>
+</body>
+</html>

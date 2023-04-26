@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/* 题目
+				弹框录入一个年份，判断这个年份是否是闰年（打印true或者falsel即可）
+				1,能被4整除，不能被100整除
+				2,能被400整除 
+				
+				
+				
+		*/
+			//获取年份
+			var year = 0;
+
+			year = parseInt(window.prompt('请输入一个年份：'));
+			//判断
+			if ((year % 4 == 0) && (year % 100 != 0) || year % 400 == 0) {
+				document.write(year + '年是闰年');
+			} else {
+				document.write(year + '年是平年');
+			}
+
+			//获取年份
+			var year = prompt('请输入一个年份')
+
+			//判断
+			var result = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)
+			//打印结果
+			console.log(result);
+		</script>
+	</body>
+</html>

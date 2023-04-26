@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father{
+            /* 主轴默认是水平方向:元素就会沿着水平方向排布 */
+            display: flex;
+
+            background: lightblue;
+
+            /* flex-direction: column; */  /* 这个属性可以将主轴方向调整为垂直方向,将来元素就会沿着垂直方向排布 */
+
+
+            /* 
+                所有的flex容器都有两个轴
+                    主轴(横轴),默认水平方向,子元素就会默认沿着水平方向排布
+                    侧轴(交叉轴),默认是垂直方向
+            */
+        }
+
+        .son{
+
+            width: 100px;
+            height: 100px;
+            background: green;
+        }
+    </style>    
+</head>
+<body>
+    <div class="father"> <!-- father:弹性容器 父元素  -->
+        <div class="son">1</div> <!-- son:弹性盒子/元素  flex子项 -->
+        <div class="son">2</div>
+        <div class="son">3</div>
+    </div>
+</body>
+</html>

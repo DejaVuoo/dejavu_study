@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//定义Student类
+			class Student {
+				//静态属性
+				static contry = '中国'
+				constructor(name, age) {
+					this.name = name
+					this.age = age
+				}
+				//特有方法
+				study() {
+					console.log('学习');
+				}
+				
+				//静态
+				static exam(){
+				console.log('考试');
+				}
+			}
+			//创建对象
+			const stu1 = new Student('张三', 23)
+			console.log(stu1);
+			console.log(stu1.name);
+			stu1.study()
+
+			//访问静态属性
+			console.log(stu1.contry); //undefined
+			console.log(Student.contry); //只能通过类名访问
+			
+			//访问静态方法
+			Student.exam() //只能通过类名访问静态方法
+			stu1.exam()
+		</script>
+	</body>
+</html>

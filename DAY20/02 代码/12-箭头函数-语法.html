@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//最简单的箭头函数()没有参数，没有返回值的函数
+			const f1 = ()=>{console.log('你好');}
+			f1()
+			
+			//因为函数体只有一条语句，{}可以省略
+			const f2 = ()=>console.log('世界')
+			f2()
+			
+			//添加一个参数
+			const f3 = (str)=>console.log('你好'+str)
+			f3('世界')
+			
+			//因为参数只有一个，()可以省略
+			const f4 = str=>console.log('你好'+str)
+			f4('世界')
+			
+			//写一个求和函数，求两个数的和
+			const f5 = (a,b)=>console.log(a+b);
+			f5(1,2)
+		</script>
+	</body>
+</html>

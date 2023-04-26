@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			/* 1,浮动元素会脱离标准流（脱标），在标准流中不占位置，相当于从地面飘向了天空
+				2,浮动元素比标准流级别高，可以覆盖标准流中的元素
+				3,下一个浮动元素，会在上一个浮动元素的后面进行左右浮动（实现了水平排布）
+		
+ 
+ */
+			.c1{
+			width:200px;
+			height:200px;
+			background:lightblue;
+			float:left;
+			}
+			.c2{
+			width:220px;
+			height:220px;
+			background:green;
+			float:left;
+			}	
+		</style>
+	</head>
+	<body>
+		<div class="c1"></div>
+		<div class="c2"></div>
+	</body>
+</html>

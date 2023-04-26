@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<img src="../04 资料/img/off.gif" onclick="myclick()">
+		<script>
+			//获取图片对象
+			var img = document.querySelector('img');
+			var on = false;//定义开关初始状态	 on = ture是打开状态
+			function myclick(){
+				img.src = on ? "../04 资料/img/off.gif" : "../04 资料/img/on.gif";
+				on = !on ;
+			}
+			
+			
+			
+		</script>
+	</body>
+</html>

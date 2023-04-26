@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //函数作为参数的案例
+        function f1(num1,fn){
+            console.log(num1);
+
+            fn()
+        }
+
+        //调用这个函数
+        f1(100,function(){
+            console.log(200);
+        })
+
+        //写一个函数作为返回值的案例
+        function f2(){
+
+            //定义一个函数
+            function f3(){
+                console.log('aaa');
+            }
+
+            return f3
+        }
+        
+        //调用这个函数
+       const f =  f2()
+       console.log(f);//f其实就是f2函数里面返回的那个函数
+
+       f()
+    </script>
+</body>
+</html>

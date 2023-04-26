@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/* 
+			 区别
+				 语法上的区别
+					 json字符串：属性名必须用双引号括起来
+					 js对象：属性名可以不加双引号
+				 作用上的区别
+					 jso字符串：本质是一个字符串，一般用于网络传输
+					 js对象：本质是一个对象（类的实例），不能在网络上传输
+			 
+			 转换
+				 目的
+					 因为jso本质是一个字符串，想要获取里面的数据非常麻烦，
+					 通常会将它转成s对象，用对象获取就很方便
+					 
+				方法
+					JSoN.parse() 方法将json字符串 数据转换为 JavaScript 对象
+					JSON.stringify() 方法将 JavaScript 对象转换为字符串。	 
+			 */
+			
+			//json字符串
+			var jsonStr ='{"username":"张三","password":"123"}'
+			
+			//转成js对象
+			var user=JSON.parse(jsonStr)
+			console.log(user);
+			console.log(typeof user);
+			console.log(user.username);
+			//js对象（字面量方式创建对象）
+			var jsobj={username:'张三'，password:'123'}
+			//转成json字符串
+			var str =JSON.stringify(jsObj)
+			console.log(str);
+			console.log(typeof str);
+		</script>
+	</body>
+</html>

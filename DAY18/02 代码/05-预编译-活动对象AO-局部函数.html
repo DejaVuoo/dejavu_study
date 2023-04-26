@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function f(){
+				function f1(){
+					console.log('aaa');
+				}
+				f1()
+			}
+			
+			f()
+			
+			/* 
+				通过断点可以看出函数f1其实是局部对象A0的一个方法而己
+			 */
+		</script>
+	</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 去掉标签的默认内外边距的影响 */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            line-height: 1;/* 去掉默认的行高,实现精准布局 */
+        }
+        .box{
+            width: 500px;
+            height: 400px;
+            border: 1px solid #ccc;
+            /* 设置内边距 */
+            padding: 40px 30px 0;
+            /* 设置自动内减 */
+            box-sizing: border-box;
+        }
+        .box .title{
+            height: 40px;
+            border-bottom: 1px solid #ccc;
+            font-size: 30px;
+        }
+        .box ul{
+            list-style: none;
+        }
+
+        .box li{
+            height: 50px;
+            padding-left: 30px;
+            border-bottom:1px dashed #ccc;
+            line-height: 50px;
+        }
+
+        .box li a{
+            text-decoration:  none;
+            font-size: 20px;
+            color: grey;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <!-- 标题 -->
+        <h2 class="title">最新文章/New Articles</h2>
+        <!-- 内容 -->
+        <ul>
+            <li><a href="">招聘</a></li>
+            <li><a href="">体验</a></li>
+            <li><a href="">jquery</a></li>
+            <li><a href="">网页</a></li>
+            <li><a href="">jquery</a></li>
+        </ul>
+    </div>
+</body>
+</html>

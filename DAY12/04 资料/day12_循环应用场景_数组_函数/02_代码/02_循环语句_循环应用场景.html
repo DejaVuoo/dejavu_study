@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 反复询问班主任,你爱我吗?1/0,只要回答不是1,就一直问,直到回答是1为止 */
+        /* 
+            分析
+                循环次数不确定,但是循环的条件是确定的,建议使用while
+
+            循环条件:回答不是1
+            循环体:一问一答过程
+
+            步骤
+                先把循环的架子搭起来
+                再写循环体
+        */
+       var answer = 0
+       while(answer != 1){
+          answer = prompt('你爱我吗?1/0')
+       }
+       alert('我也爱你,么么哒!')
+
+      /* 类似: 请用户输入登录账号和密码.(账户123 密码888) 只要1个不正确,就全部重新输入.直到正确为止. */
+
+    </script>
+</body>
+</html>

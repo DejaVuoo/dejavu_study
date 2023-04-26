@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			/* 
+			 f1ex其实是一个复合属性
+				 完整取值
+					 f1ex:f1ex-grow flex-shrink flex-basis
+					 
+				 默认值
+					f1ex:0,1,auto(不放大，自动缩小，宽度为自身的宽度)可以简写为f1ex:0
+				 
+				 其他取值
+					flex:none ==> f1ex:00 auto不能放大，也不能缩小
+					flex:非负数字=> f1e×:非负数字, 1,0% 能放大，也能缩小，数字代表占父级剩余尺寸的分数
+					flex:像素值==> f1ex: 1,1,像素值 能放大，也能缩小，像素值代表正常情况下子项的宽度
+					 
+					
+					
+					
+					
+					
+					
+			 */
+			.box{
+							display: flex;
+							width:50%;
+							
+							height:100px;
+							background:lightblue;
+							margin:0 auto;
+						}
+						.c1{
+							width:150px;
+							flex: none;
+							
+							height:100px;
+							background:royalblue;
+						}
+						.c2{
+							width:150px;
+							flex: auto;
+							height:100px;
+							background:lawngreen;
+						}
+						.c3{
+							width:150px;
+							
+			
+							height:100px;
+							background:mediumspringgreen;
+						}
+		</style>
+	</head>
+	
+	<body>
+		<div class="box">
+				<div class="c1"></div>
+				<div class="c2"></div>
+				<div class="c3"></div>
+			</div>
+	</body>
+</html>

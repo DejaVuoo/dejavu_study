@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function a() {
+				var num = 10
+
+				function b() {
+					console.log(num);
+				}
+				b()
+			}
+			a()
+			
+			/* 
+				 通过作用域链的角度分析，为什么打印的是1©
+				 
+				 分析预编译和执行的流程
+				
+					一，产生GO对象，进行全局预编译
+						[scopes] ----- GO {a :function}
+					
+					二，执行a函数，产生a函数的Ao对象，此时a函数预编译后的结果
+					[scopes] ----- aAO{num:undefined,b:function}
+									Go {a : function}
+					
+						执行a函数
+							执行第12行，给num赋值aA0(ndm:10,b:function}
+							执行第18行，调用b函数。
+							
+					三，执行b函数，产生b函数的AO对象？此时b函数预编译后的结果
+					[scopes] ------ bAO{}
+									aAO{num:10,b:function}
+									GO {a :function}		
+									
+						执行b函数
+							执行第15行，打印num,此时bAo没有定义num,它会到上一层作用域，a函数中去找
+							最终打印出来的就是10	
+							
+							
+					
+			 */
+		</script>
+	</body>
+</html>

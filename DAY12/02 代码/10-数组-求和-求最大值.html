@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var arr = [10, 20, 80, 30, 70]
+			
+			//定义一个'擂台'变量
+			var max =arr[0]
+			//依次获取后面的元素跟擂台上的元素进行比较
+			for (var i = 1; i < arr.length; i++) {
+				//判断如果后面的元素比擂台上的元素大，就把后面的元素放在擂台上
+				if(arr[i]>max){
+					max=arr[i]
+				}
+			
+			
+			}
+			//最终擂台上的数就是最大的数
+			console.log(max);
+			
+			//定义一个'擂台'变量
+			var min =arr[0]
+			//依次获取后面的元素跟擂台上的元素进行比较
+			for (var i = 1; i < arr.length; i++) {
+				//判断如果后面的元素比擂台上的元素小，就把后面的元素放在擂台上
+				if(arr[i]<min){
+					min=arr[i]
+				}
+			
+			
+			}
+			//最终擂台上的数就是最小的数
+			console.log(min);
+		</script>
+	</body>
+</html>

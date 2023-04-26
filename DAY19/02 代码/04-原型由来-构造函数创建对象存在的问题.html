@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function Student(name, age) {
+				this.name = name
+				this.age = age
+
+				this.study = function() {
+					console.log('学习');
+				}
+			}
+			//创建两个实例对象
+			var stu1 = new Student('张三', 23)
+			stu1.study()
+			var stu2 = new Student('李四', 23)
+			stu2.study()
+
+			/* 
+				new()在内存中做了4件事
+					1,在堆区中开辟了一块空间
+					2,让this指向这块空间
+					3,执行构造函数中的代码，给这个空间的属性和方法赋值
+					4,返回空间的地址给对象 
+					
+				存在的问题
+					每创建一个对象，就会为对象里面的方法，分配一个内存空间，比较浪费内存
+					
+					
+			 */
+
+			//验证一下两个对象中方法是不是同一个地址
+			console.log(stu1.study === stu2.study); //false说明不是同一个地址，创建了两份，浪费内存
+		</script>
+	</body>
+</html>

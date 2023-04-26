@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 需求: 只选择div下的子代p元素,设置成红色 */
+        div>p{  /* 子选择器 */
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>段落1</p>  <!-- p元素是div的儿子 -->
+        <p>段落2</p>
+    </div>
+
+    <div>
+        <span>
+            <p>段落3</p> <!-- p元素是div的孙子 -->
+            <p>段落4</p>
+        </span>
+    </div>
+   
+</body>
+</html>

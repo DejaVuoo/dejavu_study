@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			div{
+				width: 200px;
+				height: 200px;
+				background: royalblue;
+				border: 10px solid greenyellow;
+				padding: 10px;
+				overflow: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div>万物枯荣皆为你眼，我目眩神驰。而你一笑清明，潦倒我的众生。我爱你就像拖拉机上山轰轰烈烈，我对你的爱就像泼妇骂街一样滔滔不绝。轻轻贴近你的耳朵擦浪嘿呦。写你名字可真难，倒不是笔画繁琐，只是写你名字时得蘸上四分春风，三分月色，两分微醺，还有一分你的眉眼才好。</div>
+		<script>
+			//获取内容区域的宽度和高度
+			var div = document.querySelector('div');
+			console.log(div.scrollHeight);
+			console.log(div.scrollWidth);
+			
+			//打印滚动的距离
+			div.addEventListener('scroll',function(){
+			console.log(div.scrollTop);
+			})
+			
+		</script>
+	</body>
+</html>

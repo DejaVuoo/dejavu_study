@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function a(test) {
+
+            console.log(b)
+            var b = 0
+            console.log(b)
+
+            function b() {
+                console.log(222)
+            }
+        }
+
+        a(1)
+
+        /*
+            大致步骤
+                1,在函数被调用的那一刻,就会为当前函数生成一个AO对象
+                2,先查找变量和形参的声明,作为AO对象的属性名,值是undefined
+                3,使用实参的值,替换形参的值
+                4,在查找函数的声明,作为AO对象的属性名,值是function
+                5,从上到下依次执行代码(声明的语句会被略过)
+
+            具体流程
+                一,生成GO对象
+
+                二,全局预编译
+                    1,查找全局变量 没有
+                    2,查找全局函数 有 GO {a:function}
+
+                三,执行script里面的代码
+                    声明的语句会被略过,直接执行第27行,调用函数,此时就会进行函数的预编译
+                    
+                    1,在函数被调用的那一刻,就会为当前函数生成一个AO对象
+                    2,先查找变量的声明,作为AO对象的属性名,值是undefined
+                        AO : {test:undefined,b:undefined}
+                    3,使用实参的值,替换形参的值
+                        AO : {test:1,b:undefined}
+                    4,在查找函数的声明,作为AO对象的属性名,值是function
+                        AO :  {test:1,b:function}
+                    5,从上到下依次执行代码(声明的语句会被略过)
+                        执行第15行,打印b function
+                        执行第16行,给b赋值  {test:1,b:0}
+                        执行第17行,打印b  0
+           
+        */
+
+
+    </script>
+</body>
+
+</html>

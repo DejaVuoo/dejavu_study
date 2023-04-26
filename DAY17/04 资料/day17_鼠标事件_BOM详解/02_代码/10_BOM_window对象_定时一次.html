@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* window.setTimeout(要调用的函数,等待时间)	在指定的毫秒数后调用函数或计算表达式。
+
+            1,window可以省略
+            2,等待的时间是毫秒值
+            3,第一个参数可以是代码串或者函数,代码串:'函数名()',如果传函数,直接赋值函数即可
+            4,一个页面可以定义多个定时器,可以使用变量来区分这些定时器
+
+        清除定时器
+            clearTimeout(定时器的id)
+
+        */
+        function f1(){
+            console.log('1秒后执行');
+        }
+
+        var timer1 = setTimeout('f1()',1000)//字符串形式的参数必须要带()
+
+
+
+       function f2(){
+            console.log('2秒后执行'); //函数类型参数,直接赋值函数名即可
+        }
+
+       var timer2 = setTimeout(f2,2000)
+
+       //清除第二个定时器
+       clearInterval(timer2)
+    </script>
+</body>
+</html>

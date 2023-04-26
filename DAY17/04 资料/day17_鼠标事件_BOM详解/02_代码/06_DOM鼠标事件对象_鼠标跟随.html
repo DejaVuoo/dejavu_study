@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 先隐藏图片 */
+        img{
+            position: absolute;
+            top: -100px;
+            left: -100px;
+        }
+    </style>
+</head>
+<body>
+    <img src="./img/angel.gif" alt="">
+    <script>
+        /* 
+            分析
+                onmousemove 事件会在鼠标指针移到指定的对象时发生。
+
+                在事件里面获取鼠标的坐标
+                把x的坐标和y的坐标作为图片的绝对定位的left和top的值
+                这样就可以移动图片了
+        */
+       //先获取图片对象
+       var img =  document.querySelector('img')
+
+       document.addEventListener('mousemove',function(e){
+            
+            //page:鼠标在页面文档的x和y轴坐标
+            console.log(e.pageX);
+            console.log(e.pageY);
+
+           //获取鼠标的坐标
+           var x = e.pageX
+           var y = e.pageY
+
+           //将坐标设置为img对象的偏移值
+           img.style.left = x - 50 + 'px'
+           img.style.top = y - 40 +'px'
+       })
+    </script>
+</body>
+</html>

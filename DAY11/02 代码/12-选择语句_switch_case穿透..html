@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/* 
+			 case穿透产生的原因
+				因为brak用于结束switch语句的，如果忘记写了，会产生case穿透
+			 
+			 
+			 */
+		
+			 //判断月份属于哪个季节：12,1,2冬季3,4,5春季6,7,8夏季9,10,11秋季
+			 var th = prompt('月份')
+			 //判断
+			 switch (+th) {
+			 	case 3:
+			 	case 4:
+			 	case 5:
+			 		alert('春季')
+			 		break
+			 	case 6:
+			 	case 7:
+			 	case 8:
+			 		alert('夏季')
+			 		break
+			 	case 9:
+			 	case 10:
+			 	case 11:
+			 		alert('秋季')
+			 		break
+			 	case 12:
+			 	case 1:
+			 	case 2:
+			 		alert('冬季')
+			 		break
+			 	default:
+			 		alert('不是月份')
+			 		break
+			 } 
+		</script>
+	</body>
+</html>

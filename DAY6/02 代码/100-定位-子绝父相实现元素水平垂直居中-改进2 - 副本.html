@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			/* 针对上一节的问题
+						由于left的值是写死的，如果father的宽度发生改变，就不能居中了
+					解决
+						让1eft为宽度的50%，然后再往左偏移一点
+				又出现了一个问题
+						改变son的宽度之后，又不能居中了，因为margin-left的值是写死的		
+				
+			
+			 */
+			.father{
+				width: 800px;
+				height: 600px;
+				background-color: aqua;
+				position: relative;
+				
+			}
+			.son{
+				width: 300px;
+				height: 200px;
+				background-color: aquamarine;
+				position: absolute;
+				left: 50%;/*代表占父元素宽度的一半*/
+				transform: translateX(-50%);/*transform:位移属性translateX:沿x轴移动，%是相对于它自身 */
+
+				top: 200px;
+				
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div class="father">
+			<div class="son"></div>
+		</div>
+	</body>
+</html>

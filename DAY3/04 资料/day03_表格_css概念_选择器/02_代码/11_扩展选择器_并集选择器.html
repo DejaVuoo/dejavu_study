@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            需求
+                同时选择div和p,设置字体为红色
+        */
+
+        /* 方式一:叠加元素选择器 */
+        div,p{
+            color: red;
+        }
+
+        /* 方式二:叠加类选择器 */
+        .c1,.c2{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="c1">中国</div>
+    <p class="c2">俄罗斯</p>
+</body>
+</html>

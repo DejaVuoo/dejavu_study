@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <script>
+        /* 
+              prompt输入一个四位数  求每个位上的数字之和 1234 ===> 10 
+        */
+        var num = prompt('请输入一个四位数')//1234
+
+        //获取每一位上的数
+        var ge =  num%10
+        var shi = parseInt(num/10%10) //parseInt只取整数位的数值,小数位不会取, . 是一个非数字字符串
+        var bai = parseInt(num/100%10)
+        var qian = parseInt(num/1000%10)
+
+        console.log(ge+shi+bai+qian);
+     </script>
+</body>
+</html>

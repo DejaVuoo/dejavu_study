@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var str = ''
+			for (var i = 1; i <= 6; i++) {
+				for (var j = 1; j <= 6; j++) {
+					str += '⭐⭐'
+					//在内层循环里面使用break,只金结束它当前所在的内层循环，不影响外层循环
+					if (j = 2) {
+						break
+					}
+				}
+				str += '\n'
+			}
+			console.log(str);
+		</script>
+	</body>
+</html>

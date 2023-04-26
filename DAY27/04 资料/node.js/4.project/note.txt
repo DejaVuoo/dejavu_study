@@ -1,0 +1,7 @@
+// Copyright (c) 2023 smable<316245279@qq.com>
+// 
+// This software is released under the MIT License.
+// https://opensource.org/licenses/MIT
+
+dependencies 存放生产环境下的第三方依赖 
+如果有的依赖只希望它作用于本地开发 开发环境 devDependencies 存放开发环境下的第三方依赖

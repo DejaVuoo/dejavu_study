@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+
+	</head>
+
+	<body>
+
+		<script type="text/javascript">
+			function f1() {
+				console.log('1秒后执行');
+			}
+			var timer1 = setInterval('f1()', 1000) //字符串形式的参数必须要带()
+
+
+			function f2() {
+				console.log('2秒后执行'); //函数类型参数，直接赋值函数名即可
+			}
+			var timer2 = setInterval(f2, 2000)
+
+			//清除第二个定时器
+			clearInterval(timer2)
+		</script>
+	</body>
+
+</html>

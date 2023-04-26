@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            display: flex;
+            width: 1226px;
+            height: 600px;
+            background: lightblue;
+            margin: 0 auto;
+            gap:14px;
+        }
+        .left{
+            width: 234px;
+            height: 600px;
+            background: #800080;
+        }
+        .right{
+            flex: 1; /* 将剩余的尺寸分配给右边 */
+            height: 600px;
+            background: lightgreen;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+</body>
+</html>
