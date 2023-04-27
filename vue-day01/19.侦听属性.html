@@ -1,0 +1,46 @@
+<!--
+ Copyright (c) 2023 smable<316245279@qq.com>
+ 
+ This software is released under the MIT License.
+ https://opensource.org/licenses/MIT
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="count++">按钮</button>
+        <h2 v-show="ishow">动态显示的标题</h2>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                //如果count值是偶数 h2显示 count值奇数 h2隐藏
+                count:0,
+                ishow:true
+            },
+            watch:{
+                //监听data数据的变化 如果data源数据变了 执行回调函数
+                count(newValue,oldValue){
+                    if(newValue%2===0){
+                        this.ishow = true
+                    }else{
+                        this.ishow = false
+                    }
+                }
+            }
+            })
+    </script>
+</body>
+
+</html>

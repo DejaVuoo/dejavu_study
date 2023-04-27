@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>0</h2>
+    <button onclick="fn()">点我自增</button>
+    <script>
+        const h2 = document.querySelector('h2')
+        const btn = document.querySelector('button')
+        function fn(){
+            h2.innerHTML = +h2.innerHTML + 1
+        }
+    </script>
+</body>
+</html>

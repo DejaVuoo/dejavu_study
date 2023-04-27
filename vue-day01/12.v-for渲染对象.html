@@ -1,0 +1,58 @@
+<!--
+ Copyright (c) 2023 smable<316245279@qq.com>
+ 
+ This software is released under the MIT License.
+ https://opensource.org/licenses/MIT
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <!-- 对象数据也可以渲染 普通数字也可以渲染 但实际渲染的数据都是数组 -->
+            <li v-for="(value,index) in '10'">
+               {{value}}--{{index}}
+            </li>
+        </ul>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                // friends:[
+                //     {
+                //         name:'peiqi',
+                //         age:4,
+                //         gender:'girl'
+                //     },
+                //     {
+                //         name:'qiaozhi',
+                //         age:3,
+                //         gender:'boy'
+                //     },{
+                //         name:'suxi',
+                //         age:3,
+                //         gender:'girl'
+                //     }
+                // ]
+                person:{
+                    name:'peiqi',
+                    age:4,
+                    gender:'girl'
+                }
+            }
+            })
+    </script>
+</body>
+
+</html>

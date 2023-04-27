@@ -1,0 +1,35 @@
+<!--
+ Copyright (c) 2023 smable<316245279@qq.com>
+ 
+ This software is released under the MIT License.
+ https://opensource.org/licenses/MIT
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- v-html可以将指令后的内容渲染到页面上(和{{}}很类似) 而且可以解析标签 -->
+        <!-- v-html和v-text 前者可以解析html标签 v-text则不可以 v-text和插值的作用基本一致 -->
+        <h1 v-text="count"></h1>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                count:'<em>0</em>'
+            }
+            })
+    </script>
+</body>
+
+</html>

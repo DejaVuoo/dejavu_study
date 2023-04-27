@@ -1,0 +1,46 @@
+<!--
+ Copyright (c) 2023 smable<316245279@qq.com>
+ 
+ This software is released under the MIT License.
+ https://opensource.org/licenses/MIT
+-->
+
+<!--
+ Copyright (c) 2023 smable<316245279@qq.com>
+ 
+ This software is released under the MIT License.
+ https://opensource.org/licenses/MIT
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+       <!-- template是vue中给我们提供的一个空白标签 -->
+       <button @click="show = !show">点我切换标题的显示隐藏</button>
+       <template v-if="show"> 
+        <h1>标题1</h1>
+        <h1>标题2</h1>
+        <h1>标题3</h1>
+       </template>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                show:true
+            }
+         })
+    </script>
+</body>
+
+</html>

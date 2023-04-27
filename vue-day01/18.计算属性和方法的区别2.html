@@ -1,0 +1,54 @@
+<!--
+ Copyright (c) 2023 smable<316245279@qq.com>
+ 
+ This software is released under the MIT License.
+ https://opensource.org/licenses/MIT
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 如果模板中能直接使用一个变量 那么这个变量一定被会挂在到vue实例身上 -->
+        <!-- data,methods,computed配置选项中的数据都会挂在到模板上 -->
+       <h2>{{reverse}}</h2>
+       <h3>{{count}}</h3>
+       <button @click="msg+=1">按钮</button>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                msg:'hello',
+                count:0
+            },
+            // methods:{
+            //     reverse(){
+            //         console.log('方法被调用')
+            //         //计算属性必须通过返回值的形式表达
+            //         return this.msg.split('').reverse().join('')
+            //     }
+            // }
+            computed:{
+                //3.如果计算属性依赖的数据没有变化 它不会重新计算 同样能提高性能
+                reverse(){
+                    console.log('计算属性被调用')
+                    //计算属性必须通过返回值的形式表达
+                    return this.msg.split('').reverse().join('')
+                }
+            }
+            })
+            console.log(vm)
+    </script>
+</body>
+
+</html>

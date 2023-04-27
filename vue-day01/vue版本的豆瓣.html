@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="referrer" content="never">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {margin: 0;padding: 0;} 
+    ul,ol{list-style:none;}
+    img{border:0;}
+    a {/* color: royalblue; */text-decoration: none;}
+
+    span {
+      color: #ff0303;
+    }
+
+    .movies img {
+
+      width: 100%;
+
+    }
+
+
+
+    body {
+      display: flex;
+      justify-content: center;
+    }
+
+
+    .container {
+      display: grid;
+      position: relative;
+      /* margin: 0 auto; */
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      text-align: center;
+      align-items: center;
+      gap: 15px;
+      padding: 20px;
+      margin-top: 100px;
+      /* width: 100%; */
+      background-color: aquamarine;
+      border: 1px solid #121212;
+    }
+
+    .item{
+      position: relative;
+    }
+
+    .container>.item>.details {
+      display: none;
+      
+      z-index: 9;
+      top: 10px;
+      left: 100%;
+      width: 338px;
+      padding: 25px;
+      font-size: 13px;
+      color: #777777;
+      background-color: white;
+      border: 1px solid #ccc;
+      box-shadow: 0 0 5px 5px #00000088;
+      box-sizing: border-box;
+      transition: 0.3s;
+      /* height: 376px; */
+    }
+
+    .container>.item:hover .details {
+      display: block;
+      position: absolute;
+    }
+
+    .container>.item>.details>div {
+      /* color: #ff0303; */
+      margin: 10px 0;
+    }
+
+    .container>.item>.details>p {
+      margin: 10px 0;
+      /* color: #000; */
+    }
+
+    .container>.item>.details>.keyword {
+      width: 88%;
+    }
+
+    .container>.item>.details>.evaluate {
+      /* display: inline-block; */
+      width: 100%;
+      padding: 6px;
+      border: 1px solid #cccccc;
+      background-color: #d4d3d3;
+    }
+
+    .container>.item>.details>button {
+      margin-right: 20px;
+      padding: 4px 8px;
+      background-color: white;
+      border: 1px solid #777777;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container" id="movies">
+    <div class="item" v-for="(movie, index) in Movies" :key="index">
+      <img :src="movie.info.imgurl" alt="">
+      <p>{{movie.title}}&nbsp;<span>{{movie.info.pingfen}}</span></p>
+      <div class="details " >
+        <a :href="movie.info.url">{{movie.title}}</a>
+        <div><span>{{movie.info.pingfen}}</span>
+        </div>
+        <p class='keyword'>{{movie.info.yanyuan}}</p>
+        <p class=''><span>时长：</span>{{movie.info.duration}}</p>
+        <p class=''><span>类型：</span>{{movie.info.type}}</p>
+        <button>想看</button><button>看过</button>
+        <p class="evaluate">{{movie.info.pingjia}}</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="vue.js"></script>
+
+  <script>
+    new Vue({
+      el: '#movies',
+      data: {
+        Movies: [
+          {
+            title: "神出鬼没",
+            info: {
+              url: "https://movie.douban.com/subject/35588155/",
+              imgurl: "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2888918765.jpg",
+              yanyuan: "2023-04-21(美国网络) / 克里斯·埃文斯 / 安娜·德·阿玛斯 / 艾德里安·布洛迪 / 瑞安·雷诺兹 / 塞巴斯蒂安·斯坦 / 安东尼·麦凯 / 约翰·赵 / 蒂姆·布雷克·尼尔森 / 艾米·塞德丽丝 / 泰特·多诺万 / 麦克·莫 / 丽兹·布罗德威 / 穆斯塔法·沙基尔",
+              pingfen: "5.9",
+              pingjia: "(4100人评价)",
+              duration: "120分钟",
+              type: "剧情 / 战争 / 犯罪 / 冒险"
+            }
+          },
+          {
+            title: "俄罗斯方块",
+            info: {
+              url: "https://movie.douban.com/subject/26087471/",
+              imgurl: "https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2888730530.jpg",
+              yanyuan: "2023-03-15(西南偏南电影节) / 2023-03-31(美国网络) / 塔伦·埃哲顿 / 迈尔斯·巴罗 / 尹成植 / 尼基塔·叶甫列莫夫 / 托比·琼斯 / 奥列格·斯特凡 / 罗杰·阿拉姆 / 安东尼·鲍伊 / 古畑新之 / 伊川东吾 / 長渕文音 / 伊戈尔·格拉布佐夫 / 山村宪之介",
+              pingfen: "8.1",
+              pingjia: "(23166人评价)",
+              duration: "120分钟",
+              type: "剧情 / 战争 / 犯罪 / 冒险"
+            }
+          },
+          {
+            title: "饥渴游戏",
+            info: {
+              url: "https://movie.douban.com/subject/36122158/",
+              imgurl: "https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2888919519.jpg",
+              yanyuan: "2023-04-08(泰国网络) / 诺帕奇·贾亚纳玛 / 茱蒂蒙·琼查容苏因 / 冈·斯瓦蒂 / 卜密巴特·塔沃斯理 / 泰国 / 西蒂斯里·蒙哥西里",
+              pingfen: "5.5",
+              pingjia: "(6467人评价)",
+              duration: "130分钟",
+              type: "剧情 / 惊悚"
+            }
+          },
+          {
+            title: "蚁人与黄蜂女：量子狂潮",
+            info: {
+              url: "https://movie.douban.com/subject/34610636/",
+              imgurl: "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2888100566.jpg",
+              yanyuan: "2023-02-15(法国) / 2023-02-17(美国/中国大陆) / 保罗·路德 / 伊万杰琳·莉莉 / 迈克尔·道格拉斯 / 米歇尔·菲佛 / 乔纳森·梅杰斯 / 凯瑟琳·纽顿 / 比尔·默瑞 / 凯蒂·M·奥布莱恩 / 威廉·杰克森·哈珀 / 詹姆斯·卡特勒 / 大卫·达斯马齐连",
+              pingfen: "5.9",
+              pingjia: "(103228人评价)",
+              duration: "120分钟",
+              type: "剧情 / 战争 / 犯罪 / 冒险"
+            }
+          },
+          {
+            title: "下一个素熙",
+            info: {
+              url: "https://movie.douban.com/subject/35739931/",
+              imgurl: "https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2886381049.jpg",
+              yanyuan: "2022-05-25(戛纳电影节) / 2023-02-08(韩国) / 金时恩 / 裴斗娜 / 崔喜珍 / 宋永世 / 金宇谦 / 郑会潾 ",
+              pingfen: "8.2",
+              pingjia: "(11790人评价)",
+              duration: "134分钟",
+              type: "剧情"
+            }
+          },
+          {
+            title: "杀死福顺",
+            info: {
+              url: "https://movie.douban.com/subject/35521951/",
+              imgurl: "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2887348324.jpg",
+              yanyuan: "2023-02-18(柏林国际电影节) / 2023-03-31(韩国网络) / 全度妍 / 李絮 / 薛景求 / 黄政民 / 具教焕 / 金诗雅 / 法希姆·法兹利 / 金成伍 / Willis Chung / 尹敬浩 / 安德烈亚斯·弗龙克 / 李妍 / 崔秉默",
+              pingfen: "6.7",
+              pingjia: "(27884人评价)",
+              duration: "100分钟",
+              type: "悬疑 / 犯罪 / 冒险"
+            }
+          },
+          {
+            title: "雷霆沙赞！众神之怒",
+            info: {
+              url: "https://movie.douban.com/subject/33402300/",
+              imgurl: "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2888229976.jpg",
+              yanyuan: "2023-03-15(澳大利亚) / 2023-03-17(美国/中国大陆) / 扎克瑞·莱维 / 亚瑟·安其 / 杰克·迪伦·格雷泽 / 海伦·米伦 / 刘玉玲 / 瑞秋·齐格勒 / 杰曼·翰苏 / 盖尔·加朵 / 亚当·布罗迪 / 格雷斯·卡罗琳·柯里 / 梅根·古德 / 罗斯·巴特勒 / D·J·科特罗纳",
+              pingfen: "5.6",
+              pingjia: "(38863人评价)",
+              duration: "110分钟",
+              type: "剧情 / 战争"
+            }
+          },
+          {
+            title: "疾速追杀4",
+            info: {
+              url: "https://movie.douban.com/subject/33455421/",
+              imgurl: "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2884692335.jpg",
+              yanyuan: "2023-03-13(西南偏南电影节) / 2023-03-24(美国) / 基努·里维斯 / 甄子丹 / 比尔·斯卡斯加德 / 劳伦斯·菲什伯恩 / 真田广之 / 沙米尔·安德森 / 兰斯·莱迪克 / 泽山璃奈 / 克兰西·布朗 / 斯科特·阿金斯 / 伊恩·麦柯肖恩 / 马克·扎罗 / 娜塔丽·特纳",
+              pingfen: "8.0",
+              pingjia: "(16189人评价)",
+              duration: "120分钟",
+              type: "剧情 / 冒险"
+            }
+          },
+          {
+            title: "网络谜踪2",
+            info: {
+              url: "https://movie.douban.com/subject/34795100/",
+              imgurl: "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2886965335.jpg",
+              yanyuan: "2023-01-20(美国) / 蒂姆·格里芬 / 艾娃·扎里亚·李 / 尼娅·朗 / 斯托姆·瑞德 / 梁振邦 / 艾米·兰德克 / 梅根·苏丽 / 丽莎·山田 / 沙拉尔·阿里·斯佩克斯 / 贾米尔·希夫吉 / 迈克尔·塞戈维亚 / 丹尼尔·海尼 / 乔昆姆·德·阿尔梅达 / 劳伦湾·莫斯利",
+              pingfen: "8.0",
+              pingjia: "(77473人评价)",
+              duration: "120分钟",
+              type: "剧情 / 战争 / 犯罪 / 冒险"
+            }
+          },
+          {
+            "title": "第三次世界大战",
+            info: {
+              url: "https://movie.douban.com/subject/36021623/",
+              imgurl: "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2880988156.jpg",
+              yanyuan: "2022-09-07(威尼斯电影节) / 2023-04-20(北京国际电影节) / 莫森·坦纳班德 / 玛莎·海亚齐 / 内达·吉布拉伊利 / 纳维德·诺斯拉蒂 / 亚沙尔·巴布 / 侯赛因·努鲁兹 ",
+              pingfen: "7.9",
+              pingjia: "(3307人评价)",
+              duration: "107分钟",
+              type: "剧情 / 战争 / 犯罪 / 冒险"
+            }
+          }]
+
+      },
+
+      
+    })
+
+  </script>
+</body>
+
+</html>。

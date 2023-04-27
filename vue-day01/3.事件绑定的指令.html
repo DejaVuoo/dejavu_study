@@ -1,0 +1,47 @@
+<!--
+ Copyright (c) 2023 smable<316245279@qq.com>
+ 
+ This software is released under the MIT License.
+ https://opensource.org/licenses/MIT
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+        <!-- {{}}叫做插值表达式 -->
+      <h2 v-on:mouseover="fn1">{{count%2===0?'偶数':'奇数'}}</h2>
+      <button v-on:click="fn">点我自增</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+      const vm = new Vue({
+        el: "#app", //理解为vue关联的视图区域
+        data: { //理解为存储所有视图区域的数据的对象
+          count: 0,
+        },
+        methods: { //理解为存储所有视图区域事件回调的对象
+          //第一个指令 v-on:用来绑定事件的 它有一个简写的形式 @
+          //如果在methods配置选项中希望访问到data中的数据 必须通过this调用
+          //vue管理的函数不能写成箭头函数 必须写成普通函数
+          //定时器的回调函数不属于vue管理的函数 如果希望内部访问this必须写成箭头函数
+          fn(){ //让count自增
+           setTimeout(()=>{
+            this.count++
+           },1000)
+          },
+          fn1(){
+            console.log('鼠标移入了')
+          }
+        },
+      })
+      console.log(vm)
+    </script>
+  </body>
+</html>

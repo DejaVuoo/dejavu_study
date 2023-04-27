@@ -1,0 +1,63 @@
+<!--
+ Copyright (c) 2023 smable<316245279@qq.com>
+ 
+ This software is released under the MIT License.
+ https://opensource.org/licenses/MIT
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <!-- of 和 in 都可以实现循环效果 -->
+            <li v-for="(item,index) in friends">
+                序号:{{item.id}}--姓名:{{item.name}}--年龄：{{item.age}}--性别:{{item.gender}} --<button @click="del(index)">点我删除这条数据</button>
+            </li>
+        </ul>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                friends:[
+                    {
+                        id:Math.random().toFixed(1),
+                        name:'peiqi',
+                        age:4,
+                        gender:'girl'
+                    },
+                    {
+                        id:Math.random().toFixed(1),
+                        name:'qiaozhi',
+                        age:3,
+                        gender:'boy'
+                    },{
+                        id:Math.random().toFixed(1),
+                        name:'suxi',
+                        age:3,
+                        gender:'girl'
+                    }
+                ]
+            },
+            methods:{
+                del(index){
+                    //删除对应的那条数据
+                    //在一个数组中删除某个索引值的数组元素
+                   this.friends.splice(index,1)
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
