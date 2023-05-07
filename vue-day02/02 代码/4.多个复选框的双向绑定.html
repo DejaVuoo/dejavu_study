@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <!--多个复选框可以将checkedi设置为一个数组必须手动地设置好每一个inputi的value-->
+    <!-- value值必须写 -->
+    <input type="checkbox" value="1" v-model="checked">
+    <label >1</label>
+    <input type="checkbox" value="2" v-model="checked">
+    <label >2</label>
+    <input type="checkbox" value="3" v-model="checked">
+    <label >3</label>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+    new Vue({
+    el:'#app',
+    data:{
+      checked:[]
+    }
+    
+    })
+    </script>
+</body>
+</html>

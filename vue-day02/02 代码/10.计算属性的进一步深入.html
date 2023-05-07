@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="#app">
+    姓:<input type="text" v-model.lazy="fname">
+    名:<input type="text" v-model.lazy="lname">
+    <h1>姓名:{{}}</h1>
+  </div>
+  <script src="vue.js"></script>
+  <script>
+    //使用计算属性和侦听属性分别完成一下需求
+    //计算属性
+    /* 
+      需求：当姓或者名变化后3S钟姓名才跟着变
+      
+      
+      计算属性无法处理异步代码
+    */
+    /* new Vue({
+      el:'#app',
+      data:{
+        fname:'',
+        lname:''
+      },
+      computed:{
+        name(){
+          setTimeout(() =>{
+            return this.fname + this.lname
+          },3000)
+          
+        }
+      }
+    }) */
+    //使用侦听属性侦听属性可以
+    new Vue({
+      el: '#app',
+      data: {
+        fname: '',
+        lname: '',
+        name: ''
+      },
+      computed: {
+        fname() {
+          setTimeout(() =>{
+            this.name = this.fname + this.lname
+          },3000)
+          
+        },
+        lname() {
+          setTimeout(() =>{
+            this.name = this.fname + this.lname
+          },3000)
+          
+        }
+      }
+    }) 
+  </script>
+</body>
+
+</html>

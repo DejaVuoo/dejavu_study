@@ -1,0 +1,66 @@
+<!--
+ Copyright (c) 2023 smable<316245279@qq.com>
+ 
+ This software is released under the MIT License.
+ https://opensource.org/licenses/MIT
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .curColor {
+        color: red;
+      }
+      .bgc{
+        background-color: blue;
+      }
+      .fs{
+        font-size: 40px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app">
+      <!-- 希望给h1添加一些动态的样式 -->
+      <h1
+        class="fs"
+        :class="[{
+          curColor
+        },{
+          bgc
+        }]"
+      >
+        这是一个h1标题
+      </h1>
+      <button @click="change">点我切换颜色</button>
+      <button @click="toggle">点我切换背景颜色</button>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          //class绑定的第一种形式 对象写法 如果对象中某个属性值为true 那么这么样式会起作用
+          //希望通过class绑定多个类的话 写成数组写法
+          //class 和:class可以同时作用在一个dom元素
+          curColor: true,
+          bgc:true
+        },
+        methods: {
+          change() {
+            this.curColor = !this.curColor
+          },
+          toggle(){
+            this.bgc = !this.bgc
+          }
+        },
+      })
+    </script>
+  </body>
+</html>

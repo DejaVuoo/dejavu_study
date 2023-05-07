@@ -1,0 +1,51 @@
+<!--
+ Copyright (c) 2023 smable<316245279@qq.com>
+ 
+ This software is released under the MIT License.
+ https://opensource.org/licenses/MIT
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <h2 v-pink>{{person.name|upper}}</h2>
+      <p>{{person.age}}</p>
+      <p>{{person.gender}}</p>
+      <p v-if="person.height">{{person.height}}</p>
+      <button @click="add">添加按钮</button>
+      <button @click="del">删除年龄按钮</button>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          person: {
+            name: "peiqi",
+            age: 4,
+            gender: "女",
+          },
+        },
+        methods: {
+          add() {
+            //通过实例方法实现Vue.set
+            this.$set(this.person,'height',100)
+          },
+          del() {
+            // delete this.person.age
+           this.$delete(this.person,'age')
+          },
+        },
+      })
+    </script>
+  </body>
+</html>

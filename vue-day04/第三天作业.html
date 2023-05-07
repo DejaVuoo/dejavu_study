@@ -1,0 +1,104 @@
+<!--
+ Copyright (c) 2023 smable<316245279@qq.com>
+ 
+ This software is released under the MIT License.
+ https://opensource.org/licenses/MIT
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table{
+            border: 1px solid #ddd;
+            padding: 20px;
+            
+        }
+        td,th{
+            padding: 10px;
+        }
+        .disable{
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h2>购物车</h2>
+        <table>
+            <thead>
+                <th>ID</th>
+                <th>名称</th>
+                <th>价格</th>
+                <th>数量</th>
+                <th>操作</th>
+            </thead>
+            <tbody>
+                <tr v-for="item,index in products">
+                    <td>{{item.id}}</td>
+                    <td>{{item.title}}</td>
+                    <td>{{item.price}}</td>
+                    <td><button @click="decrease(index)" :class="{
+                        disable:item.number === 0
+                    }">➖</button>{{item.number|addZero}}<button @click="increase(index)">➕</button></td>
+                    <td><button @click="del(index)">删除</button></td>
+               </tr>
+            </tbody>
+        </table>
+        <h2>商品总价:{{allPrice}}</h2>
+    </div>
+    <script src="./vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                products:[]
+            },
+            mounted(){
+               axios.get('http://localhost:3000/products').then(res=>{
+                  this.products = res.data
+               })
+            },
+            filters:{
+                addZero(value){
+                    if(+value<10){
+                        return '0' + value
+                    }else{
+                        return value
+                    }
+                }
+            },
+            computed:{
+                allPrice(){
+                    return  this.products.reduce((prev,cur)=>{
+                        return prev + cur.price * cur.number
+                    },0)
+                }
+            },
+            methods:{
+                decrease(index){
+                    //实现自减操作
+                    if(this.products[index].number ===0){
+                        return false
+                    }
+                    this.products[index].number --
+                },
+                increase(index){
+                    this.products[index].number++
+                },
+                del(index){
+                    this.products.splice(index,1)
+                }
+            }
+            })
+    </script>
+</body>
+
+</html>

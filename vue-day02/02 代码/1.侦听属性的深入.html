@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <button @click="count++">按钮</button>
+    <h2 v-show="ishow">动态显示的标题</h2>
+  </div>
+
+  <script src="vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        number: {
+          count1: 1,
+          count2: 2,
+          count3: 3
+        },
+
+        ishow: true
+
+      },
+      //watch配置选项中书写需要监听的data数据源 函数体中书写数据源发生变化时执行的逻辑
+      watch: {
+        //页面初次加载的时候就立刻执行一次回调函数
+        /* 
+          我们可以将侦听属性写成一个对象(完整写法)，其中immediate属性可以让handler中的函数立即执行一次。
+          默认情况下，immediate会被设置为false,
+          这也解释了为什么我们使用简写方式(即直接写成函数 
+          其实就是指向了handler)的时候姓名没有显示。
+          侦听属性中除开handler和immediate2个属性外，还有一个deep属性
+          deep属性，默认情况下它的值为false，需要手动地设置为true
+          deep属性仍然是侦听number这个对象，当它内部变化的时候仍然能够执行handler
+        */
+        number: {
+          handler: function (newValue) {
+            console.log('number变了')
+            if (this.count1 % 2 === 0) {
+              this.ishow = true
+            } else {
+              this.ishow = false
+            }
+          },
+          immediate: ture, //立刻执行一次handler
+          deep: ture //实现深度监听
+        },
+      },
+    })
+
+  </script>
+</body>
+
+</html>

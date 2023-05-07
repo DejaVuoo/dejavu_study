@@ -1,0 +1,53 @@
+<!--
+ Copyright (c) 2023 smable<316245279@qq.com>
+ 
+ This software is released under the MIT License.
+ https://opensource.org/licenses/MIT
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <div @click="fn1">
+            <!-- stop修饰符阻止事件冒泡 -->
+            <a href="#" @click.stop="fn">点我</a>
+        </div>
+        <!-- .prevent修饰符阻止DOM元素的默认行为 -->
+        <form action="123.php" @submit.prevent="fn2">
+            <button>点我去#</button>
+        </form>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                
+            },
+            methods:{
+                fn(){
+                    console.log('fn')
+                },
+                fn1(){
+                    console.log('fn1')
+                },
+                fn2(){
+                    //阻止默认行为
+                    console.log('fn3')
+                }
+            }
+
+            })
+    </script>
+</body>
+
+</html>

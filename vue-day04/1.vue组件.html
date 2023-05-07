@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .header{
+            background-color: skyblue;
+            height: 20vh;
+        }
+        .content{
+            float: left;
+            width: 60%;
+            height: 80vh;
+            background-color: gold;
+        }
+        .side{
+            float: right;
+            width: 40%;
+            height: 80vh;
+            background-color: aqua;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- <div class="header"><h1>HEADER</h1></div> -->
+      <!-- 3.使用组件 -->
+      <my-header></my-header>
+      <my-content></my-content>
+      <my-side></my-side>
+      <!-- <div class="content"><h1>CONTENT</h1></div>
+      <div class="side"><h1>SIDE</h1></div> -->
+    </div>
+    <script src="/vue.js"></script>
+    <script>
+      //1.vue中定义组件
+      const MyHeader = Vue.extend({
+        //在组件中 一般通过name配置选项给每个组件起一个名字
+        name:'MyHeader',
+        template:'<div class="header"><h1>HEADER</h1></div>' 
+      })
+      const MyContent = Vue.extend({
+        //在组件中 一般通过name配置选项给每个组件起一个名字
+        name:'MyContent',
+        template:'<div class="content"><h1>CONTENT</h1></div>' 
+      })
+      const MySide = Vue.extend({
+        //在组件中 一般通过name配置选项给每个组件起一个名字
+        name:'MySide',
+        template:'<div class="side"><h1>SIDE</h1></div>' 
+      })
+      //2.注册组件
+      const vm  = new Vue({
+        el: '#app',
+        //components用来注册组件的
+        //在单个html文件中 组件名称不能写成大驼峰形式 必须写成短横线连接的形式
+        components:{
+          'my-header':MyHeader,
+          'my-content':MyContent,
+          'my-side':MySide
+        }
+      })
+    </script>
+  </body>
+</html>

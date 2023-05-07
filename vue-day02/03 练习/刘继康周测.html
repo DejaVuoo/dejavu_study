@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul,
+    ol {
+      list-style: none;
+    }
+
+
+    input,
+    button {
+      background: none;
+      border: none;
+      outline: none;
+      font: inherit;
+    }
+
+    input:hover{
+      background-color: royalblue;
+      color: lawngreen;
+      border-radius: 10px;
+    }
+
+    body {
+      background: linear-gradient(45deg, royalblue, lawngreen);
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    button {
+      border-radius: 5px;
+      margin: 10px;
+    }
+
+    .input-box,
+    .list-box {
+      display: flex;
+      box-shadow: 10px -16px teal;
+      border-radius: 10px;
+      background-color: white;
+      margin: 0 auto;
+      margin-top: 100px;
+      width: 50%;
+      align-items: center;
+
+    }
+
+    .list-box {
+      display: block;
+    }
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+    }
+
+
+
+    input {
+      border-bottom: 2px solid #615e5e;
+      width: 70%;
+      height: 50px;
+    }
+
+    .add {
+      width: 30%;
+      margin: 10px;
+      padding: 15px 40px;
+      background-color: royalblue;
+
+    }
+
+    .del {
+      margin: 10px;
+      padding: 10px 20px;
+      background-color: greenyellow;
+      font-size: 7px;
+      width: 20%;
+
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 
+
+    1.完成基本的样式布局  -- 10分
+    2.核心功能
+      2.1 将input框收集到的内容添加到下方的列表 如果有代办事项 显示列表 否则显示没有代办事项 --40分
+      2.2 正确地实现列表的删除功能 ---30分
+      2.3 可以实现代办事项的编辑功能 ---20分
+
+
+   -->
+  <div class="container" id="app">
+
+    <div class="input-box">
+      <input type="text" placeholder="请输入待办事项..." v-model.trim="todo" />
+      <button class="add" @click="add">添加</button>
+
+    </div>
+
+    <div class="list-box">
+      <ul v-if="list.length">
+        <li v-for="item in list">
+          <!-- <span  @click="changeEdited(list.id)">{{item.msg}}</span> -->
+          <input type="text" v-model="item.msg" @blur="changeEdited(list.id)">
+          <button class="del" @click="del(index)">删除</button>
+          
+        </li>
+      </ul>
+      <h2 v-else>暂无待办事项</h2>
+      <div class="footer" v-if="list.length">
+        <p>共计代办任务{{list.length}}项</p>
+        <button class="del" @click="clear">全部清除</button>
+      </div>
+    </div>
+
+  </div>
+  <script src="vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        todo: '',
+        list: []
+      },
+      methods: {
+        add() {
+          if (this.todo == '') {
+            alert('内容不能为空')
+          } else {
+            this.list.push({
+              msg: this.todo,
+              id: Date.now(),
+              isEdited: false
+            })
+            this.todo = ''
+          }
+        },
+        del(index) {
+          this.list.splice(index, 1)
+        },
+        clear() {
+          this.list = []
+        },
+        changeEdited(id) {
+          this.list.forEach(list => {
+            
+            if (list.id === id) {
+              task.isEdited = !task.isEdited
+            }
+          }
+
+          )
+
+
+        }
+      }
+    })
+
+
+  </script>
+</body>
+
+</html>

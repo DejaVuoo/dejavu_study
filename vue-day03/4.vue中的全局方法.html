@@ -1,0 +1,63 @@
+<!--
+ Copyright (c) 2023 smable<316245279@qq.com>
+ 
+ This software is released under the MIT License.
+ https://opensource.org/licenses/MIT
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <h2 v-pink>{{person.name|upper}}</h2>
+      <p>{{person.age}}</p>
+      <p>{{person.gender}}</p>
+      <p v-if="person.height">{{person.height}}</p>
+      <button @click="add">添加按钮</button>
+      <button @click="del">删除年龄按钮</button>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+      //配置选项中的指令可以写成全局方法的形式
+      Vue.directive("pink", function (el) {
+        el.style.color = "pink"
+      })
+      Vue.filter("upper", function (value) {
+        return value.toUpperCase()
+      })
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          person: {
+            name: "peiqi",
+            age: 4,
+            gender: "女",
+          },
+        },
+        methods: {
+          add() {
+            //希望给person对象添加一个新的属性 height
+            console.log("add")
+            //这样直接通过对象添加的属性没有被vue观测到
+            // this.person.height= 100
+            Vue.set(this.person, "height", 100)
+            //如果希望给data中的原始数据进行增加操作 必须调用Vue.set这个全局方法 只有这样数据才具有响应性
+            console.log(this.person)
+          },
+          del() {
+            // delete this.person.age
+            Vue.delete(this.person, "age")
+            console.log(this.person)
+          },
+        },
+      })
+    </script>
+  </body>
+</html>

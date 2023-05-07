@@ -1,0 +1,66 @@
+<!--
+ Copyright (c) 2023 smable<316245279@qq.com>
+ 
+ This software is released under the MIT License.
+ https://opensource.org/licenses/MIT
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 页面加载完毕后 h2标题的字体大小逐渐减小 直至10px -->
+        <h2 :style="{fontSize:fs+'px'}">这是一个h2标题</h2>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                fs:40
+            },
+            // 挂载到页面上
+            beforeCreate(){
+                console.log('beforeCreate')
+            },
+            created(){
+                console.log('created')
+            },
+            beforeMount(){
+                console.log('beforeMount')
+            },
+            mounted(){
+                console.log('mounted')
+                //当页面加载完毕后 执行mounted里的操作
+                const timer = setInterval(()=>{
+                    if(this.fs<20){
+                        clearInterval(timer)
+                    }
+                    this.fs--
+                },100)
+            },
+            beforeUpdate(){
+                console.log('beforeUpdate')
+            },
+            updated(){
+                console.log('updated')
+            },
+            beforeDestroy(){
+                console.log('beforeDestroy')
+            },
+            destroyed(){
+                console.log('destroyed')
+            }
+            })
+    </script>
+</body>
+
+</html>

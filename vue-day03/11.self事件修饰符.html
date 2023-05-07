@@ -1,0 +1,52 @@
+<!--
+ Copyright (c) 2023 smable<316245279@qq.com>
+ 
+ This software is released under the MIT License.
+ https://opensource.org/licenses/MIT
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            padding-bottom: 100px;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div id="app">
+        <!-- 当点击的目标是当前元素本身的时候 触发对应的回调 -->
+        <div class="box" @click.self="doFn1">
+            <p @click.once='doFn'>p段落</p>
+            <h2>h2标题</h2>
+        </div>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                
+            },
+            methods:{
+                doFn(){
+                    console.log('doFn')
+                },
+                doFn1(){
+                    console.log('doFn1')
+                }
+            }
+            })
+    </script>
+</body>
+
+</html>

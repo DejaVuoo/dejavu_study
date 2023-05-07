@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>萍萍酱biubiubiu</title>
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;user-select: none;}
+        ul,ol{list-style:none;}
+        a{text-decoration:none;}
+        img{border:0;}
+        .pos-r{position: relative;}
+        .pos-a{position: absolute;}
+        body{
+            background-color: #48a6ff;
+        }
+        .top{
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            background-color: rgb(0, 120, 201);
+        }
+        .top .tit{
+            padding: 20px 0;
+            color: white;
+            font-size: 30px;
+        }
+        .txt{
+            width: 490px;
+            padding: 10px;
+            font-size: 18px;
+            resize: none;
+            vertical-align:middle;
+        }
+        .btn{
+            padding: 10px;
+            vertical-align:middle;
+            cursor: pointer;
+        }
+        .wrap{
+            width: 550px;
+            margin: 10px auto;
+            padding: 10px 20px ;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 5px 5px #00000038;
+        }
+        .lists{
+            
+        }
+        .list{
+            height: 60px;
+            padding-left: 10px;
+            font-size: 22px;
+            border-bottom: 1px solid #8a8a8a;
+            line-height: 60px;
+            transition: 0.3s;
+        }
+        div.list{
+            font-weight: bolder;
+            border-bottom: 0px solid #8a8a8a;
+        }
+        .lists>li:hover{
+            background-color: rgb(212, 212, 212);
+        }
+        .lists>li>span{cursor: pointer;}
+        /* .lists>li>span::before{
+            display: inline-block;
+            content: '';
+            width: 50px;
+        } */
+        /* .lists>li>.g{
+            color: #8a8a8a;
+            text-decoration:line-through;
+        } */
+        /* .lists>li>.g::before{
+            content: '✔';
+        } */
+        i{
+            float: right;
+            width: 62px;
+            height: 100%;
+            color: #000000;
+            text-align: center;
+            line-height: 62px;
+            cursor: pointer;
+        }
+        i:hover{
+            color: #ffffff;
+            background-color: rgb(184, 0, 0);
+        }
+        .listInput{
+            width: 85%;
+            height: 85%;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <div class="top">
+            <h2 class="tit">My ToDo List</h2>
+            <div>
+                <!-- <textarea name="" id="" cols="50" rows="1" class="txt" placeholder="输入提醒要做的事件"></textarea> -->
+                <input type="text"  placeholder="输入提醒要做的事件" class="txt" v-model.trim="inputVal" >
+                <button class="btn" @click="addEvent">添加</button>
+            </div>  
+        </div>
+        <div class="wrap">
+            <ul class="lists">
+                <li class="list" v-for="(item,index) in lists">
+                    <input type="text" v-model.lazy="item.list" class="listInput" v-show="item.show" autofocus="autofocus" @blur="blur(index)">
+                    <span @click="inputShow(index)" v-show="!item.show" >{{item.list}}</span><i @click="delList(index)">删除</i></li>
+            </ul>
+            <div class="list">{{total}}</div>
+        </div>
+    </div>
+    
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:'#content',
+            data:{
+                inputVal:'',
+                lists:[
+
+                ],
+                total:'暂无代办事项',
+                n:0,
+                focus:"autofocus"
+            },
+            methods:{
+                addEvent(){
+                    val=this.inputVal.trim()
+                    console.log(val);
+                    if(val==''){
+                        alert('请输入内容！')
+                    }else{
+                        console.log(1111);
+                        this.lists.push({list:val,show:false})
+                        this.inputVal=''
+                        this.total="已有"+(++this.n)+"件代办事件"
+                    } 
+                },
+                delList(index){
+                    console.log('删前',this.n);
+
+                    this.lists.splice(index,1);
+                    console.log('删后',this.n);
+                    
+                    this.total="有"+(--this.n)+"件代办事件";
+                    // console.log(this.n);
+
+                },
+                inputShow(index){
+                    this.lists[index].show = true;
+                },
+                blur(index){
+                    this.lists[index].show = false;
+                }
+            },
+            watch:{
+                lists:{
+                    handler:function(newValue,oldValue){
+                        console.log('侦听了');
+                        if(this.box==true){
+                            this.$refs.input.$refs.input.focus()
+                        }
+                        // console.log(newValue,oldValue);  
+                    },
+                    immediate:true, //true立即执行一次handler，默认为false
+                    deep:true  //实现深度监听，对于对象数据的属性的值甚至更深度的侦听,默认为false
+                }
+            }
+        })
+            
+    </script>
+</body>
+</html>
